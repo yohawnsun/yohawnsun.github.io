@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+=======
+
+.container{
+width:100%;
+
+}
+
+>>>>>>> Lemon
+body {
+    background-color: #e9ecef;
+    
+}
+
+.jumbotron{
+    background-color: #fff;
+
+}
+
+.card,.col-sm{
+padding:20px;
+
+}

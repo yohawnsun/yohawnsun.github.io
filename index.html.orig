@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Required meta tags -->
+<metacharset="utf-8">
+<metaname="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link
+        rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css
+"integrity="sha384-
+ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"crossorigin="ano
+nymous">
+<link rel="stylesheet" href="internalstyle.css">
+<<<<<<< HEAD
+=======
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+>>>>>>> Lemon
+</head>
+<body>
+    <div class="container">
+<!--Menu-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Menu</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="experience.html">Experience</a>
+            </li>
+  
+            
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+
+
+        </ul>
+       
+    </div>
+</nav>
+<!--Menu ends-->
+<!--Starter-->
+<div class="jumbotron">
+    <h1 class="display-4"></h1>
+    <p class="lead">Pontus Johansson</p>
+    <hr class="my-4">
+    <p>A customer driven product developer. Perfectly matched in an agile environment, with the big picture in mind. Passionate focus on customer value both by creating innovations as well as doing incremental improvements. Sees the value of collaboration where one plus one can be three or even more.</p>
+    <a class="btn btn-primary btn-lg" href="experience.html" role="button">My experience</a>
+</div>
+<!--Starter ends-->
+
+
+
+
+
+    </div>
+
+
+
+
+
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>

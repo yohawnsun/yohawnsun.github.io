@@ -1,0 +1,36 @@
+
+.container{
+width:100%;
+
+}
+
+
+
+    .container .picture{
+        float:right;
+        width:100px;
+        margin-top:-10px;
+        }
+
+        .list-group-item.active {
+            font-size:14px;
+            background-color: darkslategrey;
+            border-color: darkslategrey;
+        
+        }
+
+body {
+    background-color: #e9ecef;
+    
+}
+
+.jumbotron{
+    background-color: #fff;
+    height:90%;
+
+}
+
+.card,.col-sm{
+padding:20px;
+
+}
