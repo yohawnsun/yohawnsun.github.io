@@ -3,7 +3,12 @@
 .pjcontainer{
 
     padding-right:20px;
-    background-color: #e9ecef;
+    background-color: #fff;
+   
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  
 }
 
 
@@ -24,17 +29,37 @@
 
 body {
     background-color: #e9ecef;
-    
+ 
 }
 
 .jumbotron{
+   
     background-color: #fff;
     height:90%;
     margin-bottom: -20px;
 
 }
 
-.card,.col-sm{
-padding:20px;
+.col-sm{
 
+border:0px;
+
+align-content: center;
 }
+
+.card{
+   
+    border:0px;
+    margin:20px;
+    align-items: center;
+   /*shadow: 5px 5px 10px #888888;*/
+    }
+
+    .card img{
+        width:90%;
+        max-height: 150px;
+        
+       
+       /*shadow: 5px 5px 10px #888888;*/
+        }
+    
