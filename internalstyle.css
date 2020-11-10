@@ -1,15 +1,18 @@
 
-.container{
-width:100%;
 
+.pjcontainer{
+
+    padding-right:20px;
+    background-color: #e9ecef;
 }
 
 
-
-    .container .picture{
+     .picture{
         float:right;
-        width:100px;
-        margin-top:-10px;
+        
+        margin-top:-30px;
+      
+
         }
 
         .list-group-item.active {
@@ -27,6 +30,7 @@ body {
 .jumbotron{
     background-color: #fff;
     height:90%;
+    margin-bottom: -20px;
 
 }
 
