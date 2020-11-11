@@ -4,6 +4,7 @@ body {
     line-height: 1;
     font-weight: 400;
    margin:5px;
+   padding:5px;
 
   }
   
@@ -24,7 +25,7 @@ body {
     position: fixed;
     bottom: 22px;
     right: 0;
-    margin: 2px;
+    margin: 20px;
     width: 320px;
     transform: translate(0, 5%);
     transition-property: transform;
@@ -35,6 +36,7 @@ body {
   @media(max-width: 480px) {
     #formbutton-modalContainer {
       width: 276px;
+      margin-bottom:20px;
     }
   }
   
@@ -47,6 +49,7 @@ body {
     border-radius: 12px;
     box-shadow: 5px 5px 22px rgba(22, 22, 22, 0.2);
     line-height: 1.2;
+    
     
     color: #fff;
     margin-top:10px;
@@ -100,6 +103,7 @@ body {
     padding-left: 10px;
     border:0px;
     margin-top:10px;
+    
   }
   
   #formbutton-formStatus {
@@ -129,6 +133,7 @@ body {
   
   #formbutton-form label:not(:last-child) {
     padding: 10px 0 2px 0;
+    
   }
   
   #formbutton-form input,
@@ -139,7 +144,7 @@ body {
     font-family: inherit;
     font-size: 100%;
     color: inherit;
-    display: block;
+   
     box-sizing: border-box;
     width: 100%;
     -webkit-appearance: none;
@@ -160,6 +165,7 @@ body {
   #formbutton-form #card-element {
     
     padding: 0.75rem 0.25rem;
+    
   }
   
   #formbutton-form input:focus:not([type="radio"]):not([type="checkbox"]),
@@ -170,6 +176,7 @@ body {
     outline-width: thin;
     outline-color: gray;
     outline-offset: -1px;
+    
   }
   
   #formbutton-form textarea {
@@ -181,7 +188,7 @@ body {
   #formbutton-form [type="submit"],
   #formbutton-form [type="reset"] {
     margin-top:10px;
-  margin-bottom:10px;
+  
     padding: 0.65rem 0.75rem 0.6rem ;
     width: auto;
     cursor: pointer;
@@ -195,6 +202,7 @@ body {
     outline-width: thin;
     outline-offset: -1px;
     outline-color: gray;
+    margin-bottom:20px;
   }
   
   #formbutton-form button:hover,
