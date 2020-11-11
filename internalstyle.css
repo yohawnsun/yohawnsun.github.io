@@ -2,13 +2,47 @@
 
 .pjcontainer{
 
-    padding-right:20px;
+    padding-right:0px;
     background-color: #fff;
    
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   
+}
+
+.headertext{
+
+    
+    
+}
+
+.grayscale{
+
+    filter: grayscale(100%);
+
+}
+
+.headertext:before{
+
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0; 
+    z-index: -1;
+text-shadow: -0.001em -0.001em 1px rgba(255,255,255,.15)
+    
+}
+.headertext:after{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0; 
+    z-index: -2;
+    text-shadow: 10px 10px 10px rgba(0,0,0,.5), 20px 20px 20px rgba(0,0,0,.4), 30px 30px 30px rgba(0,0,0,.1);
+    mix-blend-mode: multiply;
+    
+    
 }
 
 
