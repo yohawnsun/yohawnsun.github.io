@@ -33,17 +33,16 @@ text-transform: uppercase;
 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 font-size: 1.5em;
 text-align: center;
-display: inline;
 text-transform: uppercase;
 color:rgb(80, 75, 75);
+margin-top:20px;
 }
 
 .pjcontainer .header3{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 1.0em;
     text-align: center;
-    display: inline;
-    text-transform: uppercase;
+        text-transform: uppercase;
     color:gray;
     }
 
