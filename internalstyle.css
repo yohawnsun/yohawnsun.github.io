@@ -37,6 +37,8 @@ text-transform: uppercase;
 color:rgb(80, 75, 75);
 margin-top:20px;
 /*border-top: 1px solid #d6d8d9;*/
+width:200px;
+margin:20px auto;
 border-bottom: 1px solid #d6d8d9;
 }
 
