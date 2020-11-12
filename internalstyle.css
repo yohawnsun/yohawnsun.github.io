@@ -15,7 +15,9 @@ body {
 }
 
 .pjcontainer .skillcontainer{
-background-color: rgba(245, 234, 234, 0.822);
+    color: #1b1e21;
+    background-color: #d6d8d9;
+    border-color: #c6c8ca;
 
 }
 
