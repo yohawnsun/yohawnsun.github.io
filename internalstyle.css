@@ -126,9 +126,13 @@ align-content: center;
    /*shadow: 5px 5px 10px #888888;*/
     }
 
+  
+
+
     .card img{
-        width:90%;
-        max-height: 150px;
+     
+        max-height: 200px;
+        max-width:300px;
         
        
        /*shadow: 5px 5px 10px #888888;*/
