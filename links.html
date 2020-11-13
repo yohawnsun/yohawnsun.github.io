@@ -10,12 +10,15 @@
 "integrity="sha384-
 ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"crossorigin="ano
 nymous">
+
 <link rel="stylesheet" href="internalstyle.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-    
-       <!--Menu-->
+   
+<!--Menu-->
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -34,10 +37,12 @@ nymous">
             <li class="nav-item">
                 <a class="nav-link" href="experience.html">Experience</a>
             </li>
-  
+
             <li class="nav-item">
-              <a class="nav-link" href="links.html">Links</a>
-          </li>
+                <a class="nav-link" href="links.html">Links</a>
+            </li>
+  
+            
             <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact</a>
             </li>
@@ -48,19 +53,38 @@ nymous">
     </div>
 </nav>
 <!--Menu ends-->
-<!--Form-->
-<div class="card" style="width: auto;">
-    <div class="card-body">
-      <h5 class="card-title">Pontus Johansson</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Contact me</h6>
-      <p class="card-text">pontus.johansson@gmail.com</p>
-      <a href="mailto:pontus.johansson@gmail.com" class="card-link">Email</a>
-      <a href="https://www.linkedin.com/in/pontus-johansson-31870a76/" class="card-link">Linkedin</a>
-    </div>
-  </div>
-<!--Form ends-->
+
+<div class="pjcontainer">
+<!--Experience Components-->
 
 
+<div class="jumbotron">
+    <h1 class="display-4"></h1>
+    <p class="lead">db.Links</p>
+    <hr class="my-4">
+    <p><div class="d-flex align-content-start flex-wrap">
+        <div id="linkscontainer"></div>
+        <div class="p-2 bd-highlight"><a href="https://github.com" target="_blank">GitHub</a></div>
+        <div class="p-2 bd-highlight"><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></div>
+        <div class="p-2 bd-highlight"><a href="https://icon8.com" target="_blank">Icon8</a></div>
+        <div class="p-2 bd-highlight"><a href="https://pixabay.com/" target="_blank">Pixbay</a></div>
+        <div class="p-2 bd-highlight"><a href="https://w3school.com" target="_blank">w3school</a></div>
+
+      </div>
+    </div></p>
+    
+   
+</div>
+
+
+
+
+<!--Experience components ends-->
+
+
+
+
+</div>
  <!-- Footer -->
  <footer class="page-footer font-small blue pt-4">
 
@@ -77,50 +101,44 @@ nymous">
      
  </div>
 </footer>
+   <script src="https://formspree.io/js/formbutton-v1.0.0.min.js" defer></script>
 
-
- 
-<script src="https://formspree.io/js/formbutton-v1.0.0.min.js" defer></script>
-
-<script>
-  /* paste this in verbatim */
-  window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments);};
-
-  /* customize formbutton here*/     
-  formbutton("create", {
-    action: "https://formspree.io/xyybpyqd",
-    title: "How can we help?",
-    fields: [
-      { 
-        type: "email", 
-        label: "Email:", 
-        name: "email",
-        required: true,
-        placeholder: "your@email.com"
-      },
-      {
-        type: "textarea",
-        label: "Message:",
-        name: "message",
-        placeholder: "What's on your mind?",
-      },
-      { type: "submit" }      
-    ],
-    styles: {
-      fontFamily: "Montserrat",
-      title: {
-        background: "gray",
-      },
-      button: {
-        background: "gray",
-      }
-    },
-    initiallyVisible: true
-  });
-</script>
-
-
-
+   <script>
+     /* paste this in verbatim */
+     window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments);};
+   
+     /* customize formbutton here*/     
+     formbutton("create", {
+       action: "https://formspree.io/xyybpyqd",
+       title: "How can we help?",
+       fields: [
+         { 
+           type: "email", 
+           label: "Email:", 
+           name: "email",
+           required: true,
+           placeholder: "your@email.com"
+         },
+         {
+           type: "textarea",
+           label: "Message:",
+           name: "message",
+           placeholder: "What's on your mind?",
+         },
+         { type: "submit" }      
+       ],
+       styles: {
+         fontFamily: "Montserrat",
+         title: {
+           background: "gray",
+         },
+         button: {
+           background: "gray",
+         }
+       },
+       initiallyVisible: false
+     });
+   </script>
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
