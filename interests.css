@@ -1,0 +1,103 @@
+.container {
+    max-width: 960px;
+  }
+  
+  /*
+   * Custom translucent site header
+   */
+  
+  .site-header {
+    background-color: rgba(202, 0, 0, 0.85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+  .site-header a {
+    color: #999;
+    transition: ease-in-out color .15s;
+  }
+  .site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /*
+ .bg-primary{
+
+    background-color: teal!important;
+    background-image: url(astronomy-1867616_1280.jpg);
+ }
+  
+ .bg-light {
+    background-color: teal!important;
+    background-image: url(astronomy-1867616_1280.jpg);
+ }
+ */
+  
+ #family
+ {
+    background-image:url("family.jpg");
+ }
+
+ #testing2{
+    background-color: sandybrown!important;
+
+ }
+
+ #gym{
+    background-image:url("gym.jpg");
+    
+ }
+ #gymheader{
+
+    text-shadow: 1px 1px 10px rgb(239 239 239);
+    color: rgb(245 245 245);
+ }
+
+ #gymtext{
+
+
+    color: rgb(245 245 245);
+ }
+  
+#creative{
+    background-image:url("creative.jpg");
+}
+
+#creativetext{
+    background-color:white;
+    color:black;
+    margin: auto;
+    width: fit-content;
+}
+
+#soccer{
+    background-image:url("soccer.jpg");
+    
+}
+
+
+  .product-device-2 {
+    top: -25%;
+    right: auto;
+    bottom: 0;
+    left: 5%;
+    background-color: #e5e5e5;
+  }
+  
+  
+  /*
+   * Extra utilities
+   */
+  
+  .flex-equal > * {
+    -ms-flex: 1;
+    flex: 1;
+  }
+  @media (min-width: 768px) {
+    .flex-md-equal > * {
+      -ms-flex: 1;
+      flex: 1;
+    }
+  }
+  
+  .overflow-hidden { overflow: hidden; }
