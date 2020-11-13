@@ -133,4 +133,11 @@ align-content: center;
        
        /*shadow: 5px 5px 10px #888888;*/
         }
+
+        .card-text-body{
+            padding:2px;
+            max-width: 250px;
+
+
+        }
     
