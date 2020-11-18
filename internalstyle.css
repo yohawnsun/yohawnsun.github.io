@@ -21,16 +21,16 @@ body {
 
 }
 
-.post h1{
+.post h1 a{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 2em;
+    font-size: 1.4em;
     text-transform: uppercase;
     color:#1b1e21;
 }
 
 .post a{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 2em;
+    font-size: 1em;
     text-transform: uppercase;
     color:#1b1e21;
 }
