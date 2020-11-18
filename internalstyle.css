@@ -21,6 +21,20 @@ body {
 
 }
 
+.post h1{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color:#1b1e21;
+}
+
+.post a{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color:#1b1e21;
+}
+
 .pjcontainer .header1{
 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 font-size: 2em;
