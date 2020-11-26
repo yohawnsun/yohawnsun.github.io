@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style05.css" rel="stylesheet">
+</head>
+<body>
+    <!--https://www.w3schools.com/js/js_htmldom.asp-->
+
+
+    <!--<input type="text" id="num1" > + <input type="text" id="num2"> <button type="button" onclick="alert('hello');console.log('hej')">=</button> <span>8</span>-->
+
+  <div class="container">
+
+    <div id="scoreboard">
+        <div class="grid">
+    
+            <div class="column">Player</div><div class="column" id="playerscore">0</div>
+            <div class="column">Computer</div><div class="column"  id="computerscore">0</div>
+    
+        </div>
+    </div>
+<div class="choices">
+   <h1>Player choose your hand!</h1>
+   <img class="pic" src="rock.png" onclick="rockpaperschissors('r')">
+   <img class="pic" src="paper.png" onclick="rockpaperschissors('p')">
+   <img class="pic" src="scissors.png" onclick="rockpaperschissors('s')">
+  
+
+<hr>
+<table align="center">
+<tr>
+
+    <td><h1>Player hand:</h1>
+        <img src="unnamed.png" id="playerpic">
+    </td>
+
+    <td><h1>VS</h1></td>
+
+<td><h1>Computer hand:</h1>
+    <img src="unnamed.png" id="computerpic">
+</td>
+
+</tr>
+
+
+</table>
+</div>
+
+
+
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

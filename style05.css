@@ -1,0 +1,48 @@
+body{
+    background-image: url("bg.png");
+  
+}
+
+.container{
+    margin:30px auto;
+    width:80%;
+    text-align: center;
+
+}
+
+#result{
+    border:2px dotted black;
+font-size: 40px;
+text-align: center;
+height: 200px;
+width:450px;
+margin:30px auto;
+}
+
+#scoreboard{
+    display: flex;
+  flex-direction:row;
+    border-bottom:3px solid black;
+font-size: 50px;
+text-align: center;
+height: 100px;
+width:600px;
+margin:30px auto;
+align-content: center;
+    
+
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 200px 70px 200px 50px ;
+
+}
+td{
+width:300px;
+
+}
+
+.pic:hover{
+    border: 3px dotted black;
+}
