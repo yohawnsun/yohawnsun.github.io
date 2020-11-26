@@ -21,6 +21,16 @@ body{
     
 
 }
+
+.container3{
+    margin:0px auto;
+    width:300px;
+    text-align: center;
+    align-items: center;
+    
+    
+
+}
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   filter: invert(1);
@@ -53,10 +63,17 @@ font-size: 25px;
 
 height: 67px;
 width:300px;
+  
 
+}
 
-    
-
+.left{
+    float:left;
+    vertical-align: middle;
+    padding-top: 30px;
+}
+.right{
+    float:right;
 }
 
 .grid{
@@ -89,7 +106,7 @@ img{
     object-fit: cover;
 
     
-    width:100px;
+    width:110px;
     height:130px;
 
 
