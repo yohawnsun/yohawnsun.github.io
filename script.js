@@ -52,7 +52,7 @@ function translateComputerChoice(choice){
 
 function reset(){
     document.getElementById("computerpic").src = "unnamed.png"
-    document.getElementById("playerpic").src = "unnamed.png"
+    //document.getElementById("playerpic").src = "unnamed.png"
     document.getElementById("playerscore").innerText="0"
     document.getElementById("computerscore").innerText="0"
 
@@ -67,7 +67,7 @@ function rockpaperschissors(choice){
     console.log("player: ", choice)
     //update pic
     document.getElementById("computerpic").src = setPic(computerChoice)
-    document.getElementById("playerpic").src = setPic(choice)
+   // document.getElementById("playerpic").src = setPic(choice)
     
     
 

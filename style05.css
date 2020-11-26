@@ -4,9 +4,21 @@ body{
 }
 
 .container{
-    margin:30px auto;
+    display: grid;
+    grid-template-columns: auto auto ;
+    margin:0px auto;
+    width:80%;
+  
+    padding:5px;
+
+}
+.container2{
+    margin:0px auto;
     width:80%;
     text-align: center;
+    align-items: center;
+    
+    
 
 }
 
@@ -19,24 +31,32 @@ width:450px;
 margin:30px auto;
 }
 
+#buttonreset{
+   
+    width:300px;
+    margin-right:10px;
+    padding-right: 20px;
+}
 #scoreboard{
-    display: flex;
-  flex-direction:row;
-    border-bottom:3px solid black;
-font-size: 50px;
-text-align: center;
-height: 100px;
-width:600px;
-margin:30px auto;
-align-content: center;
+    padding-left:20px;
+    top:0px;
+font-size: 25px;
+
+height: 67px;
+width:300px;
+
+
     
 
 }
 
 .grid{
     display: grid;
-    grid-template-columns: 200px 50px 250px 50px ;
+    grid-template-columns: 250px 50px ;
 
+}
+.column{
+    height:25px;
 }
 td{
 width:300px;
@@ -49,4 +69,14 @@ width:300px;
 
 #playerscore, #computerscore{
    font-weight: bold;
+}
+
+#computerpic{
+    object-fit: cover;
+
+    
+    width:100px;
+    height:130px;
+
+
 }
