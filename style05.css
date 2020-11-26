@@ -35,7 +35,7 @@ align-content: center;
 
 .grid{
     display: grid;
-    grid-template-columns: 200px 70px 200px 50px ;
+    grid-template-columns: 200px 50px 250px 50px ;
 
 }
 td{
@@ -45,4 +45,8 @@ width:300px;
 
 .pic:hover{
     border: 3px dotted black;
+}
+
+#playerscore, #computerscore{
+   font-weight: bold;
 }

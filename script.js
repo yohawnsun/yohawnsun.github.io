@@ -50,7 +50,13 @@ function translateComputerChoice(choice){
 }
 
 
+function reset(){
+    document.getElementById("computerpic").src = "unnamed.png"
+    document.getElementById("playerpic").src = "unnamed.png"
+    document.getElementById("playerscore").innerText="0"
+    document.getElementById("computerscore").innerText="0"
 
+}
 
 function rockpaperschissors(choice){
   
