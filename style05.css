@@ -12,7 +12,7 @@ body{
     padding:5px;
 
 }
-.container2{
+.container2, .choices{
     margin:0px auto;
     width:80%;
     text-align: center;
@@ -20,6 +20,15 @@ body{
     
     
 
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(1);
+}
+
+
+.carouselExampleInterval{
+    width:200px;
 }
 
 #result{
@@ -63,8 +72,13 @@ width:300px;
 
 }
 
+img{
+    width:200px;
+    height:230px;
+}
+
 .pic:hover{
-    border: 3px dotted black;
+    /*border: 3px dotted black;*/
 }
 
 #playerscore, #computerscore{
