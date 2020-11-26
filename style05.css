@@ -103,11 +103,11 @@ img{
 }
 
 #computerpic{
-    object-fit: cover;
+    
 
     
-    width:110px;
-    height:114px;
+        width: 100px;
+    height: 114px;
 
 
 }
