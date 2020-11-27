@@ -27,9 +27,9 @@ function reset(){
 }
 //Changed 2020-11-27
 const hands = [
-    {"name": "rock", short: "r", "image":"rock.png", num:0},
-    {"name": "paper", short: "p", "image":"paper.png", num:1},
-    {"name": "scissors", short: "s", "image":"scissors.png",num:2}
+    {"name": "rock", short: "r", "image":"rock.png"},
+    {"name": "paper", short: "p", "image":"paper.png"},
+    {"name": "scissors", short: "s", "image":"scissors.png"}
 ]
 
 //added 2020-11-26
@@ -39,6 +39,8 @@ function printScoreBoard(score, isPlayer){
     else
         document.getElementById("computerscore").innerText = `Computer: ${score}`   
 }
+
+
 
 function rockpaperschissors(choice){
     let random = Math.floor(Math.random() * 3)
