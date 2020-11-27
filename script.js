@@ -1,5 +1,25 @@
+let playerCurrentScore=0
+let computerCurrentScore=0
+let playerName ="Player"
 
-function returnResult(player, computer){
+
+
+
+
+function start(){
+
+    playerName=document.getElementById("playername").value.length>0?document.getElementById("playername").value:"Player"
+
+    document.getElementById("startdiv").remove()
+
+    printScoreBoard("playerscore", playerName, playerCurrentScore)
+    printScoreBoard("computerscore","Computer",computerCurrentScore)
+
+    //document.getElementById("startbutton").remove()
+}
+
+
+function whoWon(player, computer){
 
     if (player === computer)
         return "Draw!"
@@ -13,76 +33,46 @@ function returnResult(player, computer){
 
 }
 
-function setPic(choice){
-    let pic
-    switch (choice) {
-
-        case "r":
-            pic = "rock.png"
-            break;
-        case "p":
-                pic= "paper.png"
-                break;
-        default:
-            pic = "scissors.png"
-            break;
-    }
-
-    return pic
-}
-
-function translateComputerChoice(choice){
-    let translatedCPChoice
-
-    switch (choice) {
-        case 0:
-            translatedCPChoice = "r";
-            break;
-            case 1:
-                translatedCPChoice = "p";
-                break;
-        default:
-            translatedCPChoice = "s";
-            break;
-    }
-    return translatedCPChoice
-}
+//removed two switch-cases
 
 function reset(){
     document.getElementById("computerpic").src = "unnamed.png"
-    //document.getElementById("playerpic").src = "unnamed.png"
-    document.getElementById("playerscore").innerText="0"
-    document.getElementById("computerscore").innerText="0"
+    
+    printScoreBoard("playerscore", playerName, 0)
+    printScoreBoard("computerscore","Computer",0)
 
 }
 
-let playerCurrentScore=0
-let computerCurrentScore=0
 
-printScoreBoard("playerscore", "Player", playerCurrentScore)
-printScoreBoard("computerscore","Computer",computerCurrentScore)
+//Changed 2020-11-27
+const hands = [
+    {"name": "rock", short: "r", "image":"rock.png", num:0},
+    {"name": "paper", short: "p", "image":"paper.png", num:1},
+    {"name": "scissors", short: "s", "image":"scissors.png",num:2}
+]
+
+
 
 function printScoreBoard(name, nameText, score){
     document.getElementById(name).innerText = `${nameText}: ${score}`
 }
 
+
+
 function rockpaperschissors(choice){
-  
-    let computerChoice = translateComputerChoice(Math.floor(Math.random() * 3))
-    document.getElementById("computerpic").src = setPic(computerChoice)
+    let random = Math.floor(Math.random() * 3)
+    console.log(random)
+    let computerChoice = hands.find(o => o.num === random).short //Changed 2020-11-27
     
-    if(returnResult(choice, computerChoice)==="Player won!"){
+
+    document.getElementById("computerpic").src = hands.find(o => o.short === computerChoice).image //Changed 2020-11-27
+    if(whoWon(choice, computerChoice)==="Player won!"){
         playerCurrentScore++;
-        printScoreBoard("playerscore", "Player", playerCurrentScore)    
+        printScoreBoard("playerscore", playerName, playerCurrentScore)    
     }
 
-    if(returnResult(choice, computerChoice)==="Computer won!"){
+    if(whoWon(choice, computerChoice)==="Computer won!"){
         computerCurrentScore++;
-        printScoreBoard("computerscore","Computer",computerCurrentScore)
-       
+        printScoreBoard("computerscore","Computer",computerCurrentScore)     
     }
-
-  
-    
-
 }

@@ -3,6 +3,26 @@ body{
   
 }
 
+
+.start{
+    margin:0px auto;
+    padding:20px;
+    background: black;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+
+    text-align: center;
+}
+
+#startbutton{
+    margin:30px;
+    width:200px;
+}
+
 .container{
     display: grid;
     grid-template-columns: auto auto ;
