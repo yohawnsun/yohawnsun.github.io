@@ -43,9 +43,9 @@ function printScoreBoard(score, isPlayer){
 function rockpaperschissors(choice){
     let random = Math.floor(Math.random() * 3)
     console.log(random)
-    let computerChoice = hands.find(o => o.num === random).short //Changed 2020-11-27 
+    let computerChoice = hands[random].short //Changed 2020-11-27 
 
-    document.getElementById("computerpic").src = hands.find(o => o.short === computerChoice).image //Changed 2020-11-27
+    document.getElementById("computerpic").src = hands[random].image //Changed 2020-11-27 //.find(o => o.short === computerChoice)
     if(whoWon(choice, computerChoice)==="Player won!"){
         playerCurrentScore++;
         printScoreBoard(playerCurrentScore, true)    
