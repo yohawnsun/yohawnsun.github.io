@@ -4,9 +4,13 @@ body{
 }
 
 
+.form-control {
+margin-top:20px;
+}
+
 .start{
     margin:0px auto;
-    padding:20px;
+    padding:0px;
     background: black;
     bottom: 0;
     left: 0;
