@@ -24,6 +24,9 @@ function reset(){
     document.getElementById("computerpic").src = "unnamed.png"
     playerCurrentScore=0
     computerCurrentScore=0
+
+printScoreBoard()
+
 }
 //Changed 2020-11-27
 const hands = [
