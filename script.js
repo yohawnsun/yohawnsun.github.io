@@ -6,8 +6,7 @@ function start(){
 
     playerName=document.getElementById("playername").value.length>0?document.getElementById("playername").value:"Player"
     document.getElementById("startdiv").remove()
-    printScoreBoard(playerCurrentScore, true)
-    printScoreBoard(computerCurrentScore, false)
+    printScoreBoard()
 }
 function whoWon(player, computer){
 
@@ -22,8 +21,8 @@ function whoWon(player, computer){
 //removed two switch-cases 2020-11-27
 function reset(){
     document.getElementById("computerpic").src = "unnamed.png"
-    printScoreBoard(0, true)
-    printScoreBoard(0, false)
+    playerCurrentScore=0
+    computerCurrentScore=0
 }
 //Changed 2020-11-27
 const hands = [
@@ -33,11 +32,11 @@ const hands = [
 ]
 
 //added 2020-11-26
-function printScoreBoard(score, isPlayer){
-    if (isPlayer)
-        document.getElementById("playerscore").innerText = `${playerName}: ${score}`
-    else
-        document.getElementById("computerscore").innerText = `Computer: ${score}`   
+function printScoreBoard(){
+    
+        document.getElementById("playerscore").innerText = `${playerName}: ${playerCurrentScore}`
+    
+        document.getElementById("computerscore").innerText = `Computer: ${computerCurrentScore}`   
 }
 
 
@@ -50,11 +49,13 @@ function rockpaperschissors(choice){
     document.getElementById("computerpic").src = hands[random].image //Changed 2020-11-27 //.find(o => o.short === computerChoice)
     if(whoWon(choice, computerChoice)==="Player won!"){
         playerCurrentScore++;
-        printScoreBoard(playerCurrentScore, true)    
+   
     }
 
     if(whoWon(choice, computerChoice)==="Computer won!"){
-        computerCurrentScore++;
-        printScoreBoard(computerCurrentScore, false)     
+        computerCurrentScore++;    
     }
+
+    printScoreBoard()
+
 }
