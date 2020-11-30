@@ -198,4 +198,16 @@ align-content: center;
 
 
         }
+
+.card-text-body.project{
+    max-width:450px;
+   
+}
+
+.card img.project{
+
+        max-width:350px;
+        max-height: 250px;
+        
+}
     
