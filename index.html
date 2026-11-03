@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101827">
-  <meta name="description" content="Pontus Johansson — Business Architect connecting business, technology and AI to turn complexity into progress.">
-  <title>Pontus Johansson | Business Architecture & Transformation</title>
+  <meta name="description" content="SUTNOP — Pontus Johansson. Connecting business, technology and AI to turn complexity into progress.">
+  <title>SUTNOP — Pontus Johansson | Business, Technology & Transformation</title>
   <style>
     :root {
       --ink: #101827;
@@ -43,9 +43,12 @@
     }
     .nav-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; }
     .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: -.02em; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.05; gap: 4px; }
+    .brand-word { font-size: 15px; font-weight: 900; letter-spacing: .12em; }
+    .brand-name { color: var(--muted); font-size: 10px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
     .mark {
       width: 38px; height: 38px; display: grid; place-items: center;
-      border-radius: 12px; background: var(--ink); color: #fff; font-size: 13px;
+      border-radius: 12px; background: var(--accent); color: var(--ink); font-size: 17px; font-weight: 900;
     }
     .nav-links { display: flex; gap: 5px; align-items: center; }
     .nav-links a { padding: 9px 12px; border-radius: 10px; color: var(--muted); font-size: 14px; font-weight: 650; }
@@ -180,8 +183,12 @@
 <body>
   <nav class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="Pontus Johansson — home">
-        <span class="mark">PJ</span><span>Pontus Johansson</span>
+      <a class="brand" href="#top" aria-label="SUTNOP — Pontus Johansson, home">
+        <span class="mark">S</span>
+        <span class="brand-text">
+          <span class="brand-word">SUTNOP</span>
+          <span class="brand-name">Pontus Johansson</span>
+        </span>
       </a>
       <div class="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
