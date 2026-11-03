@@ -10,11 +10,10 @@
   
 </head>
 
-<body>
- <nav class="nav">
+<body><nav class="nav">
   <div class="wrap nav-inner">
 
-    <a class="brand" href="#top" aria-label="SURMISE — Pontus Johansson, home">
+    <a class="brand" href="#top" aria-label="SURMISE home">
       <span class="brand-text">
         <span class="brand-lockup">
           <span class="brand-word">SURMI</span>
@@ -24,7 +23,7 @@
       </span>
     </a>
 
-    <div class="nav-links" aria-label="Main navigation">
+    <div class="nav-links" id="navLinks" aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#experience">Experience</a>
@@ -32,7 +31,18 @@
       <a href="#contact">Contact</a>
     </div>
 
-    <span class="nav-note">Scroll to explore ↓</span>
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="navLinks"
+      type="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
   </div>
 </nav>
 
@@ -321,6 +331,30 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  
+  const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+
+  menuToggle.classList.toggle("active", isOpen);
+  menuToggle.setAttribute("aria-expanded", isOpen);
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+  });
+});
+  
   </script>
 </body>
 </html>
