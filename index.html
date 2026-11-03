@@ -1,26 +1,1293 @@
 <!doctype html>
 <html lang="sv">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0f172a">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0f172a">
+
 <title>Pontus Johansson | Verksamhetsarkitekt</title>
+
 <meta name="description" content="Pontus Johansson – verksamhetsarkitekt med erfarenhet i gränslandet mellan verksamhet, IT, processer, information, integrationer och AI-driven förändring.">
+
 <style>
-:root{--ink:#0f172a;--text:#263449;--muted:#66758a;--bg:#f4f6f8;--card:#fff;--line:#dce3ea;--accent:#ff4d5f;--ice:#dfebf5;--mint:#ddf4e8;--sand:#f9edcf}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1420px,calc(100% - 42px));margin:auto}.nav{position:sticky;top:0;z-index:20;background:#ffffffee;backdrop-filter:blur(18px);border-bottom:1px solid #e4e9ee}.navin{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;font-weight:800}.mark{width:38px;height:38px;border-radius:13px;background:var(--ink);color:#fff;display:grid;place-items:center}.links{display:flex;gap:5px}.links a{padding:9px 12px;border-radius:11px;color:var(--muted);font-size:14px;font-weight:650}.links a:hover{background:#edf1f5;color:var(--ink)}.hero{padding:30px 0 22px;display:grid;grid-template-columns:1.25fr .75fr;gap:19px}.heroMain{min-height:520px;background:var(--ink);color:#fff;border-radius:30px;padding:48px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}.heroMain:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:#24344a;right:-150px;top:-140px}.eyebrow{position:relative;z-index:1;font-size:12px;border:1px solid #ffffff25;background:#ffffff0c;border-radius:50px;padding:6px 12px;width:max-content;color:#dbe4ee;font-weight:700;letter-spacing:.07em}.hero h1{position:relative;z-index:1;font-size:clamp(42px,5.7vw,78px);line-height:.98;letter-spacing:-.055em;margin:25px 0 22px;max-width:890px}.hero h1 span{color:var(--accent)}.lead{position:relative;z-index:1;color:#bec9d6;font-size:18px;max-width:760px}.chips{position:relative;z-index:1;display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}.chip{padding:8px 13px;border:1px solid #ffffff1f;border-radius:99px;background:#ffffff08;color:#e5eaf0;font-size:13px}.profile{display:grid;grid-template-rows:1.27fr .73fr;gap:18px}.portrait{border-radius:28px;overflow:hidden;background:linear-gradient(150deg,#e7eef5,#cbd9e5);position:relative;min-height:320px}.portrait img{width:100%;height:100%;display:block;object-fit:cover}.portraitFallback{height:100%;min-height:320px;display:grid;place-items:center;text-align:center;padding:30px;color:var(--muted)}.role{background:var(--accent);color:#fff;border-radius:28px;padding:28px;display:flex;flex-direction:column;justify-content:space-between}.role strong{font-size:31px;line-height:1.05;letter-spacing:-.03em}.role p{margin:18px 0 0;color:#ffe9ec}.section{padding:72px 0 10px}.sectionHead{display:grid;grid-template-columns:.7fr 1.3fr;gap:30px;align-items:end;margin-bottom:24px}.kicker{font-size:12px;font-weight:850;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}h2{font-size:clamp(31px,4vw,52px);line-height:1.03;letter-spacing:-.045em;margin:6px 0 0}.sectionIntro{color:var(--muted);font-size:17px;max-width:750px;margin:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:#fff;border:1px solid var(--line);border-radius:23px;padding:25px;box-shadow:0 2px 9px #dfe5eb70}.card h3{font-size:20px;margin:10px 0 8px;letter-spacing:-.02em}.card p{color:var(--muted);margin:0}.icon{width:42px;height:42px;border-radius:13px;background:var(--ice);display:grid;place-items:center;font-size:19px}.cap .card:nth-child(2) .icon{background:var(--mint)}.cap .card:nth-child(3) .icon{background:var(--sand)}.bridge{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:28px;padding:32px;display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}.bridgeDark{background:var(--ink);color:#fff;border-radius:22px;padding:31px}.bridgeDark p{color:#b9c6d4}.route{display:grid;gap:10px}.route div{border:1px solid var(--line);border-radius:16px;padding:16px 17px}.route b{display:block}.route span{color:var(--muted);font-size:13px}.work{display:grid;grid-template-columns:.82fr 1.18fr;gap:16px}.workAside{background:var(--ice);border-radius:26px;padding:30px}.workAside h3{font-size:30px;line-height:1.08;margin:12px 0}.workList{display:grid;gap:11px}.workItem{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;grid-template-columns:130px 1fr;gap:18px}.workItem .label{font-size:12px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.08em}.workItem h3{margin:0 0 5px;font-size:18px}.workItem p{margin:0;color:var(--muted)}.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.project{min-height:240px;display:flex;flex-direction:column;justify-content:space-between}.projectTop{display:flex;justify-content:space-between;gap:15px}.num{font-size:12px;color:#8b98a8;font-weight:800}.tag{padding:5px 10px;border-radius:99px;background:#f0f3f6;font-size:11px;color:var(--muted)}.project h3{font-size:25px;line-height:1.1;margin:27px 0 9px}.project p{color:var(--muted);margin:0}.project a{margin-top:22px;font-weight:750;color:var(--accent)}.project a:hover{text-decoration:underline}.principles{background:var(--ink);color:#fff;border-radius:30px;padding:42px;margin-top:17px}.principles .grid3{margin-top:28px}.principle{border-top:1px solid #ffffff25;padding-top:17px}.principle b{font-size:18px}.principle p{color:#adbac8}.contact{margin:70px 0 28px;background:var(--accent);color:#fff;border-radius:30px;padding:44px;display:grid;grid-template-columns:1.4fr .6fr;gap:25px;align-items:end}.contact h2{max-width:800px}.contact p{color:#ffe3e7;max-width:650px}.contactBtns{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.btn{background:#fff;color:var(--ink);border-radius:13px;padding:11px 15px;font-weight:750}.btn.secondary{background:#ffffff18;color:#fff;border:1px solid #ffffff42}.foot{padding:5px 0 35px;color:var(--muted);font-size:12px}.mobileMenu{display:none}@media(max-width:900px){.wrap{width:min(100% - 28px,1420px)}.links{display:none}.hero{grid-template-columns:1fr}.heroMain{min-height:475px;padding:32px}.profile{grid-template-columns:1fr 1fr;grid-template-rows:none}.portrait{min-height:310px}.section{padding-top:55px}.sectionHead,.bridge,.work,.contact{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.contactBtns{justify-content:flex-start}.projects{grid-template-columns:1fr}.mobileMenu{display:block;color:var(--muted);font-size:13px}}@media(max-width:580px){.hero{padding-top:15px}.heroMain{min-height:500px;border-radius:24px;padding:26px}.hero h1{font-size:45px}.lead{font-size:16px}.profile{grid-template-columns:1fr}.role{min-height:205px}.sectionHead{display:block}.sectionIntro{margin-top:15px}.workItem{grid-template-columns:1fr}.principles{padding:27px}.contact{padding:28px}.portrait{height:380px}.navin{height:62px}}
-</style></head>
+:root{
+  --ink:#0f172a;
+  --text:#263449;
+  --muted:#66758a;
+  --bg:#f4f6f8;
+  --card:#fff;
+  --line:#dce3ea;
+  --accent:#ff4d5f;
+  --ice:#dfebf5;
+  --mint:#ddf4e8;
+  --sand:#f9edcf
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:85px
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif
+}
+
+a{
+  color:inherit;
+  text-decoration:none
+}
+
+.wrap{
+  width:min(1420px,calc(100% - 42px));
+  margin:auto
+}
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#ffffffee;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid #e4e9ee
+}
+
+.navin{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-weight:800
+}
+
+.mark{
+  width:38px;
+  height:38px;
+  border-radius:13px;
+  background:var(--ink);
+  color:#fff;
+  display:grid;
+  place-items:center
+}
+
+.links{
+  display:flex;
+  gap:5px
+}
+
+.links a{
+  padding:9px 12px;
+  border-radius:11px;
+  color:var(--muted);
+  font-size:14px;
+  font-weight:650
+}
+
+.links a:hover{
+  background:#edf1f5;
+  color:var(--ink)
+}
+
+
+/* HERO */
+
+.hero{
+  padding:24px 0 18px;
+  display:grid;
+  grid-template-columns:1.45fr .55fr;
+  gap:18px;
+  align-items:stretch
+}
+
+.heroMain{
+  min-height:390px;
+  background:var(--ink);
+  color:#fff;
+  border-radius:28px;
+  padding:34px 38px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  overflow:hidden;
+  position:relative
+}
+
+.heroMain:after{
+  content:"";
+  position:absolute;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  background:#24344a;
+  right:-145px;
+  top:-135px
+}
+
+.eyebrow{
+  position:relative;
+  z-index:1;
+  font-size:11px;
+  border:1px solid #ffffff25;
+  background:#ffffff0c;
+  border-radius:50px;
+  padding:6px 12px;
+  width:max-content;
+  color:#dbe4ee;
+  font-weight:700;
+  letter-spacing:.07em
+}
+
+.hero h1{
+  position:relative;
+  z-index:1;
+  font-size:clamp(38px,4.7vw,64px);
+  line-height:1;
+  letter-spacing:-.05em;
+  margin:20px 0 16px;
+  max-width:820px
+}
+
+.hero h1 span{
+  color:var(--accent)
+}
+
+.lead{
+  position:relative;
+  z-index:1;
+  color:#bec9d6;
+  font-size:16px;
+  max-width:700px
+}
+
+.chips{
+  position:relative;
+  z-index:1;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:20px
+}
+
+.chip{
+  padding:7px 12px;
+  border:1px solid #ffffff1f;
+  border-radius:99px;
+  background:#ffffff08;
+  color:#e5eaf0;
+  font-size:12px
+}
+
+
+/* PROFIL */
+
+.profile{
+  display:grid;
+  grid-template-rows:1fr auto;
+  gap:14px
+}
+
+.portrait{
+  border-radius:24px;
+  overflow:hidden;
+  background:linear-gradient(150deg,#e7eef5,#cbd9e5);
+  position:relative;
+  min-height:235px;
+  max-height:265px
+}
+
+.portrait img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover
+}
+
+.portraitFallback{
+  height:100%;
+  min-height:235px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:24px;
+  color:var(--muted)
+}
+
+.role{
+  background:var(--accent);
+  color:#fff;
+  border-radius:24px;
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:110px
+}
+
+.role strong{
+  font-size:26px;
+  line-height:1.05;
+  letter-spacing:-.03em
+}
+
+.role p{
+  margin:10px 0 0;
+  color:#ffe9ec;
+  font-size:14px
+}
+
+
+/* ÖVRIGT */
+
+.section{
+  padding:72px 0 10px
+}
+
+.sectionHead{
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:30px;
+  align-items:end;
+  margin-bottom:24px
+}
+
+.kicker{
+  font-size:12px;
+  font-weight:850;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--accent)
+}
+
+h2{
+  font-size:clamp(31px,4vw,52px);
+  line-height:1.03;
+  letter-spacing:-.045em;
+  margin:6px 0 0
+}
+
+.sectionIntro{
+  color:var(--muted);
+  font-size:17px;
+  max-width:750px;
+  margin:0
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:23px;
+  padding:25px;
+  box-shadow:0 2px 9px #dfe5eb70
+}
+
+.card h3{
+  font-size:20px;
+  margin:10px 0 8px;
+  letter-spacing:-.02em
+}
+
+.card p{
+  color:var(--muted);
+  margin:0
+}
+
+.icon{
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  background:var(--ice);
+  display:grid;
+  place-items:center;
+  font-size:19px
+}
+
+.cap .card:nth-child(2) .icon{
+  background:var(--mint)
+}
+
+.cap .card:nth-child(3) .icon{
+  background:var(--sand)
+}
+
+.bridge{
+  margin-top:16px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:32px;
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:28px
+}
+
+.bridgeDark{
+  background:var(--ink);
+  color:#fff;
+  border-radius:22px;
+  padding:31px
+}
+
+.bridgeDark p{
+  color:#b9c6d4
+}
+
+.route{
+  display:grid;
+  gap:10px
+}
+
+.route div{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px 17px
+}
+
+.route b{
+  display:block
+}
+
+.route span{
+  color:var(--muted);
+  font-size:13px
+}
+
+.work{
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:16px
+}
+
+.workAside{
+  background:var(--ice);
+  border-radius:26px;
+  padding:30px
+}
+
+.workAside h3{
+  font-size:30px;
+  line-height:1.08;
+  margin:12px 0
+}
+
+.workList{
+  display:grid;
+  gap:11px
+}
+
+.workItem{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:20px;
+  display:grid;
+  grid-template-columns:130px 1fr;
+  gap:18px
+}
+
+.workItem .label{
+  font-size:12px;
+  color:var(--muted);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em
+}
+
+.workItem h3{
+  margin:0 0 5px;
+  font-size:18px
+}
+
+.workItem p{
+  margin:0;
+  color:var(--muted)
+}
+
+.projects{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px
+}
+
+.project{
+  min-height:240px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between
+}
+
+.projectTop{
+  display:flex;
+  justify-content:space-between;
+  gap:15px
+}
+
+.num{
+  font-size:12px;
+  color:#8b98a8;
+  font-weight:800
+}
+
+.tag{
+  padding:5px 10px;
+  border-radius:99px;
+  background:#f0f3f6;
+  font-size:11px;
+  color:var(--muted)
+}
+
+.project h3{
+  font-size:25px;
+  line-height:1.1;
+  margin:27px 0 9px
+}
+
+.project p{
+  color:var(--muted);
+  margin:0
+}
+
+.project a{
+  margin-top:22px;
+  font-weight:750;
+  color:var(--accent)
+}
+
+.project a:hover{
+  text-decoration:underline
+}
+
+.principles{
+  background:var(--ink);
+  color:#fff;
+  border-radius:30px;
+  padding:42px;
+  margin-top:17px
+}
+
+.principles .grid3{
+  margin-top:28px
+}
+
+.principle{
+  border-top:1px solid #ffffff25;
+  padding-top:17px
+}
+
+.principle b{
+  font-size:18px
+}
+
+.principle p{
+  color:#adbac8
+}
+
+.contact{
+  margin:70px 0 28px;
+  background:var(--accent);
+  color:#fff;
+  border-radius:30px;
+  padding:44px;
+  display:grid;
+  grid-template-columns:1.4fr .6fr;
+  gap:25px;
+  align-items:end
+}
+
+.contact h2{
+  max-width:800px
+}
+
+.contact p{
+  color:#ffe3e7;
+  max-width:650px
+}
+
+.contactBtns{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end
+}
+
+.btn{
+  background:#fff;
+  color:var(--ink);
+  border-radius:13px;
+  padding:11px 15px;
+  font-weight:750
+}
+
+.btn.secondary{
+  background:#ffffff18;
+  color:#fff;
+  border:1px solid #ffffff42
+}
+
+.foot{
+  padding:5px 0 35px;
+  color:var(--muted);
+  font-size:12px
+}
+
+.mobileMenu{
+  display:none
+}
+
+
+/* TABLET */
+
+@media(max-width:900px){
+
+  .wrap{
+    width:min(100% - 28px,1420px)
+  }
+
+  .links{
+    display:none
+  }
+
+  .hero{
+    grid-template-columns:1fr
+  }
+
+  .heroMain{
+    min-height:390px;
+    padding:30px
+  }
+
+  .profile{
+    grid-template-columns:.8fr 1.2fr;
+    grid-template-rows:none
+  }
+
+  .portrait{
+    min-height:250px;
+    max-height:300px
+  }
+
+  .section{
+    padding-top:55px
+  }
+
+  .sectionHead,
+  .bridge,
+  .work,
+  .contact{
+    grid-template-columns:1fr
+  }
+
+  .grid3{
+    grid-template-columns:1fr
+  }
+
+  .contactBtns{
+    justify-content:flex-start
+  }
+
+  .projects{
+    grid-template-columns:1fr
+  }
+
+  .mobileMenu{
+    display:block;
+    color:var(--muted);
+    font-size:13px
+  }
+}
+
+
+/* MOBIL */
+
+@media(max-width:580px){
+
+  .hero{
+    padding-top:15px
+  }
+
+  .heroMain{
+    min-height:auto;
+    border-radius:24px;
+    padding:24px
+  }
+
+  .hero h1{
+    font-size:38px
+  }
+
+  .lead{
+    font-size:15px
+  }
+
+  .profile{
+    grid-template-columns:1fr 1fr
+  }
+
+  .portrait{
+    height:auto;
+    min-height:210px;
+    max-height:240px
+  }
+
+  .role{
+    min-height:210px
+  }
+
+  .sectionHead{
+    display:block
+  }
+
+  .sectionIntro{
+    margin-top:15px
+  }
+
+  .workItem{
+    grid-template-columns:1fr
+  }
+
+  .principles{
+    padding:27px
+  }
+
+  .contact{
+    padding:28px
+  }
+
+  .navin{
+    height:62px
+  }
+}
+
+</style>
+</head>
+
 <body>
-<nav class="nav"><div class="wrap navin"><a class="brand" href="#top"><span class="mark">PJ</span><span>Pontus Johansson</span></a><div class="links"><a href="#om">Om mig</a><a href="#kompetens">Kompetens</a><a href="#erfarenhet">Erfarenhet</a><a href="#projekt">Projekt</a><a href="#kontakt">Kontakt</a></div><span class="mobileMenu">Scrolla ↓</span></div></nav>
+
+<nav class="nav">
+  <div class="wrap navin">
+
+    <a class="brand" href="#top">
+      <span class="mark">PJ</span>
+      <span>Pontus Johansson</span>
+    </a>
+
+    <div class="links">
+      <a href="#om">Om mig</a>
+      <a href="#kompetens">Kompetens</a>
+      <a href="#erfarenhet">Erfarenhet</a>
+      <a href="#projekt">Projekt</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+
+    <span class="mobileMenu">Scrolla ↓</span>
+
+  </div>
+</nav>
+
+
 <main id="top" class="wrap">
-<section class="hero"><div class="heroMain"><div><span class="eyebrow">VERKSAMHETSARKITEKT • IT × VERKSAMHET</span><h1>Jag får <span>verksamhet och teknik</span> att mötas i förändring.</h1><p class="lead">Verksamhetsarkitekt med teknisk bakgrund och lång erfarenhet nära integrationer, processer, information och digital utveckling. Jag trivs bäst där verksamhetsbehov behöver bli genomförbara lösningar.</p></div><div class="chips"><span class="chip">Verksamhetsarkitektur</span><span class="chip">Integrationer</span><span class="chip">Process & information</span><span class="chip">Krav & förändring</span><span class="chip">AI & automation</span></div></div><div class="profile"><div class="portrait"><img src="profile.jpg" alt="Profilbild på Pontus Johansson" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="portraitFallback" style="display:none"><div><b>Din profilbild placeras här</b><br><span class="small">Spara bilden bredvid index.html som <b>profile.jpg</b></span></div></div></div><div class="role"><span class="small" style="color:#ffe3e7">MIN ROLL</span><div><strong>Verksamhetsarkitekt</strong><p>Med ena foten i verksamheten och den andra nära IT.</p></div></div></div></section>
-<section class="section" id="om"><div class="sectionHead"><div><span class="kicker">Om mig</span><h2>Helhet först.<br>Praktiskt genomförande sen.</h2></div><p class="sectionIntro">Jag arbetar med förändringsresor där affärsmål, processer, information, krav och teknik måste hänga ihop. Min tekniska erfarenhet gör att jag kan röra mig från verksamhetens behov till lösningsdialogen utan att tappa helheten.</p></div><div class="bridge"><div class="bridgeDark"><span class="kicker">Mitt perspektiv</span><h3 style="font-size:30px;margin:12px 0">Inte verksamhet eller IT.<br>Förändringen däremellan.</h3><p>Jag gillar att göra komplexa initiativ begripliga, hitta beroenden tidigt och skapa tillräcklig struktur för att team ska kunna gå från analys till test, feedback och verklig effekt.</p></div><div class="route"><div><b>Strategi → förändring</b><span>Koppla mål och önskad effekt till konkreta initiativ.</span></div><div><b>Process → information → lösning</b><span>Se sambanden mellan arbetssätt, data och tekniskt stöd.</span></div><div><b>Behov → krav → prototyp</b><span>Kravställ tillräckligt för nästa beslut och validera osäkerhet tidigt.</span></div><div><b>Leverans → lärande</b><span>Återanvänd beslut, modeller och erfarenheter i nästa förändring.</span></div></div></div></section>
-<section class="section" id="kompetens"><div class="sectionHead"><div><span class="kicker">Kompetens</span><h2>Tre perspektiv jag kombinerar.</h2></div><p class="sectionIntro">Det som särskiljer min profil är kombinationen av verksamhetsarkitektur, teknisk förståelse och praktiskt förändringsarbete.</p></div><div class="grid3 cap"><article class="card"><span class="icon">◎</span><h3>Verksamhetsarkitektur</h3><p>Förmågor, processer, information, nuläge och målbild. Jag skapar struktur som hjälper verksamhet och beslutsfattare att prioritera och navigera förändring.</p></article><article class="card"><span class="icon">⇄</span><h3>Integration & teknik</h3><p>Stor erfarenhet nära integrationsfrågor och samspelet mellan applikationer, gränssnitt och information. Det gör lösningsdialogen konkret redan från verksamhetssidan.</p></article><article class="card"><span class="icon">✦</span><h3>AI-driven förändring</h3><p>Jag utforskar hur AI kan integreras i befintliga förändringsresor för att återanvända kunskap, korta analysledtider och snabbare nå prototyp och feedback.</p></article></div></section>
-<section class="section" id="erfarenhet"><div class="sectionHead"><div><span class="kicker">Arbetslivserfarenhet</span><h2>Byggd i gränslandet mellan behov och lösning.</h2></div><p class="sectionIntro">In progress. Tänkte skriva lite vad jag jobbar med. </p></div><div class="work"><aside class="workAside"><span class="kicker">I dag</span><h3>Verksamhetsarkitektur inom bank och försäkring</h3><p>Förändringsresor, processutveckling, kravhantering, digital transformation och AI, med fokus på återanvändbara strukturer och mätbar verksamhetsnytta.</p></aside><div class="workList"><article class="workItem"><div class="label">Nuvarande fokus</div><div><h3>Verksamhet × arkitektur × förändring</h3><p>Strukturerar initiativ från idé till genomförande och kopplar verksamhetsbehov till process, information, applikation och beslut.</p></div></article><article class="workItem"><div class="label">Teknisk grund</div><div><h3>Integrationer och lösningsnära arbete</h3><p>Erfarenhet av att arbeta nära IT och översätta mellan tekniska beroenden och verksamhetskonsekvenser.</p></div></article><article class="workItem"><div class="label">Analys</div><div><h3>Data, SQL och automation</h3><p>Arbetar praktiskt med dataanalys och automation för att validera hypoteser och göra förändringsarbete mer faktabaserat.</p></div></article></div></div></section>
 
 
-<section class="section" id="projekt"><div class="sectionHead"><div><span class="kicker">Utvalda projekt & teman</span><h2>Saker jag arbetar med och utforskar.</h2></div><p class="sectionIntro">Projektkorten är vad jag gjort. Vad vill jag lyfta upp? Just nu händer för mycket för att gå in i detalj. Måste tänka framåt och speed.</p></div><div class="projects"><article class="card project"><div><div class="projectTop"><span class="num">01</span><span class="tag">AI + förändring</span></div><h3>AI-driven verksamhetstransformation</h3><p>Hur AI kan bli ett naturligt lager i förändringsresan och göra organisationens befintliga kunskap mer tillgänglig och återanvändbar.</p></div><a href="#kontakt">Läs mer / prata med mig →</a></article><article class="card project"><div><div class="projectTop"><span class="num">02</span><span class="tag">Process + AI</span></div><h3>Project B</h3><p>Utforskning av hur AI kan stötta YYYYY och minska manuellt arbete utan att flytta själva beslutet från människan.</p></div><a href="#kontakt">Läs mer / prata med mig →</a></article><article class="card project"><div><div class="projectTop"><span class="num">03</span><span class="tag">Arkitektur</span></div><h3>Process- och informationsmodellering</h3><p>Strukturering av nuläge och målbild för att skapa gemensamt språk mellan verksamhet, krav och teknisk lösning.</p></div><a href="#kontakt">Läs mer / prata med mig →</a></article><article class="card project"><div><div class="projectTop"><span class="num">04</span><span class="tag">Integration</span></div><h3>Lösningsnära verksamhetsutveckling</h3><p>Arbete i initiativ där integrationer och systemberoenden behöver förstås som en del av verksamhetsförändringen, inte som ett separat IT-spår.</p></div><a href="#kontakt">Läs mer / prata med mig →</a></article></div></section>
+<section class="hero">
+
+  <div class="heroMain">
+
+    <div>
+
+      <span class="eyebrow">
+        VERKSAMHETSARKITEKT • IT × VERKSAMHET
+      </span>
+
+      <h1>
+        Jag får
+        <span>verksamhet och teknik</span>
+        att mötas i förändring.
+      </h1>
+
+      <p class="lead">
+        Verksamhetsarkitekt med teknisk bakgrund och lång erfarenhet nära
+        integrationer, processer, information och digital utveckling.
+        Jag trivs bäst där verksamhetsbehov behöver bli genomförbara lösningar.
+      </p>
+
+    </div>
+
+    <div class="chips">
+      <span class="chip">Verksamhetsarkitektur</span>
+      <span class="chip">Integrationer</span>
+      <span class="chip">Process & information</span>
+      <span class="chip">Krav & förändring</span>
+      <span class="chip">AI & automation</span>
+    </div>
+
+  </div>
 
 
+  <div class="profile">
 
-<section class="section"><div class="principles"><span class="kicker">Så arbetar jag</span><h2>Arkitektur ska hjälpa förändring framåt.</h2><div class="grid3"><div class="principle"><b>Gör det begripligt</b><p>Modeller och struktur ska minska komplexitet, inte skapa mer dokumentation.</p></div><div class="principle"><b>Testa det osäkra</b><p>Allt går inte att kravställa fram. Prototyper och feedback är ofta bättre analysverktyg.</p></div><div class="principle"><b>Bygg för återanvändning</b><p>Processer, information, beslut och lärdomar ska kunna ge värde även i nästa initiativ.</p></div></div></div></section>
-<section class="contact" id="kontakt"><div><span class="kicker" style="color:white">Kontakt</span><h2>Vill du prata verksamhetsarkitektur, integration eller AI-driven förändring?</h2><p>Jag diskuterar gärna hur vi kan få verksamhet och IT att arbeta närmare varandra och gå snabbare från idé till något som faktiskt går att testa.</p> </div><div class="contactBtns"><a class="btn" href="mailto:pontus.johansson@gmail.com">Skicka mejl</a><a class="btn secondary" href="#top">Till toppen ↑</a></div></section>
-<footer class="foot">Pontus Johansson • Verksamhetsarkitekt • Borås</footer>
-</main></body></html>
+    <div class="portrait">
+      <img
+        src="profile.jpg"
+        alt="Profilbild på Pontus Johansson"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"
+      >
+
+      <div class="portraitFallback" style="display:none">
+        <div>
+          <b>Din profilbild placeras här</b><br>
+          <span class="small">
+            Spara bilden bredvid index.html som <b>profile.jpg</b>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="role">
+
+      <span class="small" style="color:#ffe3e7">
+        MIN ROLL
+      </span>
+
+      <div>
+        <strong>Verksamhetsarkitekt</strong>
+        <p>
+          Med ena foten i verksamheten och den andra nära IT.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="om">
+
+  <div class="sectionHead">
+
+    <div>
+      <span class="kicker">Om mig</span>
+      <h2>
+        Helhet först.<br>
+        Praktiskt genomförande sen.
+      </h2>
+    </div>
+
+    <p class="sectionIntro">
+      Jag arbetar med förändringsresor där affärsmål, processer,
+      information, krav och teknik måste hänga ihop.
+      Min tekniska erfarenhet gör att jag kan röra mig från
+      verksamhetens behov till lösningsdialogen utan att tappa helheten.
+    </p>
+
+  </div>
+
+
+  <div class="bridge">
+
+    <div class="bridgeDark">
+
+      <span class="kicker">Mitt perspektiv</span>
+
+      <h3 style="font-size:30px;margin:12px 0">
+        Inte verksamhet eller IT.<br>
+        Förändringen däremellan.
+      </h3>
+
+      <p>
+        Jag gillar att göra komplexa initiativ begripliga,
+        hitta beroenden tidigt och skapa tillräcklig struktur
+        för att team ska kunna gå från analys till test,
+        feedback och verklig effekt.
+      </p>
+
+    </div>
+
+
+    <div class="route">
+
+      <div>
+        <b>Strategi → förändring</b>
+        <span>Koppla mål och önskad effekt till konkreta initiativ.</span>
+      </div>
+
+      <div>
+        <b>Process → information → lösning</b>
+        <span>Se sambanden mellan arbetssätt, data och tekniskt stöd.</span>
+      </div>
+
+      <div>
+        <b>Behov → krav → prototyp</b>
+        <span>Kravställ tillräckligt för nästa beslut och validera osäkerhet tidigt.</span>
+      </div>
+
+      <div>
+        <b>Leverans → lärande</b>
+        <span>Återanvänd beslut, modeller och erfarenheter i nästa förändring.</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="kompetens">
+
+  <div class="sectionHead">
+
+    <div>
+      <span class="kicker">Kompetens</span>
+      <h2>Tre perspektiv jag kombinerar.</h2>
+    </div>
+
+    <p class="sectionIntro">
+      Det som särskiljer min profil är kombinationen av
+      verksamhetsarkitektur, teknisk förståelse och praktiskt förändringsarbete.
+    </p>
+
+  </div>
+
+
+  <div class="grid3 cap">
+
+    <article class="card">
+
+      <span class="icon">◎</span>
+
+      <h3>Verksamhetsarkitektur</h3>
+
+      <p>
+        Förmågor, processer, information, nuläge och målbild.
+        Jag skapar struktur som hjälper verksamhet och beslutsfattare
+        att prioritera och navigera förändring.
+      </p>
+
+    </article>
+
+
+    <article class="card">
+
+      <span class="icon">⇄</span>
+
+      <h3>Integration & teknik</h3>
+
+      <p>
+        Stor erfarenhet nära integrationsfrågor och samspelet mellan
+        applikationer, gränssnitt och information.
+        Det gör lösningsdialogen konkret redan från verksamhetssidan.
+      </p>
+
+    </article>
+
+
+    <article class="card">
+
+      <span class="icon">✦</span>
+
+      <h3>AI-driven förändring</h3>
+
+      <p>
+        Jag utforskar hur AI kan integreras i befintliga förändringsresor
+        för att återanvända kunskap, korta analysledtider och snabbare
+        nå prototyp och feedback.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="erfarenhet">
+
+  <div class="sectionHead">
+
+    <div>
+      <span class="kicker">Arbetslivserfarenhet</span>
+
+      <h2>
+        Byggd i gränslandet mellan behov och lösning.
+      </h2>
+
+    </div>
+
+    <p class="sectionIntro">
+      In progress. Tänkte skriva lite vad jag jobbar med.
+    </p>
+
+  </div>
+
+
+  <div class="work">
+
+    <aside class="workAside">
+
+      <span class="kicker">I dag</span>
+
+      <h3>
+        Verksamhetsarkitektur inom bank och försäkring
+      </h3>
+
+      <p>
+        Förändringsresor, processutveckling, kravhantering,
+        digital transformation och AI, med fokus på återanvändbara
+        strukturer och mätbar verksamhetsnytta.
+      </p>
+
+    </aside>
+
+
+    <div class="workList">
+
+      <article class="workItem">
+
+        <div class="label">
+          Nuvarande fokus
+        </div>
+
+        <div>
+
+          <h3>
+            Verksamhet × arkitektur × förändring
+          </h3>
+
+          <p>
+            Strukturerar initiativ från idé till genomförande
+            och kopplar verksamhetsbehov till process,
+            information, applikation och beslut.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="workItem">
+
+        <div class="label">
+          Teknisk grund
+        </div>
+
+        <div>
+
+          <h3>
+            Integrationer och lösningsnära arbete
+          </h3>
+
+          <p>
+            Erfarenhet av att arbeta nära IT och översätta
+            mellan tekniska beroenden och verksamhetskonsekvenser.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="workItem">
+
+        <div class="label">
+          Analys
+        </div>
+
+        <div>
+
+          <h3>
+            Data, SQL och automation
+          </h3>
+
+          <p>
+            Arbetar praktiskt med dataanalys och automation
+            för att validera hypoteser och göra förändringsarbete
+            mer faktabaserat.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="projekt">
+
+  <div class="sectionHead">
+
+    <div>
+
+      <span class="kicker">
+        Utvalda projekt & teman
+      </span>
+
+      <h2>
+        Saker jag arbetar med och utforskar.
+      </h2>
+
+    </div>
+
+    <p class="sectionIntro">
+      Projektkorten är vad jag gjort.
+      Vad vill jag lyfta upp?
+      Just nu händer för mycket för att gå in i detalj.
+      Måste tänka framåt och speed.
+    </p>
+
+  </div>
+
+
+  <div class="projects">
+
+
+    <article class="card project">
+
+      <div>
+
+        <div class="projectTop">
+          <span class="num">01</span>
+          <span class="tag">AI + förändring</span>
+        </div>
+
+        <h3>
+          AI-driven verksamhetstransformation
+        </h3>
+
+        <p>
+          Hur AI kan bli ett naturligt lager i förändringsresan
+          och göra organisationens befintliga kunskap mer
+          tillgänglig och återanvändbar.
+        </p>
+
+      </div>
+
+      <a href="#kontakt">
+        Läs mer / prata med mig →
+      </a>
+
+    </article>
+
+
+    <article class="card project">
+
+      <div>
+
+        <div class="projectTop">
+          <span class="num">02</span>
+          <span class="tag">Process + AI</span>
+        </div>
+
+        <h3>
+          Project B
+        </h3>
+
+        <p>
+          Utforskning av hur AI kan stötta YYYYY
+          och minska manuellt arbete utan att flytta
+          själva beslutet från människan.
+        </p>
+
+      </div>
+
+      <a href="#kontakt">
+        Läs mer / prata med mig →
+      </a>
+
+    </article>
+
+
+    <article class="card project">
+
+      <div>
+
+        <div class="projectTop">
+          <span class="num">03</span>
+          <span class="tag">Arkitektur</span>
+        </div>
+
+        <h3>
+          Process- och informationsmodellering
+        </h3>
+
+        <p>
+          Strukturering av nuläge och målbild för att skapa
+          gemensamt språk mellan verksamhet, krav och teknisk lösning.
+        </p>
+
+      </div>
+
+      <a href="#kontakt">
+        Läs mer / prata med mig →
+      </a>
+
+    </article>
+
+
+    <article class="card project">
+
+      <div>
+
+        <div class="projectTop">
+          <span class="num">04</span>
+          <span class="tag">Integration</span>
+        </div>
+
+        <h3>
+          Lösningsnära verksamhetsutveckling
+        </h3>
+
+        <p>
+          Arbete i initiativ där integrationer och systemberoenden
+          behöver förstås som en del av verksamhetsförändringen,
+          inte som ett separat IT-spår.
+        </p>
+
+      </div>
+
+      <a href="#kontakt">
+        Läs mer / prata med mig →
+      </a>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="principles">
+
+    <span class="kicker">
+      Så arbetar jag
+    </span>
+
+    <h2>
+      Arkitektur ska hjälpa förändring framåt.
+    </h2>
+
+
+    <div class="grid3">
+
+      <div class="principle">
+
+        <b>
+          Gör det begripligt
+        </b>
+
+        <p>
+          Modeller och struktur ska minska komplexitet,
+          inte skapa mer dokumentation.
+        </p>
+
+      </div>
+
+
+      <div class="principle">
+
+        <b>
+          Testa det osäkra
+        </b>
+
+        <p>
+          Allt går inte att kravställa fram.
+          Prototyper och feedback är ofta bättre analysverktyg.
+        </p>
+
+      </div>
+
+
+      <div class="principle">
+
+        <b>
+          Bygg för återanvändning
+        </b>
+
+        <p>
+          Processer, information, beslut och lärdomar
+          ska kunna ge värde även i nästa initiativ.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="contact" id="kontakt">
+
+  <div>
+
+    <span class="kicker" style="color:white">
+      Kontakt
+    </span>
+
+    <h2>
+      Vill du prata verksamhetsarkitektur,
+      integration eller AI-driven förändring?
+    </h2>
+
+    <p>
+      Jag diskuterar gärna hur vi kan få verksamhet och IT
+      att arbeta närmare varandra och gå snabbare från idé
+      till något som faktiskt går att testa.
+    </p>
+
+  </div>
+
+
+  <div class="contactBtns">
+
+    <a
+      class="btn"
+      href="mailto:pontus.johansson@gmail.com"
+    >
+      Skicka mejl
+    </a>
+
+    <a
+      class="btn secondary"
+      href="#top"
+    >
+      Till toppen ↑
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer class="foot">
+  Pontus Johansson • Verksamhetsarkitekt • Borås
+</footer>
+
+
+</main>
+
+</body>
+</html>
