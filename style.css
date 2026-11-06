@@ -227,6 +227,51 @@ a:focus-visible {
   transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Mobile header refinements */
+
+/* SURMISE – always black text, no black box */
+.brand-word {
+  background: transparent;
+  color: #101010;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Email icon closer to hamburger */
+@media (max-width: 900px) {
+
+  .nav-email-mobile {
+    width: 36px;
+    margin-right: 0;
+  }
+
+  /* Two lines when menu is closed */
+  .menu-toggle span:first-child {
+    width: 100%;
+  }
+
+  .menu-toggle span:nth-child(2) {
+    width: 65%;
+  }
+
+  /* Hidden third line, used for X animation */
+  .menu-toggle span:last-child {
+    opacity: 0;
+  }
+
+  /* Restore third line when menu opens */
+  .menu-toggle.active span:last-child {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 580px) {
+  .nav-email-mobile {
+    width: 36px;
+    margin-right: 0;
+  }
+}
+
 /* Hero */
 
 .hero {
