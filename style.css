@@ -161,6 +161,7 @@ a:focus-visible {
   color: var(--ink);
   border-radius: 8px;
   flex-shrink: 0;
+  transition: background .2s ease;
 }
 
 .nav-email-mobile svg {
@@ -192,19 +193,24 @@ a:focus-visible {
   gap: 6px;
   width: 44px;
   height: 44px;
-  padding: 9px;
-  background: #101827;
-  border: 1px solid rgba(255,255,255,0.2);
+  padding: 11px;
+  background: transparent;
+  border: 0;
   border-radius: 8px;
   cursor: pointer;
   flex-shrink: 0;
+  transition: background .2s ease;
+}
+
+.menu-toggle:hover {
+  background: #edf1f5;
 }
 
 .menu-toggle span {
   display: block;
   width: 100%;
   height: 2px;
-  background: #fff;
+  background: var(--ink);
   border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
@@ -689,7 +695,7 @@ footer {
     width: min(100% - 30px, 1180px);
   }
 
-  /* Switch from desktop links to mobile navigation */
+  /* Mobile navigation */
 
   .nav-inner {
     position: relative;
@@ -787,6 +793,27 @@ footer {
 }
 
 @media (max-width: 580px) {
+
+  .nav-inner {
+    height: 72px;
+  }
+
+  .nav-email-mobile {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+  }
+
+  .nav-email-mobile svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
 
   .hero {
     padding-top: 15px;
