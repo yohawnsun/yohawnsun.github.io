@@ -49,14 +49,18 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(255, 255, 255, .94);
+
+  background: rgba(255, 255, 255, .96);
+
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+
   border-bottom: 1px solid var(--line);
 }
 
 .nav-inner {
   height: 72px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,6 +69,7 @@ a {
 .brand {
   display: flex;
   align-items: center;
+
   font-weight: 800;
   letter-spacing: -.02em;
 }
@@ -72,20 +77,23 @@ a {
 .brand-text {
   display: flex;
   flex-direction: column;
+
   gap: 4px;
+
   line-height: 1;
 }
 
 .brand-lockup {
   display: flex;
   align-items: center;
+
   gap: 3px;
 }
 
 .brand-word,
 .brand-tld {
-  font-weight: 900;
   font-size: 16px;
+  font-weight: 900;
 }
 
 .brand-word {
@@ -95,60 +103,109 @@ a {
 .brand-dot {
   width: 6px;
   height: 6px;
+
   background: var(--accent);
+
   border-radius: 50%;
 }
 
 .brand-name {
-  font-size: 8px;
   color: var(--muted);
+
+  font-size: 8px;
   font-weight: 700;
+
   letter-spacing: .12em;
   text-transform: uppercase;
 }
 
+
+/* Desktop navigation */
+
 .nav-links {
   display: flex;
-  gap: 5px;
   align-items: center;
+
+  gap: 5px;
 }
 
 .nav-links a {
   padding: 9px 10px;
-  font-size: 13px;
+
   color: var(--muted);
+
+  font-size: 13px;
   font-weight: 650;
 }
+
+
+/* Mobile e-mail icon */
 
 .nav-email-mobile,
 .menu-toggle {
   display: none;
 }
 
+.nav-email-mobile {
+  flex-shrink: 0;
+}
+
 .nav-email-mobile svg {
   width: 21px;
   height: 21px;
+
   fill: none;
   stroke: currentColor;
+
   stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
+
+/* =========================================================
+   HAMBURGER
+   ========================================================= */
+
 .menu-toggle {
+  position: relative;
+
   flex-direction: column;
   justify-content: center;
+
   gap: 5px;
-  width: 40px;
-  height: 40px;
+
+  width: 42px;
+  height: 42px;
+
   padding: 10px;
-  background: none;
+
+  background: transparent;
+
   border: 0;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
 }
 
 .menu-toggle span {
-  height: 2px;
+  display: block;
+
   width: 100%;
+  height: 2px;
+
   background: var(--ink);
-  transition: .18s ease;
+
+  border-radius: 99px;
+
+  transform-origin: center;
+
+  transition:
+    transform .22s ease,
+    opacity .16s ease,
+    width .22s ease;
 }
 
 .menu-toggle span:nth-child(2) {
@@ -159,18 +216,46 @@ a {
   width: 40%;
 }
 
+
+/* Clean X */
+
+.menu-toggle.active {
+  gap: 0;
+}
+
 .menu-toggle.active span:first-child {
-  width: 100%;
-  transform: translateY(7px) rotate(45deg);
+  position: absolute;
+
+  width: 22px;
+
+  left: 10px;
+  top: 20px;
+
+  transform: rotate(45deg);
 }
 
 .menu-toggle.active span:nth-child(2) {
+  position: absolute;
+
+  width: 0;
+
+  left: 50%;
+  top: 20px;
+
   opacity: 0;
+
+  transform: scaleX(0);
 }
 
 .menu-toggle.active span:last-child {
-  width: 100%;
-  transform: translateY(-7px) rotate(-45deg);
+  position: absolute;
+
+  width: 22px;
+
+  left: 10px;
+  top: 20px;
+
+  transform: rotate(-45deg);
 }
 
 
@@ -180,11 +265,17 @@ a {
 
 .hero {
   position: relative;
+
   margin-top: 22px;
+
   min-height: 550px;
+
   padding: 56px;
+
   border-radius: 28px;
+
   overflow: hidden;
+
   color: #fff;
 
   background-image:
@@ -198,28 +289,35 @@ a {
 
   background-size: cover;
   background-position: center;
+
   box-shadow: var(--shadow);
 }
 
 .hero-content {
   position: relative;
+
   z-index: 2;
+
   width: 66%;
 }
 
 .eyebrow {
+  color: #e0e7ef;
+
   font-size: 10px;
   font-weight: 800;
+
   letter-spacing: .15em;
   text-transform: uppercase;
-  color: #e0e7ef;
 }
 
 h1 {
+  margin: 28px 0 18px;
+
   font-size: clamp(48px, 5.2vw, 70px);
   line-height: .98;
+
   letter-spacing: -.055em;
-  margin: 28px 0 18px;
 }
 
 h1 span {
@@ -228,23 +326,30 @@ h1 span {
 
 .hero-lead {
   max-width: 630px;
+
   color: #e2e8ef;
+
   font-size: 16px;
 }
 
 .chips {
   display: flex;
   flex-wrap: wrap;
+
   gap: 8px;
+
   margin-top: 26px;
 }
 
 .chips span {
+  padding: 7px 12px;
+
   border: 1px solid #ffffff80;
   border-radius: 99px;
-  padding: 7px 12px;
-  font-size: 11px;
+
   background: #0e19266e;
+
+  font-size: 11px;
 }
 
 
@@ -254,47 +359,62 @@ h1 span {
 
 .hero-profile {
   position: absolute;
+
   z-index: 3;
+
   right: 52px;
   top: 50px;
+
   width: 225px;
 }
 
 .profile-photo {
   height: 190px;
+
   border: 1px solid #ffffff99;
   border-radius: 20px;
+
   overflow: hidden;
+
   box-shadow: 0 15px 35px #0005;
 }
 
 .profile-photo img {
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 }
 
 .role-card {
-  margin-top: 8px;
-  padding: 20px;
-  border-radius: 19px;
-  background: var(--accent);
   display: flex;
   flex-direction: column;
+
+  margin-top: 8px;
+
+  padding: 20px;
+
+  border-radius: 19px;
+
+  background: var(--accent);
 }
 
 .role-card small {
+  color: #ffe6eb;
+
   font-size: 9px;
   font-weight: 800;
+
   letter-spacing: .13em;
   text-transform: uppercase;
-  color: #ffe6eb;
 }
 
 .role-card strong {
-  font-size: 22px;
   margin-top: 10px;
+
+  font-size: 22px;
   line-height: 1.1;
 }
 
@@ -303,9 +423,11 @@ h1 span {
 }
 
 .role-card p {
-  font-size: 11px;
-  color: #ffe6eb;
   margin: 6px 0 0;
+
+  color: #ffe6eb;
+
+  font-size: 11px;
 }
 
 
@@ -315,20 +437,28 @@ h1 span {
 
 .signature {
   position: absolute;
+
   right: 48px;
   bottom: 22px;
+
+  color: #fff;
+
   font-family: "Segoe Script", "Bradley Hand", cursive;
   font-size: 18px;
+
   transform: rotate(-3deg);
-  color: #fff;
 }
 
 .signature i {
   display: inline-block;
+
   width: 7px;
   height: 7px;
+
   margin-left: 5px;
+
   background: var(--accent);
+
   border-radius: 50%;
 }
 
@@ -343,17 +473,21 @@ section {
 
 .kicker {
   color: var(--accent);
+
   font-size: 10px;
   font-weight: 850;
+
   letter-spacing: .15em;
   text-transform: uppercase;
 }
 
 h2 {
+  margin: 8px 0 0;
+
   font-size: clamp(31px, 3.5vw, 48px);
   line-height: 1.02;
+
   letter-spacing: -.05em;
-  margin: 8px 0 0;
 }
 
 
@@ -363,15 +497,21 @@ h2 {
 
 .about-simple {
   display: grid;
+
   grid-template-columns: .82fr 1.18fr;
+
   gap: 70px;
+
   align-items: center;
+
   padding-bottom: 14px;
 }
 
 .about-simple p {
   margin: 0;
+
   color: var(--text);
+
   font-size: 16px;
 }
 
@@ -382,8 +522,11 @@ h2 {
 
 .capabilities-row {
   display: grid;
+
   grid-template-columns: .65fr 1.35fr;
+
   gap: 45px;
+
   align-items: start;
 }
 
@@ -393,26 +536,35 @@ h2 {
 
 .three {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 14px;
 }
 
 .card {
   padding: 25px;
+
   border: 1px solid var(--line);
   border-radius: 20px;
+
   background: #fff;
+
   box-shadow: var(--shadow);
 }
 
 .cap-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: 20px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
   background: var(--blue);
+
+  font-size: 20px;
 }
 
 .network {
@@ -424,16 +576,20 @@ h2 {
 }
 
 .card h3 {
+  margin: 16px 0 8px;
+
   font-size: 17px;
   line-height: 1.1;
-  margin: 16px 0 8px;
+
   letter-spacing: -.025em;
 }
 
 .card p {
-  color: var(--muted);
-  font-size: 12px;
   margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
 }
 
 
@@ -442,29 +598,45 @@ h2 {
    ========================================================= */
 
 .mindset {
-  margin-top: 76px;
-  padding: 45px 48px;
-  border-radius: 0;
-  color: #fff;
-  background: linear-gradient(120deg, #12243a, #07131f);
+  position: relative;
 
   display: grid;
+
   grid-template-columns: 1.05fr repeat(3, .8fr);
+
   gap: 28px;
+
   align-items: center;
 
-  position: relative;
+  margin-top: 76px;
+
+  padding: 45px 48px;
+
   overflow: hidden;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      120deg,
+      #12243a,
+      #07131f
+    );
 }
 
 .mindset:after {
   content: "";
+
   position: absolute;
+
   right: -60px;
   top: -100px;
+
   width: 300px;
   height: 300px;
+
   border: 1px solid #ffffff12;
+
   border-radius: 48% 52% 55% 45%;
 }
 
@@ -473,23 +645,31 @@ h2 {
 }
 
 .mindset-title p {
-  font-size: 12px;
   color: #bdc8d4;
+
+  font-size: 12px;
 }
 
 .principle {
-  padding-left: 28px;
-  border-left: 1px solid #ffffff22;
-  min-height: 180px;
   position: relative;
+
   z-index: 1;
+
+  min-height: 180px;
+
+  padding-left: 28px;
+
+  border-left: 1px solid #ffffff22;
 }
 
 .principle-icon {
   height: 52px;
-  font-size: 39px;
-  color: #fff;
+
   margin-bottom: 16px;
+
+  color: #fff;
+
+  font-size: 39px;
   line-height: 1;
 }
 
@@ -498,6 +678,7 @@ h2 {
 
 .mountain-icon {
   position: relative;
+
   width: 55px;
 }
 
@@ -505,8 +686,11 @@ h2 {
 .mountain-icon:after,
 .mountain-icon span:before {
   content: "";
+
   position: absolute;
+
   bottom: 8px;
+
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   border-bottom: 28px solid #fff;
@@ -514,29 +698,35 @@ h2 {
 
 .mountain-icon:after {
   left: 20px;
+
   border-left-width: 12px;
   border-right-width: 12px;
   border-bottom-width: 21px;
+
   border-bottom-color: #d9e1e9;
 }
 
 .mountain-icon span:before {
   left: 8px;
   bottom: 10px;
+
   border-left-width: 8px;
   border-right-width: 8px;
   border-bottom-width: 14px;
+
   border-bottom-color: #12243a;
 }
 
 .principle strong {
   display: block;
+
   font-size: 16px;
 }
 
 .principle p {
-  font-size: 12px;
   color: #bdc8d4;
+
+  font-size: 12px;
 }
 
 
@@ -546,8 +736,11 @@ h2 {
 
 .experience-compact {
   display: grid;
+
   grid-template-columns: .68fr 1.32fr;
+
   gap: 40px;
+
   align-items: end;
 }
 
@@ -556,25 +749,34 @@ h2 {
 }
 
 .timeline {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid #bcc7d2;
   position: relative;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid #bcc7d2;
 }
 
 .timeline article {
-  padding: 16px 12px 0;
   position: relative;
+
+  padding: 16px 12px 0;
 }
 
 .timeline article:before {
   content: "";
+
   position: absolute;
+
   top: -4px;
   left: 12px;
+
   width: 7px;
   height: 7px;
+
   border-radius: 50%;
+
   background: #c5ced7;
 }
 
@@ -585,14 +787,18 @@ h2 {
 .timeline span,
 .timeline small {
   display: block;
+
   color: var(--muted);
+
   font-size: 10px;
 }
 
 .timeline strong {
   display: block;
-  font-size: 12px;
+
   margin: 4px 0;
+
+  font-size: 12px;
   line-height: 1.25;
 }
 
@@ -603,33 +809,44 @@ h2 {
 
 .section-head {
   display: grid;
+
   grid-template-columns: .9fr 1.1fr;
+
   gap: 50px;
+
   align-items: end;
+
   margin-bottom: 24px;
 }
 
 .section-head p {
   margin: 0;
+
   color: var(--muted);
 }
 
 .thinking-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 14px;
 }
 
 .thinking-grid article {
   padding: 28px;
-  border-radius: 21px;
-  background: #fff;
+
   border: 1px solid var(--line);
+  border-radius: 21px;
+
+  background: #fff;
+
   box-shadow: var(--shadow);
 }
 
 .thinking-grid article:nth-child(1) {
   background: var(--ink);
+
   color: #fff;
 }
 
@@ -642,24 +859,30 @@ h2 {
 }
 
 .thinking-grid span {
-  font-size: 9px;
   color: var(--accent);
+
+  font-size: 9px;
   font-weight: 850;
-  text-transform: uppercase;
+
   letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 .thinking-grid h3 {
+  margin: 34px 0 12px;
+
   font-size: 24px;
   line-height: 1.08;
-  margin: 34px 0 12px;
+
   letter-spacing: -.04em;
 }
 
 .thinking-grid p {
-  font-size: 13px;
-  color: var(--muted);
   margin: 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
 }
 
 .thinking-grid article:first-child p {
@@ -672,16 +895,23 @@ h2 {
    ========================================================= */
 
 .contact {
-  margin: 76px 0 24px;
-  padding: 32px 46px;
-  border-radius: 18px;
-  background: var(--accent);
-  color: #fff;
-
   display: grid;
+
   grid-template-columns: 1.1fr .9fr auto;
+
   gap: 28px;
+
   align-items: center;
+
+  margin: 76px 0 24px;
+
+  padding: 32px 46px;
+
+  border-radius: 18px;
+
+  background: var(--accent);
+
+  color: #fff;
 }
 
 .contact .kicker {
@@ -693,28 +923,36 @@ h2 {
 }
 
 .contact p {
-  font-size: 12px;
   color: #ffe5e9;
+
+  font-size: 12px;
 }
 
 .contact-actions {
   display: flex;
+
   gap: 8px;
 }
 
 .button {
-  background: #fff;
-  color: var(--ink);
   padding: 11px 14px;
+
   border-radius: 8px;
+
+  background: #fff;
+
+  color: var(--ink);
+
   font-size: 12px;
   font-weight: 750;
 }
 
 .button.secondary {
-  background: transparent;
-  color: #fff;
   border: 1px solid #ffffff80;
+
+  background: transparent;
+
+  color: #fff;
 }
 
 
@@ -723,27 +961,36 @@ h2 {
    ========================================================= */
 
 footer {
-  padding: 3px 0 34px;
   display: flex;
+
   justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 3px 0 34px;
+
   color: var(--muted);
+
   font-size: 11px;
 }
 
 
 /* =========================================================
-   MENU ANIMATION
+   MOBILE MENU ANIMATION
    ========================================================= */
 
 @keyframes menuIn {
+
   from {
     opacity: 0;
-    transform: translateY(-8px) scale(.98);
+
+    transform: translateY(-10px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+
+    transform: translateY(0);
   }
 }
 
@@ -758,44 +1005,80 @@ footer {
     width: min(100% - 28px, 1180px);
   }
 
+
+  /* =======================================================
+     MOBILE NAVIGATION
+     ======================================================= */
+
   .nav-inner {
     position: relative;
   }
 
 
-  /* Modern floating navigation */
+  /*
+    Full-screen navigation surface.
+
+    The top edge sits just beneath the header but is pulled
+    upward slightly so that the rounded corners visually meet
+    the white header.
+  */
 
   .nav-links {
     display: none;
 
-    position: absolute;
-    top: 76px;
-    left: 0;
-    right: 0;
+    position: fixed;
 
-    padding: 12px 22px 16px;
+    z-index: 100;
 
-    background: rgba(16, 24, 39, .98);
+    top: 70px;
+    left: 14px;
+    right: 14px;
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    /*
+      Fill the remaining visible viewport.
+      14px bottom gap creates the subtle floating-sheet feeling.
+    */
+    height: calc(100dvh - 84px);
+
+    padding: 22px 28px 32px;
+
+    background: #081827;
 
     border: 1px solid rgba(255, 255, 255, .08);
-    border-radius: 20px;
+
+    border-radius:
+      28px
+      28px
+      20px
+      20px;
 
     box-shadow:
-      0 24px 60px rgba(16, 24, 39, .22);
+      0 28px 70px rgba(4, 12, 23, .32);
 
     flex-direction: column;
     align-items: stretch;
 
-    overflow: hidden;
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-links.open {
     display: flex;
-    animation: menuIn .18s ease-out;
+
+    animation:
+      menuIn
+      .20s
+      cubic-bezier(.2, .7, .2, 1);
   }
+
+
+  /*
+    Clean navigation typography.
+    No arrows.
+  */
 
   .nav-links a {
     position: relative;
@@ -803,16 +1086,21 @@ footer {
     display: flex;
     align-items: center;
 
-    min-height: 58px;
-    padding: 0 6px;
+    flex-shrink: 0;
 
-    color: #fff;
+    min-height: 68px;
 
-    font-size: 17px;
-    font-weight: 700;
+    padding: 0 10px;
+
+    color: #eef3f8;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    letter-spacing: -.015em;
 
     border-bottom:
-      1px solid rgba(255, 255, 255, .10);
+      1px solid rgba(255, 255, 255, .11);
   }
 
   .nav-links a:last-child {
@@ -820,48 +1108,95 @@ footer {
   }
 
   .nav-links a::after {
-    content: "↗";
-
-    position: absolute;
-    right: 6px;
-
-    color: var(--accent);
-
-    font-size: 16px;
-    font-weight: 400;
+    content: none;
   }
+
+  .nav-links a:hover {
+    color: #fff;
+  }
+
+
+  /*
+    Mail icon support inside the menu.
+
+    When the small HTML enhancement is added, use:
+
+    <span class="nav-menu-icon">...</span>
+  */
+
+  .nav-menu-icon {
+    width: 25px;
+    height: 25px;
+
+    margin-right: 16px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 25px;
+  }
+
+  .nav-menu-icon svg {
+    width: 23px;
+    height: 23px;
+
+    fill: none;
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+
+  /*
+    Desktop E-post link is hidden because the dedicated
+    mobile mail icon remains in the white header.
+  */
 
   .nav-email-desktop {
     display: none;
   }
 
+
   .nav-email-mobile {
     display: flex;
 
-    margin-left: auto;
+    width: 42px;
+    height: 42px;
 
-    width: 40px;
-    height: 40px;
+    margin-left: auto;
 
     align-items: center;
     justify-content: center;
+
+    color: var(--ink);
   }
+
 
   .menu-toggle {
     display: flex;
+
+    z-index: 110;
   }
 
 
-  /* Hero */
+  /* =======================================================
+     HERO
+     ======================================================= */
 
   .hero {
     min-height: 760px;
+
     padding: 38px 28px;
+
     background-position: 58% center;
   }
 
   .hero:after {
     content: "";
+
     position: absolute;
     inset: 0;
 
@@ -874,11 +1209,13 @@ footer {
       );
 
     z-index: 0;
+
     pointer-events: none;
   }
 
   .hero-content {
     width: 100%;
+
     padding-bottom: 255px;
   }
 
@@ -890,7 +1227,6 @@ footer {
 
   .hero-profile {
     top: auto;
-
     bottom: 34px;
     left: 28px;
     right: 28px;
@@ -898,7 +1234,10 @@ footer {
     width: auto;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+      1fr 1fr;
+
     gap: 10px;
 
     align-items: stretch;
@@ -924,13 +1263,16 @@ footer {
   }
 
 
-  /* Other sections */
+  /* =======================================================
+     OTHER SECTIONS
+     ======================================================= */
 
   .about-simple,
   .capabilities-row,
   .experience-compact,
   .section-head {
     grid-template-columns: 1fr;
+
     gap: 22px;
   }
 
@@ -941,20 +1283,24 @@ footer {
 
   .mindset {
     grid-template-columns: 1fr;
+
     padding: 34px 28px;
   }
 
   .principle {
-    border-left: 0;
-    border-top: 1px solid #ffffff22;
+    min-height: 0;
 
     padding: 22px 0 0;
 
-    min-height: 0;
+    border-left: 0;
+
+    border-top:
+      1px solid #ffffff22;
   }
 
   .timeline {
     grid-template-columns: 1fr 1fr;
+
     gap: 17px;
   }
 
@@ -980,30 +1326,90 @@ footer {
 
 
   /* =======================================================
-     MOBILE MENU
+     MOBILE FULL-SCREEN MENU
      ======================================================= */
 
   .nav-links {
-    top: 76px;
+    /*
+      Slight overlap with header, like the mockup.
+      Header and logo remain visible above.
+    */
 
-    left: 0;
-    right: 0;
+    top: 66px;
 
-    padding: 10px 20px 12px;
+    left: 14px;
+    right: 14px;
 
-    border-radius: 20px;
+    height:
+      calc(100dvh - 80px);
+
+    padding:
+      22px
+      26px
+      30px;
+
+    border-radius:
+      26px
+      26px
+      18px
+      18px;
   }
 
   .nav-links a {
-    min-height: 56px;
+    min-height: 66px;
 
-    padding: 0 4px;
+    padding: 0 8px;
 
-    font-size: 17px;
+    font-size: 18px;
+    font-weight: 500;
   }
 
-  .nav-links a::after {
-    right: 4px;
+
+  /* Header icons */
+
+  .nav-email-mobile {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  /*
+    Reinforce X-state on the smallest screens.
+    The middle hamburger line is completely removed.
+  */
+
+  .menu-toggle.active span:first-child {
+    width: 22px;
+
+    left: 9px;
+    top: 19px;
+
+    transform: rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    width: 0;
+    height: 0;
+
+    opacity: 0;
+
+    transform: scale(0);
+
+    visibility: hidden;
+  }
+
+  .menu-toggle.active span:last-child {
+    width: 22px;
+
+    left: 9px;
+    top: 19px;
+
+    transform: rotate(-45deg);
   }
 
 
@@ -1019,16 +1425,12 @@ footer {
       20px
       90px;
 
-    border-radius: 0;
-
     min-height: 660px;
+
+    border-radius: 0;
 
     background-position: 61% center;
 
-    /*
-      Allows the profile and role cards
-      to float outside the hero.
-    */
     overflow: visible;
   }
 
@@ -1038,10 +1440,10 @@ footer {
   }
 
   h1 {
+    margin: 22px 0 16px;
+
     font-size: 42px;
     line-height: .98;
-
-    margin: 22px 0 16px;
   }
 
   .hero-lead {
@@ -1050,16 +1452,19 @@ footer {
 
   .chips {
     gap: 6px;
+
     margin-top: 20px;
   }
 
   .chips span {
     padding: 6px 9px;
+
     font-size: 9px;
   }
 
   .hero-content {
     width: 100%;
+
     padding-bottom: 0;
   }
 
@@ -1067,10 +1472,10 @@ footer {
   /* =======================================================
      PROFILE + ROLE
 
-     No white frame/container.
+     Two independent cards.
      Equal width.
      Equal height.
-     Half on hero / half outside.
+     Half inside / half outside hero.
      ======================================================= */
 
   .hero-profile {
@@ -1083,6 +1488,7 @@ footer {
     width: auto;
 
     display: grid;
+
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
 
@@ -1101,7 +1507,7 @@ footer {
   }
 
 
-  /* Profile photo */
+  /* Profile image */
 
   .profile-photo {
     width: 100%;
@@ -1115,7 +1521,8 @@ footer {
     background: #fff;
 
     box-shadow:
-      0 16px 34px rgba(16, 24, 39, .18);
+      0 16px 34px
+      rgba(16, 24, 39, .18);
   }
 
   .profile-photo img {
@@ -1133,10 +1540,12 @@ footer {
 
   .role-card {
     width: 100%;
+
     height: 150px;
     min-height: 150px;
 
     margin: 0;
+
     padding: 16px;
 
     border-radius: 18px;
@@ -1150,7 +1559,8 @@ footer {
     overflow: hidden;
 
     box-shadow:
-      0 16px 34px rgba(16, 24, 39, .18);
+      0 16px 34px
+      rgba(16, 24, 39, .18);
   }
 
   .role-card small {
@@ -1202,14 +1612,14 @@ footer {
   }
 
   .card {
-    padding: 22px;
-
     display: grid;
 
     grid-template-columns:
       45px 1fr;
 
     column-gap: 13px;
+
+    padding: 22px;
   }
 
   .card .cap-icon {
@@ -1231,6 +1641,7 @@ footer {
 
   .mindset {
     margin-top: 55px;
+
     border-radius: 0;
   }
 
@@ -1249,12 +1660,19 @@ footer {
 
   .timeline {
     grid-template-columns: 1fr;
+
     border-top: 0;
   }
 
   .timeline article {
-    border-left: 1px solid #c5ced7;
-    padding: 0 0 23px 20px;
+    padding:
+      0
+      0
+      23px
+      20px;
+
+    border-left:
+      1px solid #c5ced7;
   }
 
   .timeline article:before {
@@ -1282,7 +1700,11 @@ footer {
 
   .contact {
     margin-top: 55px;
-    padding: 30px 24px;
+
+    padding:
+      30px
+      24px;
+
     border-radius: 20px;
   }
 
@@ -1297,6 +1719,7 @@ footer {
 
   footer {
     flex-direction: column;
+
     gap: 4px;
   }
 }
