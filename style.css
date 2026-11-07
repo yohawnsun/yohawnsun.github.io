@@ -231,7 +231,9 @@ h1 span {
 }
 
 
-/* Profile on hero */
+/* =========================================================
+   PROFILE ON HERO
+   ========================================================= */
 
 .hero-profile {
   position: absolute;
@@ -289,7 +291,9 @@ h1 span {
 }
 
 
-/* Handwritten signature */
+/* =========================================================
+   HANDWRITTEN SIGNATURE
+   ========================================================= */
 
 .signature {
   position: absolute;
@@ -652,7 +656,7 @@ h2 {
 .contact {
   margin: 76px 0 24px;
   padding: 32px 46px;
-  border-radius: 0;
+  border-radius: 18px;
   background: var(--accent);
   color: #fff;
 
@@ -807,17 +811,21 @@ footer {
     width: auto;
 
     display: grid;
-    grid-template-columns: .86fr 1.14fr;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
 
     align-items: stretch;
   }
 
   .profile-photo {
+    width: 100%;
     height: 180px;
   }
 
   .role-card {
+    width: 100%;
+    height: 180px;
+    min-height: 180px;
     margin: 0;
     justify-content: center;
   }
@@ -880,21 +888,25 @@ footer {
   }
 
 
-  /* Hero */
+  /* =======================================================
+     HERO
+     ======================================================= */
 
   .hero {
     margin-top: 14px;
 
-    /*
-      Extra bottom padding gives the floating identity card
-      room while keeping it inside the mountain image.
-    */
-    padding: 28px 20px 190px;
+    padding: 28px 20px 92px;
 
     border-radius: 0;
-    min-height: 760px;
+    min-height: 660px;
 
     background-position: 61% center;
+
+    /*
+      Required so the identity card can sit
+      halfway outside the hero.
+    */
+    overflow: visible;
   }
 
   .eyebrow {
@@ -928,30 +940,38 @@ footer {
   }
 
 
-  /*
-    PROFILE + ROLE
+  /* =======================================================
+     PROFILE + ROLE
 
-    Both elements now sit inside a shared white floating card
-    while remaining on top of the mountain hero.
-  */
+     50 / 50 width
+     Same height
+     Half inside hero
+     Half outside hero
+     ======================================================= */
 
   .hero-profile {
     position: absolute;
 
     left: 20px;
     right: 20px;
-    bottom: 24px;
+
+    /*
+      Card height including padding is roughly 162px.
+      -78px gives an almost exact 50/50 overlap.
+    */
+    bottom: -78px;
 
     width: auto;
 
     display: grid;
-    grid-template-columns: .9fr 1.1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
+
     align-items: stretch;
 
     padding: 6px;
 
-    background: rgba(255, 255, 255, .94);
+    background: rgba(255, 255, 255, .96);
 
     border-radius: 20px;
 
@@ -960,7 +980,8 @@ footer {
   }
 
   .profile-photo {
-    height: 142px;
+    width: 100%;
+    height: 150px;
 
     border: 0;
     border-radius: 15px;
@@ -970,13 +991,19 @@ footer {
   }
 
   .profile-photo img {
+    display: block;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+    object-position: center;
   }
 
   .role-card {
-    min-height: 142px;
+    width: 100%;
+    height: 150px;
+    min-height: 150px;
 
     margin: 0;
     padding: 16px;
@@ -986,6 +1013,8 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    overflow: hidden;
   }
 
   .role-card small {
@@ -995,6 +1024,7 @@ footer {
   .role-card strong {
     margin-top: 8px;
     font-size: 18px;
+    line-height: 1.1;
   }
 
   .role-card span {
@@ -1002,16 +1032,20 @@ footer {
   }
 
   .role-card p {
-    margin-top: 5px;
+    margin: 5px 0 0;
     font-size: 9px;
     line-height: 1.4;
   }
 
 
-  /* About */
+  /* =======================================================
+     ABOUT
+
+     Compensates for floating profile card.
+     ======================================================= */
 
   .about-simple {
-    padding-top: 55px;
+    padding-top: 132px;
   }
 
   .about-simple p {
@@ -1019,7 +1053,9 @@ footer {
   }
 
 
-  /* Capabilities */
+  /* =======================================================
+     CAPABILITIES
+     ======================================================= */
 
   .capabilities-row {
     padding-top: 55px;
@@ -1050,7 +1086,9 @@ footer {
   }
 
 
-  /* Mindset */
+  /* =======================================================
+     MINDSET
+     ======================================================= */
 
   .mindset {
     margin-top: 55px;
@@ -1062,7 +1100,9 @@ footer {
   }
 
 
-  /* Experience */
+  /* =======================================================
+     EXPERIENCE
+     ======================================================= */
 
   .experience-compact {
     padding-top: 55px;
@@ -1084,7 +1124,9 @@ footer {
   }
 
 
-  /* Thinking */
+  /* =======================================================
+     THINKING
+     ======================================================= */
 
   .section-head {
     padding-top: 0;
@@ -1095,11 +1137,18 @@ footer {
   }
 
 
-  /* Contact */
+  /* =======================================================
+     CONTACT
+     ======================================================= */
 
   .contact {
     margin-top: 55px;
     padding: 30px 24px;
+
+    /*
+      Rounded coral ending restored.
+    */
+    border-radius: 20px;
   }
 
   .contact-actions {
@@ -1107,13 +1156,12 @@ footer {
   }
 
 
-  /* Footer */
+  /* =======================================================
+     FOOTER
+     ======================================================= */
 
   footer {
     flex-direction: column;
     gap: 4px;
   }
 }
-
-
-Sen är det viktigt att profile photo o read card är lika stora 
