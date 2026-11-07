@@ -74,6 +74,16 @@ a:focus-visible {
   letter-spacing: -.02em;
 }
 
+.brand-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: #FF4D6A;   /* samma korall/röd som på sajten */
+  border-radius: 50%;
+  margin: 0 3px 1px 3px; /* justera så den sitter i mellanhöjd */
+  flex-shrink: 0;
+}
+
 .brand-text {
   display: flex;
   flex-direction: column;
