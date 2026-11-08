@@ -319,6 +319,15 @@ h1 span {
 
 
 /* =========================================================
+   MOBILE SCROLL CUE
+   ========================================================= */
+
+.hero-scroll {
+  display: none;
+}
+
+
+/* =========================================================
    PROFILE ON HERO
    ========================================================= */
 
@@ -1138,7 +1147,9 @@ footer {
   }
 
 
-  /* HERO - TABLET */
+  /* =======================================================
+     HERO - TABLET
+     ======================================================= */
 
   .hero {
     min-height: 760px;
@@ -1251,12 +1262,18 @@ footer {
 
 @media (max-width: 580px) {
 
+  .wrap {
+    width: calc(100% - 30px);
+  }
+
   .nav-inner {
     height: 68px;
   }
 
 
-  /* MOBILE FULLSCREEN MENU */
+  /* =======================================================
+     MOBILE FULLSCREEN MENU
+     ======================================================= */
 
   .nav-links {
     inset: 0;
@@ -1325,7 +1342,9 @@ footer {
   }
 
 
-  /* TOP MOBILE CONTROLS */
+  /* =======================================================
+     TOP MOBILE CONTROLS
+     ======================================================= */
 
   .nav-email-mobile {
     width: 40px;
@@ -1378,7 +1397,8 @@ footer {
 
 
   /* =======================================================
-     HERO - MOBILE FULL BLEED
+     HERO - MOBILE
+     intentionally different from tablet/desktop
      ======================================================= */
 
   .hero {
@@ -1388,132 +1408,208 @@ footer {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
 
-    padding: 28px 20px 90px;
-    min-height: 660px;
+    min-height: calc(100svh - 68px);
+    padding:
+      clamp(38px, 8vh, 72px)
+      24px
+      84px;
+
+    display: flex;
+    align-items: flex-start;
 
     border-radius: 0;
-    background-position: 61% center;
-    overflow: visible;
-  }
+    overflow: hidden;
 
-  .eyebrow {
-    font-size: 8px;
-    line-height: 1.45;
-  }
+    background-position: 60% center;
 
-  h1 {
-    margin: 22px 0 16px;
-    font-size: 42px;
-    line-height: .98;
-  }
-
-  .hero-lead {
-    font-size: 14px;
-  }
-
-  .chips {
-    gap: 6px;
-    margin-top: 20px;
-  }
-
-  .chips span {
-    padding: 6px 9px;
-    font-size: 9px;
-  }
-
-  .hero-content {
-    width: 100%;
-    padding-bottom: 0;
-  }
-
-
-  /* PROFILE + ROLE */
-
-  .hero-profile {
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    bottom: -75px;
-    width: auto;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    align-items: stretch;
-    padding: 0;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
     box-shadow: none;
   }
 
-  .profile-photo {
-    width: 100%;
-    height: 150px;
-    border: 0;
-    border-radius: 18px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 16px 34px rgba(16, 24, 39, .18);
+
+  /* Stronger mobile-specific readability gradient */
+
+  .hero:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 14, 27, .78) 0%,
+        rgba(5, 14, 27, .62) 44%,
+        rgba(5, 14, 27, .52) 67%,
+        rgba(5, 14, 27, .82) 100%
+      );
   }
 
-  .profile-photo img {
+
+  /* Hero text */
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 520px;
+    padding: 0;
+  }
+
+  .eyebrow {
     display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: none;
-  }
+    max-width: 310px;
 
-  .role-card {
-    width: 100%;
-    height: 150px;
-    min-height: 150px;
-    margin: 0;
-    padding: 16px;
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: var(--accent);
-    overflow: hidden;
-    box-shadow: 0 16px 34px rgba(16, 24, 39, .18);
-  }
+    color: rgba(231, 237, 244, .82);
 
-  .role-card small {
-    font-size: 8px;
-  }
-
-  .role-card strong {
-    margin-top: 8px;
-    font-size: 18px;
-    line-height: 1.08;
-  }
-
-  .role-card span {
-    font-size: 11px;
-  }
-
-  .role-card p {
-    margin: 5px 0 0;
     font-size: 9px;
-    line-height: 1.4;
+    font-weight: 800;
+    line-height: 1.55;
+    letter-spacing: .14em;
   }
 
 
-  /* ABOUT */
+  /*
+     The desktop <br> remains in the HTML,
+     but the mobile typography gets more room
+     and becomes the visual focal point.
+  */
 
-  .about-simple {
-    padding-top: 125px;
+  h1 {
+    max-width: 520px;
+    margin: 24px 0 20px;
+
+    font-size: clamp(42px, 12vw, 54px);
+    line-height: .94;
+    letter-spacing: -.058em;
   }
 
-  .about-simple p {
-    font-size: 14px;
+  .hero-lead {
+    max-width: 390px;
+    margin: 0;
+
+    color: rgba(232, 238, 245, .88);
+
+    font-size: 15px;
+    line-height: 1.58;
+  }
+
+
+  /* Remove desktop detail density on mobile */
+
+  .chips {
+    display: none;
+  }
+
+  .hero-profile {
+    display: none;
+  }
+
+  .signature {
+    display: none;
   }
 
 
   /* =======================================================
-     MINDSET - MOBILE FULL BLEED + HORIZONTAL PRINCIPLES
+     MOBILE SCROLL ARROW
+     ======================================================= */
+
+  .hero-scroll {
+    position: absolute;
+    z-index: 4;
+
+    left: 50%;
+    bottom: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    color: rgba(255, 255, 255, .82);
+
+    font-size: 27px;
+    font-weight: 300;
+    line-height: 1;
+
+    transform: translateX(-50%);
+
+    transition:
+      color .18s ease,
+      transform .18s ease;
+  }
+
+  .hero-scroll:active {
+    color: #fff;
+    transform: translateX(-50%) translateY(3px);
+  }
+
+
+  /* =======================================================
+     ABOUT
+     ======================================================= */
+
+  section {
+    padding-top: 68px;
+  }
+
+  .about-simple {
+    padding-top: 68px;
+    padding-bottom: 6px;
+    gap: 26px;
+  }
+
+  .kicker {
+    font-size: 10px;
+  }
+
+  h2 {
+    font-size: 34px;
+    line-height: 1.01;
+  }
+
+  .about-simple p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+
+  /* =======================================================
+     CAPABILITIES
+     ======================================================= */
+
+  .capabilities-row {
+    gap: 28px;
+  }
+
+  .section-side {
+    padding-top: 0;
+  }
+
+  .three {
+    gap: 12px;
+  }
+
+  .card {
+    padding: 23px;
+    border-radius: 18px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+
+  /* =======================================================
+     MINDSET - MOBILE FULL BLEED
      ======================================================= */
 
   .mindset {
@@ -1523,7 +1619,7 @@ footer {
     margin-right: calc(50% - 50vw);
     margin-top: 76px;
 
-    padding: 34px 20px 36px;
+    padding: 42px 24px 38px;
 
     grid-template-columns: 1fr;
     gap: 0;
@@ -1536,28 +1632,31 @@ footer {
   }
 
   .mindset-title h2 {
-    font-size: 34px;
+    font-size: 38px;
   }
 
   .mindset-title p {
+    max-width: 330px;
     margin-bottom: 0;
     font-size: 12px;
+    line-height: 1.6;
   }
 
 
-  /*
+  /* =======================================================
      PRINCIPLES
-
-     Icon | heading
-          | description
-
-     The HTML does not need to change.
-  */
+     Icon | heading + copy
+     ======================================================= */
 
   .principle {
     display: grid;
-    grid-template-columns: 58px minmax(0, 1fr);
-    grid-template-rows: auto auto;
+
+    grid-template-columns:
+      58px minmax(0, 1fr);
+
+    grid-template-rows:
+      auto auto;
+
     column-gap: 18px;
     row-gap: 5px;
 
@@ -1593,7 +1692,6 @@ footer {
     grid-row: 1;
 
     display: block;
-
     margin: 0;
 
     font-size: 16px;
@@ -1618,28 +1716,116 @@ footer {
   }
 
 
-  /* TIMELINE */
+  /* =======================================================
+     EXPERIENCE
+     ======================================================= */
+
+  .experience-compact {
+    gap: 30px;
+  }
+
+  .experience-title h2 {
+    font-size: 32px;
+  }
 
   .timeline {
     grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 0;
+  }
+
+  .timeline article {
+    padding: 17px 0 17px 19px;
+    border-left: 1px solid #bcc7d2;
+  }
+
+  .timeline article:before {
+    top: 24px;
+    left: -4px;
+  }
+
+  .timeline strong {
+    font-size: 14px;
+  }
+
+  .timeline span,
+  .timeline small {
+    font-size: 11px;
   }
 
 
-  /* CONTACT */
+  /* =======================================================
+     SELECTED THINKING
+     ======================================================= */
+
+  .section-head {
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .section-head p {
+    font-size: 14px;
+  }
+
+  .thinking-grid {
+    gap: 12px;
+  }
+
+  .thinking-grid article {
+    padding: 25px 23px;
+    border-radius: 18px;
+  }
+
+  .thinking-grid h3 {
+    margin: 28px 0 12px;
+    font-size: 25px;
+  }
+
+
+  /* =======================================================
+     CONTACT
+     ======================================================= */
 
   .contact {
-    padding: 28px 22px;
+    width: 100vw;
+
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    margin-top: 68px;
+    margin-bottom: 28px;
+
+    padding: 38px 24px;
+
+    border-radius: 0;
+  }
+
+  .contact h2 {
+    font-size: 32px;
+  }
+
+  .contact p {
+    font-size: 13px;
+    line-height: 1.6;
   }
 
   .contact-actions {
     flex-wrap: wrap;
   }
 
+  .button {
+    padding: 12px 15px;
+  }
 
-  /* FOOTER */
+
+  /* =======================================================
+     FOOTER
+     ======================================================= */
 
   footer {
     flex-direction: column;
     gap: 4px;
+    padding-bottom:
+      max(28px, env(safe-area-inset-bottom));
   }
 }
