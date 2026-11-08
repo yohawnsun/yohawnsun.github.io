@@ -905,9 +905,6 @@ footer {
       );
   }
 
-
-  /* Technical grid in background */
-
   .nav-links::before {
     content: "";
     position: fixed;
@@ -946,9 +943,6 @@ footer {
       );
   }
 
-
-  /* Accent glow */
-
   .nav-links::after {
     content: "";
     position: fixed;
@@ -974,9 +968,7 @@ footer {
   }
 
 
-  /* =======================================================
-     MENU LINKS
-     ======================================================= */
+  /* MENU LINKS */
 
   .nav-links a {
     position: relative;
@@ -1001,17 +993,12 @@ footer {
       transform .25s ease;
   }
 
-
-  /* Fading divider */
-
   .nav-links a::after {
     content: "";
     position: absolute;
-
     left: 6px;
     right: 0;
     bottom: 0;
-
     height: 1px;
 
     background:
@@ -1045,17 +1032,13 @@ footer {
   }
 
 
-  /* =======================================================
-     NAVIGATION NUMBERS
-     ======================================================= */
+  /* NAVIGATION NUMBERS */
 
   .nav-links a:not(.nav-email-desktop)::before {
     width: 28px;
     flex: 0 0 28px;
     margin-right: 4px;
-
     color: var(--accent);
-
     font-size: 9px;
     font-weight: 850;
     letter-spacing: .12em;
@@ -1082,9 +1065,7 @@ footer {
   }
 
 
-  /* =======================================================
-     EMAIL LINK
-     ======================================================= */
+  /* EMAIL LINK */
 
   .nav-email-desktop {
     display: flex;
@@ -1094,9 +1075,7 @@ footer {
     min-height: 72px;
     margin-bottom: 14px;
     padding: 0 6px;
-
     color: #fff;
-
     font-size: clamp(19px, 5vw, 23px);
     font-weight: 650;
   }
@@ -1115,12 +1094,10 @@ footer {
     width: 27px;
     height: 27px;
     margin-right: 18px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex: 0 0 27px;
-
     color: var(--accent);
   }
 
@@ -1128,7 +1105,6 @@ footer {
     width: 25px;
     height: 25px;
     fill: none;
-
     stroke: currentColor;
     stroke-width: 1.9;
     stroke-linecap: round;
@@ -1136,66 +1112,45 @@ footer {
   }
 
 
-  /* =======================================================
-     STRONG SURMISE LOGO IN MENU
-     ======================================================= */
+  /* STRONG SURMISE LOGO IN MENU */
 
   .nav-menu-brand {
     position: relative;
     display: block;
-
     margin-top: auto;
-
-    padding:
-      36px
-      6px
-      4px;
+    padding: 36px 6px 4px;
   }
 
   .nav-menu-brand::before {
     content: "";
     position: absolute;
-
     top: 15px;
     left: 6px;
-
     width: 44px;
     height: 2px;
-
     border-radius: 99px;
-
     background: var(--accent);
   }
 
   .nav-menu-lockup {
     display: flex;
     align-items: center;
-
     gap: 5px;
-
     color: #fff;
-
     font-size: clamp(23px, 6vw, 31px);
     font-weight: 950;
-
     letter-spacing: .095em;
     line-height: 1;
-
-    text-shadow:
-      0 0 28px rgba(255, 255, 255, .08);
+    text-shadow: 0 0 28px rgba(255, 255, 255, .08);
   }
 
   .nav-menu-dot {
     display: block;
-
     width: 9px;
     height: 9px;
-
     flex: 0 0 9px;
-
     background: var(--accent);
     border-radius: 50%;
-
     box-shadow:
       0 0 0 5px rgba(255, 77, 106, .07),
       0 0 24px rgba(255, 77, 106, .45);
@@ -1203,33 +1158,24 @@ footer {
 
   .nav-menu-tagline {
     margin-top: 12px;
-
     color: rgba(203, 214, 228, .74);
-
     font-size: clamp(8px, 2.3vw, 10px);
     font-weight: 750;
-
     letter-spacing: .22em;
     line-height: 1.55;
-
     text-transform: uppercase;
   }
 
 
-  /* =======================================================
-     MOBILE HEADER ICONS
-     ======================================================= */
+  /* MOBILE HEADER ICONS */
 
   .nav-email-mobile {
     display: flex;
-
     width: 42px;
     height: 42px;
     margin-left: auto;
-
     align-items: center;
     justify-content: center;
-
     color: var(--ink);
   }
 
@@ -1239,13 +1185,10 @@ footer {
   }
 
 
-  /* =======================================================
-     STAGGERED OPEN ANIMATION
-     ======================================================= */
+  /* STAGGERED OPEN ANIMATION */
 
   .nav-links.open > a {
     opacity: 0;
-
     animation:
       surmiseLinkIn .46s
       cubic-bezier(.2, .8, .2, 1)
@@ -1278,7 +1221,6 @@ footer {
 
   .nav-links.open .nav-menu-brand {
     opacity: 0;
-
     animation:
       surmiseBrandIn .55s .30s
       cubic-bezier(.2, .8, .2, 1)
@@ -1286,9 +1228,7 @@ footer {
   }
 
 
-  /* =======================================================
-     HERO - TABLET
-     ======================================================= */
+  /* HERO - TABLET */
 
   .hero {
     min-height: 760px;
@@ -1301,7 +1241,6 @@ footer {
     content: "";
     position: absolute;
     inset: 0;
-
     background:
       linear-gradient(
         180deg,
@@ -1309,7 +1248,6 @@ footer {
         rgba(5, 14, 26, .30) 60%,
         rgba(5, 14, 26, .75)
       );
-
     z-index: 0;
     pointer-events: none;
   }
@@ -1330,13 +1268,10 @@ footer {
     bottom: 34px;
     left: 28px;
     right: 28px;
-
     width: auto;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-
     align-items: stretch;
   }
 
@@ -1349,9 +1284,7 @@ footer {
     width: 100%;
     height: 180px;
     min-height: 180px;
-
     margin: 0;
-
     justify-content: center;
   }
 
@@ -1383,7 +1316,6 @@ footer {
   .principle {
     min-height: 0;
     padding: 22px 0 0;
-
     border-left: 0;
     border-top: 1px solid #ffffff22;
   }
@@ -1414,13 +1346,10 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE FULLSCREEN MENU
-     ======================================================= */
+  /* MOBILE FULLSCREEN MENU */
 
   .nav-links {
     inset: 0;
-
     width: 100vw;
     height: 100dvh;
 
@@ -1436,7 +1365,6 @@ footer {
   .nav-links a {
     min-height: 61px;
     padding: 0 6px;
-
     font-size: 19px;
     font-weight: 580;
   }
@@ -1444,16 +1372,13 @@ footer {
   .nav-links .nav-email-desktop {
     min-height: 68px;
     margin-bottom: 10px;
-
     font-size: 21px;
   }
 
   .nav-menu-icon {
     width: 26px;
     height: 26px;
-
     margin-right: 18px;
-
     flex-basis: 26px;
   }
 
@@ -1471,12 +1396,9 @@ footer {
 
   .nav-menu-lockup {
     gap: 5px;
-
     color: #fff;
-
     font-size: 25px;
     font-weight: 950;
-
     letter-spacing: .095em;
   }
 
@@ -1488,14 +1410,10 @@ footer {
 
   .nav-menu-tagline {
     max-width: 340px;
-
     margin-top: 11px;
-
     color: rgba(220, 228, 237, .70);
-
     font-size: 8px;
     font-weight: 750;
-
     letter-spacing: .20em;
   }
 
@@ -1514,29 +1432,18 @@ footer {
 
   .menu-toggle.active {
     position: fixed;
-
     top: max(20px, env(safe-area-inset-top));
     right: 18px;
-
     z-index: 1002;
-
     width: 46px;
     height: 46px;
-
     padding: 11px;
-
     background: rgba(255, 255, 255, .055);
-
-    border:
-      1px solid
-      rgba(255, 255, 255, .16);
-
+    border: 1px solid rgba(255, 255, 255, .16);
     border-radius: 14px;
-
     box-shadow:
       0 12px 30px rgba(0, 0, 0, .18),
       inset 0 1px 0 rgba(255, 255, 255, .07);
-
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
@@ -1549,17 +1456,14 @@ footer {
     width: 22px;
     left: 11px;
     top: 21px;
-
     transform: rotate(45deg);
   }
 
   .menu-toggle.active span:nth-child(2) {
     width: 0;
     height: 0;
-
     opacity: 0;
     visibility: hidden;
-
     transform: scale(0);
   }
 
@@ -1567,21 +1471,22 @@ footer {
     width: 22px;
     left: 11px;
     top: 21px;
-
     transform: rotate(-45deg);
   }
 
 
   /* =======================================================
-     HERO - MOBILE
+     HERO - MOBILE FULL BLEED
      ======================================================= */
 
   .hero {
-    margin-top: 0px;
-    margin-left:0px;
-    msrgin-right:0px;
-    padding: 28px 20px 90px;
+    width: 100vw;
 
+    margin-top: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    padding: 28px 20px 90px;
     min-height: 660px;
 
     border-radius: 0;
@@ -1598,7 +1503,6 @@ footer {
 
   h1 {
     margin: 22px 0 16px;
-
     font-size: 42px;
     line-height: .98;
   }
@@ -1623,48 +1527,35 @@ footer {
   }
 
 
-  /* =======================================================
-     PROFILE + ROLE
-     ======================================================= */
+  /* PROFILE + ROLE */
 
   .hero-profile {
     position: absolute;
-
     left: 20px;
     right: 20px;
     bottom: -75px;
-
     width: auto;
 
     display: grid;
-
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 10px;
     align-items: stretch;
-
     padding: 0;
 
     background: transparent;
-
     border: 0;
     border-radius: 0;
-
     box-shadow: none;
   }
 
   .profile-photo {
     width: 100%;
     height: 150px;
-
     border: 0;
     border-radius: 18px;
-
     overflow: hidden;
-
     background: #fff;
-
     box-shadow:
       0 16px 34px
       rgba(16, 24, 39, .18);
@@ -1672,13 +1563,10 @@ footer {
 
   .profile-photo img {
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center;
-
     filter: none;
   }
 
@@ -1686,10 +1574,8 @@ footer {
     width: 100%;
     height: 150px;
     min-height: 150px;
-
     margin: 0;
     padding: 16px;
-
     border-radius: 18px;
 
     display: flex;
@@ -1697,7 +1583,6 @@ footer {
     justify-content: center;
 
     background: var(--accent);
-
     overflow: hidden;
 
     box-shadow:
@@ -1711,7 +1596,6 @@ footer {
 
   .role-card strong {
     margin-top: 8px;
-
     font-size: 18px;
     line-height: 1.08;
   }
@@ -1722,15 +1606,12 @@ footer {
 
   .role-card p {
     margin: 5px 0 0;
-
     font-size: 9px;
     line-height: 1.4;
   }
 
 
-  /* =======================================================
-     ABOUT
-     ======================================================= */
+  /* ABOUT */
 
   .about-simple {
     padding-top: 125px;
@@ -1741,138 +1622,6 @@ footer {
   }
 
 
-  /* =======================================================
-     CAPABILITIES
-     ======================================================= */
+  /* CAPABILITIES */
 
-  .capabilities-row {
-    padding-top: 55px;
-  }
-
-  .section-side {
-    padding: 0;
-  }
-
-  .card {
-    display: grid;
-
-    grid-template-columns:
-      45px 1fr;
-
-    column-gap: 13px;
-
-    padding: 22px;
-  }
-
-  .card .cap-icon {
-    grid-row: 1 / 3;
-  }
-
-  .card h3 {
-    margin: 1px 0 6px;
-  }
-
-  .card p {
-    grid-column: 2;
-  }
-
-
-  /* =======================================================
-     MINDSET
-     ======================================================= */
-
-  .mindset {
-    margin-top: 55px;
-    border-radius: 0;
-  }
-
-  .mindset-title h2 {
-    font-size: 42px;
-  }
-
-
-  /* =======================================================
-     EXPERIENCE
-     ======================================================= */
-
-  .experience-compact {
-    padding-top: 55px;
-  }
-
-  .timeline {
-    grid-template-columns: 1fr;
-    border-top: 0;
-  }
-
-  .timeline article {
-    padding: 0 0 23px 20px;
-
-    border-left:
-      1px solid #c5ced7;
-  }
-
-  .timeline article:before {
-    top: 2px;
-    left: -4px;
-  }
-
-
-  /* =======================================================
-     THINKING
-     ======================================================= */
-
-  .section-head {
-    padding-top: 0;
-  }
-
-  .thinking-grid article {
-    min-height: 220px;
-  }
-
-
-  /* =======================================================
-     CONTACT
-     ======================================================= */
-
-  .contact {
-    margin-top: 55px;
-
-    padding: 30px 24px;
-
-    border-radius: 20px;
-  }
-
-  .contact-actions {
-    flex-wrap: wrap;
-  }
-
-
-  /* =======================================================
-     FOOTER
-     ======================================================= */
-
-  footer {
-    flex-direction: column;
-    gap: 4px;
-  }
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  .nav-links.open,
-  .nav-links.open > a,
-  .nav-links.open .nav-menu-brand {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
+  .
