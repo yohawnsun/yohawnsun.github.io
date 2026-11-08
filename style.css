@@ -984,6 +984,7 @@ footer {
   .hero {
     min-height: 760px;
     padding: 38px 28px;
+     border-radius: 20px;
     background-position: 58% center;
   }
 
