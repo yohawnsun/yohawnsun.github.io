@@ -30,6 +30,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body:has(.nav-links.open) {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -213,7 +217,8 @@ a {
   transition:
     transform .22s ease,
     opacity .16s ease,
-    width .22s ease;
+    width .22s ease,
+    background-color .18s ease;
 }
 
 .menu-toggle span:nth-child(2) {
@@ -228,7 +233,24 @@ a {
 /* Clean X */
 
 .menu-toggle.active {
+  position: fixed;
+
+  top: max(18px, env(safe-area-inset-top));
+  right: 20px;
+
+  z-index: 1002;
+
   gap: 0;
+
+  background: rgba(255, 255, 255, .08);
+
+  border: 1px solid rgba(255, 255, 255, .10);
+
+  border-radius: 12px;
+}
+
+.menu-toggle.active span {
+  background: #fff;
 }
 
 .menu-toggle.active span:first-child {
@@ -236,8 +258,8 @@ a {
 
   width: 22px;
 
-  left: 10px;
-  top: 20px;
+  left: 9px;
+  top: 19px;
 
   transform: rotate(45deg);
 }
@@ -246,13 +268,16 @@ a {
   position: absolute;
 
   width: 0;
+  height: 0;
 
   left: 50%;
-  top: 20px;
+  top: 19px;
 
   opacity: 0;
 
-  transform: scaleX(0);
+  visibility: hidden;
+
+  transform: scale(0);
 }
 
 .menu-toggle.active span:last-child {
@@ -260,8 +285,8 @@ a {
 
   width: 22px;
 
-  left: 10px;
-  top: 20px;
+  left: 9px;
+  top: 19px;
 
   transform: rotate(-45deg);
 }
@@ -990,12 +1015,12 @@ footer {
 @keyframes menuIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: scale(.985);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
   }
 }
 
@@ -1012,7 +1037,7 @@ footer {
 
 
   /* =======================================================
-     MOBILE NAVIGATION
+     FULL-SCREEN MOBILE NAVIGATION
      ======================================================= */
 
   .nav-inner {
@@ -1023,28 +1048,25 @@ footer {
     display: none;
 
     position: fixed;
-    z-index: 100;
 
-    top: 70px;
-    left: 14px;
-    right: 14px;
+    z-index: 1000;
 
-    height: calc(100dvh - 84px);
+    inset: 0;
 
-    padding: 22px 28px 32px;
+    width: 100vw;
+    height: 100dvh;
+
+    padding:
+      max(92px, calc(env(safe-area-inset-top) + 76px))
+      34px
+      max(28px, env(safe-area-inset-bottom));
 
     background: #081827;
 
-    border: 1px solid rgba(255, 255, 255, .08);
+    border: 0;
+    border-radius: 0;
 
-    border-radius:
-      28px
-      28px
-      20px
-      20px;
-
-    box-shadow:
-      0 28px 70px rgba(4, 12, 23, .32);
+    box-shadow: none;
 
     flex-direction: column;
     align-items: stretch;
@@ -1052,6 +1074,7 @@ footer {
     overflow-y: auto;
 
     overscroll-behavior: contain;
+
     -webkit-overflow-scrolling: touch;
   }
 
@@ -1065,7 +1088,7 @@ footer {
   }
 
 
-  /* Clean menu links */
+  /* Clean navigation links */
 
   .nav-links a {
     position: relative;
@@ -1089,11 +1112,6 @@ footer {
     border-bottom:
       1px solid rgba(255, 255, 255, .11);
   }
-
-  /*
-    Keep separator beneath Contact.
-    The branding block starts after this line.
-  */
 
   .nav-links a:last-of-type {
     border-bottom:
@@ -1160,7 +1178,7 @@ footer {
 
     gap: 3px;
 
-    color: rgba(255, 255, 255, .92);
+    color: rgba(255, 255, 255, .94);
 
     font-size: 15px;
     font-weight: 900;
@@ -1186,7 +1204,7 @@ footer {
   .nav-menu-tagline {
     margin-top: 8px;
 
-    color: rgba(220, 228, 237, .58);
+    color: rgba(220, 228, 237, .62);
 
     font-size: 8px;
     font-weight: 700;
@@ -1198,7 +1216,10 @@ footer {
   }
 
 
-  /* Header mail button */
+  /*
+    The regular header e-mail icon remains hidden
+    behind the full-screen menu.
+  */
 
   .nav-email-mobile {
     display: flex;
@@ -1214,10 +1235,17 @@ footer {
     color: var(--ink);
   }
 
+
+  /*
+    The toggle remains above the full-screen overlay.
+    When active, positioning is handled by the global
+    active-state rules.
+  */
+
   .menu-toggle {
     display: flex;
 
-    z-index: 110;
+    z-index: 1002;
   }
 
 
@@ -1366,28 +1394,22 @@ footer {
 
 
   /* =======================================================
-     MOBILE FULL-SCREEN MENU
+     FULL-SCREEN MOBILE MENU
      ======================================================= */
 
   .nav-links {
-    top: 66px;
+    inset: 0;
 
-    left: 14px;
-    right: 14px;
-
-    height:
-      calc(100dvh - 80px);
+    width: 100vw;
+    height: 100dvh;
 
     padding:
-      22px
+      max(88px, calc(env(safe-area-inset-top) + 72px))
       26px
-      30px;
+      max(24px, env(safe-area-inset-bottom));
 
-    border-radius:
-      26px
-      26px
-      18px
-      18px;
+    border: 0;
+    border-radius: 0;
   }
 
   .nav-links a {
@@ -1429,6 +1451,8 @@ footer {
   .nav-menu-lockup {
     gap: 3px;
 
+    color: rgba(255, 255, 255, .94);
+
     font-size: 15px;
   }
 
@@ -1442,33 +1466,61 @@ footer {
   .nav-menu-tagline {
     margin-top: 8px;
 
-    color: rgba(220, 228, 237, .58);
+    color: rgba(220, 228, 237, .62);
 
     font-size: 8px;
     letter-spacing: .13em;
   }
 
 
-  /* Header icons */
+  /*
+    The regular header icon exists underneath the menu,
+    but is fully covered by the overlay.
+  */
 
   .nav-email-mobile {
     width: 40px;
     height: 40px;
   }
 
+
+  /*
+    X inside the dark full-screen menu.
+  */
+
   .menu-toggle {
     width: 40px;
     height: 40px;
   }
 
+  .menu-toggle.active {
+    position: fixed;
 
-  /* Clean X */
+    top: max(18px, env(safe-area-inset-top));
+    right: 18px;
+
+    z-index: 1002;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 11px;
+
+    background: rgba(255, 255, 255, .08);
+
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 13px;
+  }
+
+  .menu-toggle.active span {
+    background: #fff;
+  }
 
   .menu-toggle.active span:first-child {
     width: 22px;
 
-    left: 9px;
-    top: 19px;
+    left: 10px;
+    top: 20px;
 
     transform: rotate(45deg);
   }
@@ -1479,16 +1531,16 @@ footer {
 
     opacity: 0;
 
-    transform: scale(0);
-
     visibility: hidden;
+
+    transform: scale(0);
   }
 
   .menu-toggle.active span:last-child {
     width: 22px;
 
-    left: 9px;
-    top: 19px;
+    left: 10px;
+    top: 20px;
 
     transform: rotate(-45deg);
   }
