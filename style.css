@@ -855,18 +855,12 @@ footer {
     position: relative;
   }
 
-
-  /* =======================================================
-     SURMISE FULLSCREEN MENU
-     ======================================================= */
-
   .nav-links {
     display: none;
     position: fixed;
     isolation: isolate;
     z-index: 1000;
     inset: 0;
-
     width: 100vw;
     height: 100dvh;
 
@@ -925,22 +919,6 @@ footer {
 
     background-size: 42px 42px;
     opacity: .75;
-
-    -webkit-mask-image:
-      linear-gradient(
-        to bottom,
-        #000 0%,
-        #000 65%,
-        transparent 100%
-      );
-
-    mask-image:
-      linear-gradient(
-        to bottom,
-        #000 0%,
-        #000 65%,
-        transparent 100%
-      );
   }
 
   .nav-links::after {
@@ -949,48 +927,31 @@ footer {
     z-index: -1;
     top: -110px;
     right: -130px;
-
     width: 380px;
     height: 380px;
-
     pointer-events: none;
     border-radius: 50%;
-
     background: rgba(255, 77, 106, .12);
     filter: blur(85px);
   }
 
   .nav-links.open {
     display: flex;
-    animation:
-      surmiseMenuIn .38s
-      cubic-bezier(.2, .8, .2, 1);
+    animation: surmiseMenuIn .38s cubic-bezier(.2, .8, .2, 1);
   }
-
-
-  /* MENU LINKS */
 
   .nav-links a {
     position: relative;
     display: flex;
     align-items: center;
     flex-shrink: 0;
-
     min-height: 64px;
     padding: 0 6px;
-
     color: rgba(239, 244, 250, .90);
-
     font-size: clamp(18px, 4.8vw, 22px);
     font-weight: 580;
     letter-spacing: -.025em;
-
     border-bottom: 0;
-
-    transition:
-      color .2s ease,
-      padding-left .25s ease,
-      transform .25s ease;
   }
 
   .nav-links a::after {
@@ -1000,7 +961,6 @@ footer {
     right: 0;
     bottom: 0;
     height: 1px;
-
     background:
       linear-gradient(
         90deg,
@@ -1009,30 +969,6 @@ footer {
         transparent
       );
   }
-
-  .nav-links a:hover,
-  .nav-links a:focus-visible {
-    color: #fff;
-    padding-left: 12px;
-  }
-
-  .nav-links a:hover::after,
-  .nav-links a:focus-visible::after {
-    background:
-      linear-gradient(
-        90deg,
-        var(--accent),
-        rgba(255, 77, 106, .25) 58%,
-        transparent
-      );
-  }
-
-  .nav-links a:active {
-    transform: scale(.985);
-  }
-
-
-  /* NAVIGATION NUMBERS */
 
   .nav-links a:not(.nav-email-desktop)::before {
     width: 28px;
@@ -1064,9 +1000,6 @@ footer {
     content: "05";
   }
 
-
-  /* EMAIL LINK */
-
   .nav-email-desktop {
     display: flex;
   }
@@ -1078,16 +1011,6 @@ footer {
     color: #fff;
     font-size: clamp(19px, 5vw, 23px);
     font-weight: 650;
-  }
-
-  .nav-links .nav-email-desktop::after {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(255, 77, 106, .85),
-        rgba(255, 255, 255, .10) 42%,
-        transparent
-      );
   }
 
   .nav-menu-icon {
@@ -1110,9 +1033,6 @@ footer {
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-
-
-  /* STRONG SURMISE LOGO IN MENU */
 
   .nav-menu-brand {
     position: relative;
@@ -1141,7 +1061,6 @@ footer {
     font-weight: 950;
     letter-spacing: .095em;
     line-height: 1;
-    text-shadow: 0 0 28px rgba(255, 255, 255, .08);
   }
 
   .nav-menu-dot {
@@ -1151,9 +1070,6 @@ footer {
     flex: 0 0 9px;
     background: var(--accent);
     border-radius: 50%;
-    box-shadow:
-      0 0 0 5px rgba(255, 77, 106, .07),
-      0 0 24px rgba(255, 77, 106, .45);
   }
 
   .nav-menu-tagline {
@@ -1165,9 +1081,6 @@ footer {
     line-height: 1.55;
     text-transform: uppercase;
   }
-
-
-  /* MOBILE HEADER ICONS */
 
   .nav-email-mobile {
     display: flex;
@@ -1183,9 +1096,6 @@ footer {
     display: flex;
     z-index: 1002;
   }
-
-
-  /* STAGGERED OPEN ANIMATION */
 
   .nav-links.open > a {
     opacity: 0;
@@ -1387,9 +1297,6 @@ footer {
     height: 24px;
   }
 
-
-  /* Stronger bottom branding */
-
   .nav-menu-brand {
     padding: 32px 6px 5px;
   }
@@ -1418,7 +1325,7 @@ footer {
   }
 
 
-  /* Top mobile controls */
+  /* TOP MOBILE CONTROLS */
 
   .nav-email-mobile {
     width: 40px;
@@ -1441,11 +1348,6 @@ footer {
     background: rgba(255, 255, 255, .055);
     border: 1px solid rgba(255, 255, 255, .16);
     border-radius: 14px;
-    box-shadow:
-      0 12px 30px rgba(0, 0, 0, .18),
-      inset 0 1px 0 rgba(255, 255, 255, .07);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
   }
 
   .menu-toggle.active span {
@@ -1490,9 +1392,7 @@ footer {
     min-height: 660px;
 
     border-radius: 0;
-
     background-position: 61% center;
-
     overflow: visible;
   }
 
@@ -1535,14 +1435,11 @@ footer {
     right: 20px;
     bottom: -75px;
     width: auto;
-
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     gap: 10px;
     align-items: stretch;
     padding: 0;
-
     background: transparent;
     border: 0;
     border-radius: 0;
@@ -1556,9 +1453,7 @@ footer {
     border-radius: 18px;
     overflow: hidden;
     background: #fff;
-    box-shadow:
-      0 16px 34px
-      rgba(16, 24, 39, .18);
+    box-shadow: 0 16px 34px rgba(16, 24, 39, .18);
   }
 
   .profile-photo img {
@@ -1577,17 +1472,12 @@ footer {
     margin: 0;
     padding: 16px;
     border-radius: 18px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     background: var(--accent);
     overflow: hidden;
-
-    box-shadow:
-      0 16px 34px
-      rgba(16, 24, 39, .18);
+    box-shadow: 0 16px 34px rgba(16, 24, 39, .18);
   }
 
   .role-card small {
@@ -1622,6 +1512,134 @@ footer {
   }
 
 
-  /* CAPABILITIES */
+  /* =======================================================
+     MINDSET - MOBILE FULL BLEED + HORIZONTAL PRINCIPLES
+     ======================================================= */
 
-  .
+  .mindset {
+    width: 100vw;
+
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: 76px;
+
+    padding: 34px 20px 36px;
+
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    border-radius: 0;
+  }
+
+  .mindset-title {
+    padding-bottom: 8px;
+  }
+
+  .mindset-title h2 {
+    font-size: 34px;
+  }
+
+  .mindset-title p {
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+
+
+  /*
+     PRINCIPLES
+
+     Icon | heading
+          | description
+
+     The HTML does not need to change.
+  */
+
+  .principle {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 18px;
+    row-gap: 5px;
+
+    min-height: 0;
+
+    padding: 26px 0;
+
+    border-left: 0;
+    border-top: 1px solid #ffffff22;
+
+    align-items: start;
+  }
+
+  .principle-icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+
+    width: 58px;
+    height: 52px;
+
+    margin: 0;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    font-size: 39px;
+    line-height: 1;
+  }
+
+  .principle strong {
+    grid-column: 2;
+    grid-row: 1;
+
+    display: block;
+
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .principle p {
+    grid-column: 2;
+    grid-row: 2;
+
+    margin: 0;
+
+    color: #bdc8d4;
+
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .mountain-icon {
+    width: 55px;
+    height: 52px;
+  }
+
+
+  /* TIMELINE */
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* CONTACT */
+
+  .contact {
+    padding: 28px 22px;
+  }
+
+  .contact-actions {
+    flex-wrap: wrap;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
