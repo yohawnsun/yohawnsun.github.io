@@ -112,7 +112,7 @@ a {
 }
 
 
-/* Desktop navigation */
+/* DESKTOP NAVIGATION */
 
 .nav-links {
   display: flex;
@@ -319,7 +319,7 @@ h1 span {
 
 
 /* =========================================================
-   MOBILE SCROLL CUE
+   SCROLL CUE
    ========================================================= */
 
 .hero-scroll {
@@ -1271,9 +1271,7 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE FULLSCREEN MENU
-     ======================================================= */
+  /* MOBILE FULLSCREEN MENU */
 
   .nav-links {
     inset: 0;
@@ -1342,9 +1340,7 @@ footer {
   }
 
 
-  /* =======================================================
-     TOP MOBILE CONTROLS
-     ======================================================= */
+  /* TOP MOBILE CONTROLS */
 
   .nav-email-mobile {
     width: 40px;
@@ -1397,8 +1393,7 @@ footer {
 
 
   /* =======================================================
-     HERO - MOBILE
-     intentionally different from tablet/desktop
+     HERO - CLEAN MOBILE VERSION
      ======================================================= */
 
   .hero {
@@ -1409,6 +1404,7 @@ footer {
     margin-right: calc(50% - 50vw);
 
     min-height: calc(100svh - 68px);
+
     padding:
       clamp(38px, 8vh, 72px)
       24px
@@ -1424,9 +1420,6 @@ footer {
 
     box-shadow: none;
   }
-
-
-  /* Stronger mobile-specific readability gradient */
 
   .hero:after {
     content: "";
@@ -1445,9 +1438,6 @@ footer {
       );
   }
 
-
-  /* Hero text */
-
   .hero-content {
     position: relative;
     z-index: 2;
@@ -1458,7 +1448,7 @@ footer {
 
   .eyebrow {
     display: block;
-    max-width: 310px;
+    max-width: 330px;
 
     color: rgba(231, 237, 244, .82);
 
@@ -1467,13 +1457,6 @@ footer {
     line-height: 1.55;
     letter-spacing: .14em;
   }
-
-
-  /*
-     The desktop <br> remains in the HTML,
-     but the mobile typography gets more room
-     and becomes the visual focal point.
-  */
 
   h1 {
     max-width: 520px;
@@ -1495,7 +1478,7 @@ footer {
   }
 
 
-  /* Remove desktop detail density on mobile */
+  /* Remove desktop detail density */
 
   .chips {
     display: none;
@@ -1510,9 +1493,7 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE SCROLL ARROW
-     ======================================================= */
+  /* MOBILE SCROLL ARROW */
 
   .hero-scroll {
     position: absolute;
@@ -1643,10 +1624,7 @@ footer {
   }
 
 
-  /* =======================================================
-     PRINCIPLES
-     Icon | heading + copy
-     ======================================================= */
+  /* PRINCIPLES */
 
   .principle {
     display: grid;
@@ -1825,6 +1803,7 @@ footer {
   footer {
     flex-direction: column;
     gap: 4px;
+
     padding-bottom:
       max(28px, env(safe-area-inset-bottom));
   }
