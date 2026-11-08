@@ -844,6 +844,7 @@ footer {
     transform: scale(1.012);
     filter: brightness(.78);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -856,6 +857,7 @@ footer {
     opacity: 0;
     transform: translateY(13px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -867,6 +869,7 @@ footer {
     opacity: 0;
     transform: translateY(14px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -878,6 +881,7 @@ footer {
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(4px);
   }
@@ -910,23 +914,41 @@ footer {
     inset: 0;
     width: 100vw;
     height: 100dvh;
+
     padding:
       max(112px, calc(env(safe-area-inset-top) + 94px))
       clamp(26px, 7vw, 54px)
       max(28px, env(safe-area-inset-bottom));
+
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
+
     overflow: hidden auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+
     border: 0;
     border-radius: 0;
     box-shadow: none;
+
     background:
-      radial-gradient(circle at 82% 18%, rgba(255, 77, 106, .18), transparent 34%),
-      radial-gradient(circle at 10% 88%, rgba(67, 105, 255, .11), transparent 38%),
-      linear-gradient(145deg, #050a13 0%, #091426 52%, #07101f 100%);
+      radial-gradient(
+        circle at 82% 18%,
+        rgba(255, 77, 106, .18),
+        transparent 34%
+      ),
+      radial-gradient(
+        circle at 10% 88%,
+        rgba(67, 105, 255, .11),
+        transparent 38%
+      ),
+      linear-gradient(
+        145deg,
+        #050a13 0%,
+        #091426 52%,
+        #07101f 100%
+      );
   }
 
   .nav-links::before {
@@ -935,9 +957,18 @@ footer {
     z-index: -1;
     inset: 0;
     pointer-events: none;
+
     background-image:
-      linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+      linear-gradient(
+        rgba(255, 255, 255, .025) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, .025) 1px,
+        transparent 1px
+      );
+
     background-size: 42px 42px;
     opacity: .75;
   }
@@ -982,12 +1013,14 @@ footer {
     right: 0;
     bottom: 0;
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, .20),
-      rgba(255, 255, 255, .07) 72%,
-      transparent
-    );
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, .20),
+        rgba(255, 255, 255, .07) 72%,
+        transparent
+      );
   }
 
   .nav-links a:not(.nav-email-desktop)::before {
@@ -1000,11 +1033,25 @@ footer {
     letter-spacing: .12em;
   }
 
-  .nav-links a[href="#about"]::before { content: "01"; }
-  .nav-links a[href="#capabilities"]::before { content: "02"; }
-  .nav-links a[href="#experience"]::before { content: "03"; }
-  .nav-links a[href="#thinking"]::before { content: "04"; }
-  .nav-links a[href="#contact"]::before { content: "05"; }
+  .nav-links a[href="#about"]::before {
+    content: "01";
+  }
+
+  .nav-links a[href="#capabilities"]::before {
+    content: "02";
+  }
+
+  .nav-links a[href="#experience"]::before {
+    content: "03";
+  }
+
+  .nav-links a[href="#thinking"]::before {
+    content: "04";
+  }
+
+  .nav-links a[href="#contact"]::before {
+    content: "05";
+  }
 
   .nav-links .nav-email-desktop {
     display: flex;
@@ -1020,10 +1067,12 @@ footer {
     width: 27px;
     height: 27px;
     margin-right: 18px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex: 0 0 27px;
+
     color: var(--accent);
   }
 
@@ -1102,36 +1151,67 @@ footer {
 
   .nav-links.open > a {
     opacity: 0;
-    animation: surmiseLinkIn .46s cubic-bezier(.2, .8, .2, 1) forwards;
+    animation:
+      surmiseLinkIn .46s
+      cubic-bezier(.2, .8, .2, 1)
+      forwards;
   }
 
-  .nav-links.open > a:nth-of-type(1) { animation-delay: .06s; }
-  .nav-links.open > a:nth-of-type(2) { animation-delay: .10s; }
-  .nav-links.open > a:nth-of-type(3) { animation-delay: .14s; }
-  .nav-links.open > a:nth-of-type(4) { animation-delay: .18s; }
-  .nav-links.open > a:nth-of-type(5) { animation-delay: .22s; }
-  .nav-links.open > a:nth-of-type(6) { animation-delay: .26s; }
+  .nav-links.open > a:nth-of-type(1) {
+    animation-delay: .06s;
+  }
+
+  .nav-links.open > a:nth-of-type(2) {
+    animation-delay: .10s;
+  }
+
+  .nav-links.open > a:nth-of-type(3) {
+    animation-delay: .14s;
+  }
+
+  .nav-links.open > a:nth-of-type(4) {
+    animation-delay: .18s;
+  }
+
+  .nav-links.open > a:nth-of-type(5) {
+    animation-delay: .22s;
+  }
+
+  .nav-links.open > a:nth-of-type(6) {
+    animation-delay: .26s;
+  }
 
   .nav-links.open .nav-menu-brand {
     opacity: 0;
-    animation: surmiseBrandIn .55s .30s cubic-bezier(.2, .8, .2, 1) forwards;
+    animation:
+      surmiseBrandIn .55s .30s
+      cubic-bezier(.2, .8, .2, 1)
+      forwards;
   }
 
 
-  /* IPAD HERO */
+  /* =======================================================
+     IPAD HERO
+     ======================================================= */
 
   .hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(230px, .72fr);
+    grid-template-columns:
+      minmax(0, 1.05fr)
+      minmax(230px, .72fr);
+
     column-gap: 38px;
     row-gap: 20px;
     align-items: center;
+
     min-height: 520px;
     margin-top: 18px;
     padding: 44px 40px;
+
     color: #fff;
     border-radius: 24px;
     overflow: hidden;
+
     background-image:
       linear-gradient(
         90deg,
@@ -1140,6 +1220,7 @@ footer {
         rgba(7, 16, 29, .16) 100%
       ),
       url('/hero-mountains.png');
+
     background-size: cover;
     background-position: center;
     box-shadow: var(--shadow);
@@ -1157,6 +1238,7 @@ footer {
   h1 {
     max-width: 490px;
     margin: 0;
+
     color: #fff;
     font-size: clamp(43px, 6.6vw, 59px);
     line-height: .93;
@@ -1173,8 +1255,10 @@ footer {
 
   .hero-mobile-focus {
     display: block;
+
     max-width: 450px;
     margin: 22px 0 0;
+
     color: rgba(255, 255, 255, .90);
     font-size: 17px;
     line-height: 1.43;
@@ -1198,8 +1282,10 @@ footer {
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 5;
+
     border: 1px solid rgba(255, 255, 255, .42);
     border-radius: 22px;
+
     box-shadow: 0 18px 45px rgba(0, 0, 0, .22);
   }
 
@@ -1212,10 +1298,13 @@ footer {
 
   .role-card {
     display: block;
+
     height: auto;
     min-height: 0;
+
     margin: 14px 0 0;
     padding: 0;
+
     color: #fff;
     background: transparent;
     border-radius: 0;
@@ -1229,6 +1318,7 @@ footer {
   .role-card strong {
     display: block;
     margin: 0;
+
     color: #fff;
     font-size: 21px;
     line-height: 1.08;
@@ -1238,6 +1328,7 @@ footer {
   .role-card span {
     display: block;
     margin-top: 4px;
+
     color: rgba(255, 255, 255, .80);
     font-size: 13px;
   }
@@ -1250,9 +1341,11 @@ footer {
     position: absolute;
     left: 40px;
     bottom: 22px;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     color: #fff;
   }
 
@@ -1267,6 +1360,7 @@ footer {
   .hero-scroll-label {
     display: block;
     margin-top: 5px;
+
     color: rgba(255, 255, 255, .80);
     font-size: 8px;
     font-weight: 800;
@@ -1275,7 +1369,9 @@ footer {
   }
 
 
-  /* IPAD SECTIONS */
+  /* =======================================================
+     IPAD SECTIONS
+     ======================================================= */
 
   section {
     padding-top: 76px;
@@ -1481,10 +1577,13 @@ footer {
 
   .hero {
     display: block;
+
     min-height: auto;
     margin-top: 0;
     padding: 30px 0 24px;
+
     color: var(--ink);
+
     background: #fff;
     border-radius: 0;
     box-shadow: none;
@@ -1503,6 +1602,7 @@ footer {
   h1 {
     max-width: 100%;
     margin: 0;
+
     color: var(--ink);
     font-size: clamp(40px, 11.6vw, 49px);
     line-height: .91;
@@ -1519,8 +1619,10 @@ footer {
 
   .hero-mobile-focus {
     display: block;
+
     max-width: 330px;
     margin: 15px 0 0;
+
     color: var(--text);
     font-size: 15px;
     line-height: 1.4;
@@ -1535,22 +1637,30 @@ footer {
 
 
   /* =======================================================
-     PROFILE - SHORTER LIKE MOCKUP
+     MOBILE PROFILE
      ======================================================= */
 
   .hero-profile {
     position: static;
     display: block;
+
     width: 100%;
     margin-top: 21px;
   }
 
   .profile-photo {
     width: 100%;
+
+    /*
+      LOWER / MORE COMPACT PROFILE IMAGE
+      closer to the original mockup.
+    */
     height: clamp(225px, 61vw, 270px);
     aspect-ratio: auto;
+
     border: 0;
     border-radius: 18px;
+
     box-shadow: none;
     overflow: hidden;
   }
@@ -1559,22 +1669,20 @@ footer {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
 
-    /*
-      Raise/lower this percentage slightly if needed.
-      Smaller number = image moves visually downward.
-      Larger number = image moves visually upward.
-    */
+    object-fit: cover;
     object-position: center 33%;
   }
 
   .role-card {
     display: block;
+
     height: auto;
     min-height: 0;
+
     margin: 12px 0 0;
     padding: 0;
+
     color: var(--ink);
     background: transparent;
     border-radius: 0;
@@ -1588,6 +1696,7 @@ footer {
   .role-card strong {
     display: block;
     margin: 0;
+
     color: var(--ink);
     font-size: 18px;
     line-height: 1.1;
@@ -1596,7 +1705,9 @@ footer {
 
   .role-card span {
     display: block;
+
     margin-top: 3px;
+
     color: var(--text);
     font-size: 13px;
   }
@@ -1607,8 +1718,8 @@ footer {
 
 
   /* =======================================================
-     MOBILE SCROLL CUE
-     CIRCLE + CHEVRON + HANDWRITTEN EXPLORE MORE
+     SCROLL DOWN
+     CIRCLE + CHEVRON + EXPLORE MORE
      ======================================================= */
 
   .hero-scroll {
@@ -1647,10 +1758,8 @@ footer {
     animation: none;
   }
 
-  /*
-     Draw the down chevron ourselves instead of relying
-     on the character contained in the HTML.
-  */
+  /* PURE CSS DOWN CHEVRON */
+
   .hero-scroll-arrow::after {
     content: "";
 
@@ -1671,6 +1780,9 @@ footer {
     animation: scrollCue 1.9s ease-in-out infinite;
   }
 
+
+  /* HANDWRITTEN "EXPLORE MORE" */
+
   .hero-scroll-label {
     position: absolute;
 
@@ -1678,7 +1790,6 @@ footer {
     top: 16px;
 
     display: block;
-
     width: 82px;
     margin: 0;
 
@@ -1694,15 +1805,15 @@ footer {
     font-weight: 400;
     line-height: 1.05;
     letter-spacing: -.035em;
+
     text-transform: none;
 
     transform: rotate(-7deg);
   }
 
-  /*
-     Little handwritten arrow from "Explore more"
-     back toward the circular scroll control.
-  */
+
+  /* HANDDRAWN STYLE POINTER */
+
   .hero-scroll-label::after {
     content: "↙";
 
@@ -1737,10 +1848,6 @@ footer {
     grid-template-columns: 1fr;
     gap: 18px;
 
-    /*
-      hero-scroll now provides the visual transition,
-      therefore About does not need the massive old gap.
-    */
     padding-top: 40px;
     padding-bottom: 0;
 
@@ -1761,7 +1868,9 @@ footer {
   }
 
 
-  /* MOBILE CAPABILITIES */
+  /* =======================================================
+     MOBILE CAPABILITIES
+     ======================================================= */
 
   .capabilities-row {
     display: block;
@@ -1774,6 +1883,7 @@ footer {
 
   .capabilities-title {
     margin-top: 7px;
+
     font-size: 37px;
     line-height: .98;
   }
@@ -1782,6 +1892,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
+
     margin-top: 24px;
   }
 
@@ -1789,8 +1900,10 @@ footer {
     display: grid;
     grid-template-columns: 58px minmax(0, 1fr);
     gap: 15px;
+
     min-height: 78px;
     padding: 8px 0;
+
     align-items: center;
   }
 
@@ -1816,14 +1929,19 @@ footer {
   }
 
 
-  /* MOBILE MINDSET */
+  /* =======================================================
+     MOBILE MINDSET
+     ======================================================= */
 
   .mindset {
     width: 100vw;
+
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     margin-top: 58px;
+
     padding: 38px 24px 34px;
+
     gap: 0;
     border-radius: 0;
   }
@@ -1839,6 +1957,7 @@ footer {
   .mindset-title p {
     max-width: 330px;
     margin-bottom: 0;
+
     font-size: 12px;
     line-height: 1.6;
   }
@@ -1847,24 +1966,31 @@ footer {
     display: grid;
     grid-template-columns: 56px minmax(0, 1fr);
     grid-template-rows: auto auto;
+
     column-gap: 16px;
     row-gap: 5px;
+
     min-height: 0;
     padding: 23px 0;
+
     border-left: 0;
     border-top: 1px solid #ffffff22;
+
     align-items: start;
   }
 
   .principle-icon {
     grid-column: 1;
     grid-row: 1 / span 2;
+
     width: 56px;
     height: 50px;
     margin: 0;
+
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+
     font-size: 38px;
     line-height: 1;
   }
@@ -1872,7 +1998,9 @@ footer {
   .principle strong {
     grid-column: 2;
     grid-row: 1;
+
     margin: 0;
+
     font-size: 16px;
     line-height: 1.25;
   }
@@ -1880,8 +2008,11 @@ footer {
   .principle p {
     grid-column: 2;
     grid-row: 2;
+
     margin: 0;
+
     color: #bdc8d4;
+
     font-size: 12px;
     line-height: 1.5;
   }
@@ -1892,7 +2023,9 @@ footer {
   }
 
 
-  /* MOBILE EXPERIENCE */
+  /* =======================================================
+     MOBILE EXPERIENCE
+     ======================================================= */
 
   .experience-compact {
     grid-template-columns: 1fr;
@@ -1929,7 +2062,9 @@ footer {
   }
 
 
-  /* MOBILE THINKING */
+  /* =======================================================
+     MOBILE THINKING
+     ======================================================= */
 
   .section-head {
     grid-template-columns: 1fr;
@@ -1957,15 +2092,20 @@ footer {
   }
 
 
-  /* MOBILE CONTACT */
+  /* =======================================================
+     MOBILE CONTACT
+     ======================================================= */
 
   .contact {
     width: 100vw;
+
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     margin-top: 58px;
     margin-bottom: 28px;
+
     padding: 36px 24px;
+
     border-radius: 0;
   }
 
@@ -1987,12 +2127,16 @@ footer {
   }
 
 
-  /* MOBILE FOOTER */
+  /* =======================================================
+     MOBILE FOOTER
+     ======================================================= */
 
   footer {
     flex-direction: column;
     gap: 4px;
-    padding-bottom: max(28px, env(safe-area-inset-bottom));
+
+    padding-bottom:
+      max(28px, env(safe-area-inset-bottom));
   }
 }
 
