@@ -401,7 +401,12 @@ h1 span {
   width: 225px;
 }
 
+
+/* Profile image container */
+
 .profile-photo {
+  position: relative;
+
   height: 190px;
 
   border: 1px solid #ffffff99;
@@ -410,7 +415,12 @@ h1 span {
   overflow: hidden;
 
   box-shadow: 0 15px 35px #0005;
+
+  isolation: isolate;
 }
+
+
+/* Natural cool-toned portrait */
 
 .profile-photo img {
   display: block;
@@ -419,7 +429,37 @@ h1 span {
   height: 100%;
 
   object-fit: cover;
+
+  filter:
+    saturate(.88)
+    contrast(1.03)
+    brightness(.96);
 }
+
+
+/* Subtle blue-grey overlay */
+
+.profile-photo::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 36, 58, .10) 0%,
+      rgba(16, 36, 58, .16) 55%,
+      rgba(7, 19, 35, .25) 100%
+    );
+
+  mix-blend-mode: multiply;
+}
+
 
 .role-card {
   display: flex;
