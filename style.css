@@ -265,7 +265,6 @@ a {
   border-radius: 28px;
   overflow: hidden;
   color: #fff;
-
   background-image:
     linear-gradient(
       90deg,
@@ -274,7 +273,6 @@ a {
       rgba(7, 16, 29, .18) 100%
     ),
     url('/hero-mountains.png');
-
   background-size: cover;
   background-position: center;
   box-shadow: var(--shadow);
@@ -472,7 +470,6 @@ h2 {
 
 /* =========================================================
    CAPABILITIES
-   SIX ON EVERY DEVICE
    ========================================================= */
 
 .capabilities-row {
@@ -847,7 +844,6 @@ footer {
     transform: scale(1.012);
     filter: brightness(.78);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
@@ -860,7 +856,6 @@ footer {
     opacity: 0;
     transform: translateY(13px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -872,7 +867,6 @@ footer {
     opacity: 0;
     transform: translateY(14px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -884,9 +878,8 @@ footer {
   100% {
     transform: translateY(0);
   }
-
   50% {
-    transform: translateY(5px);
+    transform: translateY(4px);
   }
 }
 
@@ -909,55 +902,31 @@ footer {
     position: relative;
   }
 
-
-  /* =======================================================
-     FULLSCREEN NAV
-     ======================================================= */
-
   .nav-links {
     display: none;
     position: fixed;
     isolation: isolate;
     z-index: 1000;
     inset: 0;
-
     width: 100vw;
     height: 100dvh;
-
     padding:
       max(112px, calc(env(safe-area-inset-top) + 94px))
       clamp(26px, 7vw, 54px)
       max(28px, env(safe-area-inset-bottom));
-
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-
     overflow: hidden auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
-
     border: 0;
     border-radius: 0;
     box-shadow: none;
-
     background:
-      radial-gradient(
-        circle at 82% 18%,
-        rgba(255, 77, 106, .18),
-        transparent 34%
-      ),
-      radial-gradient(
-        circle at 10% 88%,
-        rgba(67, 105, 255, .11),
-        transparent 38%
-      ),
-      linear-gradient(
-        145deg,
-        #050a13 0%,
-        #091426 52%,
-        #07101f 100%
-      );
+      radial-gradient(circle at 82% 18%, rgba(255, 77, 106, .18), transparent 34%),
+      radial-gradient(circle at 10% 88%, rgba(67, 105, 255, .11), transparent 38%),
+      linear-gradient(145deg, #050a13 0%, #091426 52%, #07101f 100%);
   }
 
   .nav-links::before {
@@ -966,18 +935,9 @@ footer {
     z-index: -1;
     inset: 0;
     pointer-events: none;
-
     background-image:
-      linear-gradient(
-        rgba(255, 255, 255, .025) 1px,
-        transparent 1px
-      ),
-      linear-gradient(
-        90deg,
-        rgba(255, 255, 255, .025) 1px,
-        transparent 1px
-      );
-
+      linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
     background-size: 42px 42px;
     opacity: .75;
   }
@@ -1006,15 +966,12 @@ footer {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-
     min-height: 64px;
     padding: 0 6px;
-
     color: rgba(239, 244, 250, .90);
     font-size: clamp(18px, 4.8vw, 22px);
     font-weight: 580;
     letter-spacing: -.025em;
-
     border-bottom: 0;
   }
 
@@ -1025,53 +982,35 @@ footer {
     right: 0;
     bottom: 0;
     height: 1px;
-
-    background:
-      linear-gradient(
-        90deg,
-        rgba(255, 255, 255, .20),
-        rgba(255, 255, 255, .07) 72%,
-        transparent
-      );
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, .20),
+      rgba(255, 255, 255, .07) 72%,
+      transparent
+    );
   }
 
   .nav-links a:not(.nav-email-desktop)::before {
     width: 28px;
     flex: 0 0 28px;
     margin-right: 4px;
-
     color: var(--accent);
     font-size: 9px;
     font-weight: 850;
     letter-spacing: .12em;
   }
 
-  .nav-links a[href="#about"]::before {
-    content: "01";
-  }
-
-  .nav-links a[href="#capabilities"]::before {
-    content: "02";
-  }
-
-  .nav-links a[href="#experience"]::before {
-    content: "03";
-  }
-
-  .nav-links a[href="#thinking"]::before {
-    content: "04";
-  }
-
-  .nav-links a[href="#contact"]::before {
-    content: "05";
-  }
+  .nav-links a[href="#about"]::before { content: "01"; }
+  .nav-links a[href="#capabilities"]::before { content: "02"; }
+  .nav-links a[href="#experience"]::before { content: "03"; }
+  .nav-links a[href="#thinking"]::before { content: "04"; }
+  .nav-links a[href="#contact"]::before { content: "05"; }
 
   .nav-links .nav-email-desktop {
     display: flex;
     min-height: 72px;
     margin-bottom: 14px;
     padding: 0 6px;
-
     color: #fff;
     font-size: clamp(19px, 5vw, 23px);
     font-weight: 650;
@@ -1081,12 +1020,10 @@ footer {
     width: 27px;
     height: 27px;
     margin-right: 18px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex: 0 0 27px;
-
     color: var(--accent);
   }
 
@@ -1122,7 +1059,6 @@ footer {
     display: flex;
     align-items: center;
     gap: 5px;
-
     color: #fff;
     font-size: clamp(23px, 6vw, 31px);
     font-weight: 950;
@@ -1141,7 +1077,6 @@ footer {
 
   .nav-menu-tagline {
     margin-top: 12px;
-
     color: rgba(203, 214, 228, .74);
     font-size: clamp(8px, 2.3vw, 10px);
     font-weight: 750;
@@ -1155,10 +1090,8 @@ footer {
     width: 42px;
     height: 42px;
     margin-left: auto;
-
     align-items: center;
     justify-content: center;
-
     color: var(--ink);
   }
 
@@ -1169,68 +1102,36 @@ footer {
 
   .nav-links.open > a {
     opacity: 0;
-    animation:
-      surmiseLinkIn .46s
-      cubic-bezier(.2, .8, .2, 1)
-      forwards;
+    animation: surmiseLinkIn .46s cubic-bezier(.2, .8, .2, 1) forwards;
   }
 
-  .nav-links.open > a:nth-of-type(1) {
-    animation-delay: .06s;
-  }
-
-  .nav-links.open > a:nth-of-type(2) {
-    animation-delay: .10s;
-  }
-
-  .nav-links.open > a:nth-of-type(3) {
-    animation-delay: .14s;
-  }
-
-  .nav-links.open > a:nth-of-type(4) {
-    animation-delay: .18s;
-  }
-
-  .nav-links.open > a:nth-of-type(5) {
-    animation-delay: .22s;
-  }
-
-  .nav-links.open > a:nth-of-type(6) {
-    animation-delay: .26s;
-  }
+  .nav-links.open > a:nth-of-type(1) { animation-delay: .06s; }
+  .nav-links.open > a:nth-of-type(2) { animation-delay: .10s; }
+  .nav-links.open > a:nth-of-type(3) { animation-delay: .14s; }
+  .nav-links.open > a:nth-of-type(4) { animation-delay: .18s; }
+  .nav-links.open > a:nth-of-type(5) { animation-delay: .22s; }
+  .nav-links.open > a:nth-of-type(6) { animation-delay: .26s; }
 
   .nav-links.open .nav-menu-brand {
     opacity: 0;
-    animation:
-      surmiseBrandIn .55s .30s
-      cubic-bezier(.2, .8, .2, 1)
-      forwards;
+    animation: surmiseBrandIn .55s .30s cubic-bezier(.2, .8, .2, 1) forwards;
   }
 
 
-  /* =======================================================
-     IPAD HERO
-     KEEP MOUNTAINS
-     ======================================================= */
+  /* IPAD HERO */
 
   .hero {
     display: grid;
-    grid-template-columns:
-      minmax(0, 1.05fr)
-      minmax(230px, .72fr);
-
+    grid-template-columns: minmax(0, 1.05fr) minmax(230px, .72fr);
     column-gap: 38px;
     row-gap: 20px;
     align-items: center;
-
     min-height: 520px;
     margin-top: 18px;
     padding: 44px 40px;
-
     color: #fff;
     border-radius: 24px;
     overflow: hidden;
-
     background-image:
       linear-gradient(
         90deg,
@@ -1239,7 +1140,6 @@ footer {
         rgba(7, 16, 29, .16) 100%
       ),
       url('/hero-mountains.png');
-
     background-size: cover;
     background-position: center;
     box-shadow: var(--shadow);
@@ -1257,7 +1157,6 @@ footer {
   h1 {
     max-width: 490px;
     margin: 0;
-
     color: #fff;
     font-size: clamp(43px, 6.6vw, 59px);
     line-height: .93;
@@ -1274,10 +1173,8 @@ footer {
 
   .hero-mobile-focus {
     display: block;
-
     max-width: 450px;
     margin: 22px 0 0;
-
     color: rgba(255, 255, 255, .90);
     font-size: 17px;
     line-height: 1.43;
@@ -1301,10 +1198,8 @@ footer {
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 5;
-
     border: 1px solid rgba(255, 255, 255, .42);
     border-radius: 22px;
-
     box-shadow: 0 18px 45px rgba(0, 0, 0, .22);
   }
 
@@ -1317,13 +1212,10 @@ footer {
 
   .role-card {
     display: block;
-
     height: auto;
     min-height: 0;
-
     margin: 14px 0 0;
     padding: 0;
-
     color: #fff;
     background: transparent;
     border-radius: 0;
@@ -1337,7 +1229,6 @@ footer {
   .role-card strong {
     display: block;
     margin: 0;
-
     color: #fff;
     font-size: 21px;
     line-height: 1.08;
@@ -1347,7 +1238,6 @@ footer {
   .role-card span {
     display: block;
     margin-top: 4px;
-
     color: rgba(255, 255, 255, .80);
     font-size: 13px;
   }
@@ -1360,11 +1250,9 @@ footer {
     position: absolute;
     left: 40px;
     bottom: 22px;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
     color: #fff;
   }
 
@@ -1379,7 +1267,6 @@ footer {
   .hero-scroll-label {
     display: block;
     margin-top: 5px;
-
     color: rgba(255, 255, 255, .80);
     font-size: 8px;
     font-weight: 800;
@@ -1388,9 +1275,7 @@ footer {
   }
 
 
-  /* =======================================================
-     IPAD ABOUT
-     ======================================================= */
+  /* IPAD SECTIONS */
 
   section {
     padding-top: 76px;
@@ -1407,11 +1292,6 @@ footer {
     font-size: 15px;
     line-height: 1.62;
   }
-
-
-  /* =======================================================
-     IPAD CAPABILITIES
-     ======================================================= */
 
   .capabilities-row {
     display: block;
@@ -1457,11 +1337,6 @@ footer {
     font-size: 12px;
   }
 
-
-  /* =======================================================
-     IPAD MINDSET
-     ======================================================= */
-
   .mindset {
     grid-template-columns: 1fr;
     padding: 42px 36px;
@@ -1473,11 +1348,6 @@ footer {
     border-left: 0;
     border-top: 1px solid #ffffff22;
   }
-
-
-  /* =======================================================
-     IPAD REST
-     ======================================================= */
 
   .experience-compact,
   .section-head {
@@ -1544,9 +1414,7 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE FULLSCREEN MENU
-     ======================================================= */
+  /* MOBILE MENU */
 
   .nav-links {
     padding:
@@ -1608,19 +1476,15 @@ footer {
 
 
   /* =======================================================
-     COMPACT MOBILE HERO
-     WHITE, CLEAN, NO MOUNTAIN
+     MOBILE HERO
      ======================================================= */
 
   .hero {
     display: block;
-
     min-height: auto;
     margin-top: 0;
-    padding: 30px 0 28px;
-
+    padding: 30px 0 24px;
     color: var(--ink);
-
     background: #fff;
     border-radius: 0;
     box-shadow: none;
@@ -1639,7 +1503,6 @@ footer {
   h1 {
     max-width: 100%;
     margin: 0;
-
     color: var(--ink);
     font-size: clamp(40px, 11.6vw, 49px);
     line-height: .91;
@@ -1656,10 +1519,8 @@ footer {
 
   .hero-mobile-focus {
     display: block;
-
     max-width: 330px;
     margin: 15px 0 0;
-
     color: var(--text);
     font-size: 15px;
     line-height: 1.4;
@@ -1672,23 +1533,24 @@ footer {
     display: none;
   }
 
+
+  /* =======================================================
+     PROFILE - SHORTER LIKE MOCKUP
+     ======================================================= */
+
   .hero-profile {
     position: static;
     display: block;
-
     width: 100%;
     margin-top: 21px;
   }
 
   .profile-photo {
     width: 100%;
-    height: auto;
-
-    aspect-ratio: 1.55 / 1;
-
+    height: clamp(225px, 61vw, 270px);
+    aspect-ratio: auto;
     border: 0;
     border-radius: 18px;
-
     box-shadow: none;
     overflow: hidden;
   }
@@ -1697,20 +1559,22 @@ footer {
     display: block;
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-    object-position: center 29%;
+
+    /*
+      Raise/lower this percentage slightly if needed.
+      Smaller number = image moves visually downward.
+      Larger number = image moves visually upward.
+    */
+    object-position: center 33%;
   }
 
   .role-card {
     display: block;
-
     height: auto;
     min-height: 0;
-
-    margin: 11px 0 0;
+    margin: 12px 0 0;
     padding: 0;
-
     color: var(--ink);
     background: transparent;
     border-radius: 0;
@@ -1724,7 +1588,6 @@ footer {
   .role-card strong {
     display: block;
     margin: 0;
-
     color: var(--ink);
     font-size: 18px;
     line-height: 1.1;
@@ -1733,9 +1596,7 @@ footer {
 
   .role-card span {
     display: block;
-
     margin-top: 3px;
-
     color: var(--text);
     font-size: 13px;
   }
@@ -1744,8 +1605,122 @@ footer {
     content: " · Borås";
   }
 
+
+  /* =======================================================
+     MOBILE SCROLL CUE
+     CIRCLE + CHEVRON + HANDWRITTEN EXPLORE MORE
+     ======================================================= */
+
   .hero-scroll {
-    display: none;
+    position: relative;
+    left: auto;
+    bottom: auto;
+
+    display: block;
+
+    width: min(270px, 82%);
+    height: 90px;
+
+    margin: 24px auto 0;
+
+    color: var(--ink);
+  }
+
+  .hero-scroll-arrow {
+    position: absolute;
+    left: 50%;
+    top: 0;
+
+    display: block;
+
+    width: 60px;
+    height: 60px;
+
+    margin-left: -30px;
+
+    color: transparent;
+    font-size: 0;
+
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+
+    animation: none;
+  }
+
+  /*
+     Draw the down chevron ourselves instead of relying
+     on the character contained in the HTML.
+  */
+  .hero-scroll-arrow::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 46%;
+
+    width: 17px;
+    height: 17px;
+
+    border-right: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+
+    transform:
+      translate(-50%, -60%)
+      rotate(45deg);
+
+    animation: scrollCue 1.9s ease-in-out infinite;
+  }
+
+  .hero-scroll-label {
+    position: absolute;
+
+    left: calc(50% + 48px);
+    top: 16px;
+
+    display: block;
+
+    width: 82px;
+    margin: 0;
+
+    color: var(--text);
+
+    font-family:
+      "Segoe Print",
+      "Bradley Hand",
+      "Comic Sans MS",
+      cursive;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -.035em;
+    text-transform: none;
+
+    transform: rotate(-7deg);
+  }
+
+  /*
+     Little handwritten arrow from "Explore more"
+     back toward the circular scroll control.
+  */
+  .hero-scroll-label::after {
+    content: "↙";
+
+    position: absolute;
+    left: -21px;
+    top: 27px;
+
+    color: var(--text);
+
+    font-family:
+      "Segoe Print",
+      "Bradley Hand",
+      cursive;
+
+    font-size: 27px;
+    font-weight: 400;
+
+    transform: rotate(4deg);
   }
 
 
@@ -1762,7 +1737,11 @@ footer {
     grid-template-columns: 1fr;
     gap: 18px;
 
-    padding-top: 48px;
+    /*
+      hero-scroll now provides the visual transition,
+      therefore About does not need the massive old gap.
+    */
+    padding-top: 40px;
     padding-bottom: 0;
 
     border-top: 1px solid var(--line);
@@ -1782,10 +1761,7 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE CAPABILITIES
-     SIX, COMPACT
-     ======================================================= */
+  /* MOBILE CAPABILITIES */
 
   .capabilities-row {
     display: block;
@@ -1798,7 +1774,6 @@ footer {
 
   .capabilities-title {
     margin-top: 7px;
-
     font-size: 37px;
     line-height: .98;
   }
@@ -1807,7 +1782,6 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0;
-
     margin-top: 24px;
   }
 
@@ -1815,10 +1789,8 @@ footer {
     display: grid;
     grid-template-columns: 58px minmax(0, 1fr);
     gap: 15px;
-
     min-height: 78px;
     padding: 8px 0;
-
     align-items: center;
   }
 
@@ -1844,19 +1816,14 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE MINDSET
-     ======================================================= */
+  /* MOBILE MINDSET */
 
   .mindset {
     width: 100vw;
-
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     margin-top: 58px;
-
     padding: 38px 24px 34px;
-
     gap: 0;
     border-radius: 0;
   }
@@ -1872,7 +1839,6 @@ footer {
   .mindset-title p {
     max-width: 330px;
     margin-bottom: 0;
-
     font-size: 12px;
     line-height: 1.6;
   }
@@ -1881,31 +1847,24 @@ footer {
     display: grid;
     grid-template-columns: 56px minmax(0, 1fr);
     grid-template-rows: auto auto;
-
     column-gap: 16px;
     row-gap: 5px;
-
     min-height: 0;
     padding: 23px 0;
-
     border-left: 0;
     border-top: 1px solid #ffffff22;
-
     align-items: start;
   }
 
   .principle-icon {
     grid-column: 1;
     grid-row: 1 / span 2;
-
     width: 56px;
     height: 50px;
     margin: 0;
-
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-
     font-size: 38px;
     line-height: 1;
   }
@@ -1913,9 +1872,7 @@ footer {
   .principle strong {
     grid-column: 2;
     grid-row: 1;
-
     margin: 0;
-
     font-size: 16px;
     line-height: 1.25;
   }
@@ -1923,11 +1880,8 @@ footer {
   .principle p {
     grid-column: 2;
     grid-row: 2;
-
     margin: 0;
-
     color: #bdc8d4;
-
     font-size: 12px;
     line-height: 1.5;
   }
@@ -1938,9 +1892,7 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE EXPERIENCE
-     ======================================================= */
+  /* MOBILE EXPERIENCE */
 
   .experience-compact {
     grid-template-columns: 1fr;
@@ -1977,9 +1929,7 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE THINKING
-     ======================================================= */
+  /* MOBILE THINKING */
 
   .section-head {
     grid-template-columns: 1fr;
@@ -2007,20 +1957,15 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE CONTACT
-     ======================================================= */
+  /* MOBILE CONTACT */
 
   .contact {
     width: 100vw;
-
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     margin-top: 58px;
     margin-bottom: 28px;
-
     padding: 36px 24px;
-
     border-radius: 0;
   }
 
@@ -2042,16 +1987,12 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE FOOTER
-     ======================================================= */
+  /* MOBILE FOOTER */
 
   footer {
     flex-direction: column;
     gap: 4px;
-
-    padding-bottom:
-      max(28px, env(safe-area-inset-bottom));
+    padding-bottom: max(28px, env(safe-area-inset-bottom));
   }
 }
 
@@ -2084,7 +2025,23 @@ footer {
   }
 
   .profile-photo {
-    aspect-ratio: 1.45 / 1;
+    height: 215px;
+    aspect-ratio: auto;
+  }
+
+  .hero-scroll {
+    margin-top: 21px;
+  }
+
+  .hero-scroll-arrow {
+    width: 56px;
+    height: 56px;
+    margin-left: -28px;
+  }
+
+  .hero-scroll-label {
+    left: calc(50% + 43px);
+    font-size: 14px;
   }
 
   .capability-item {
@@ -2122,7 +2079,7 @@ footer {
     scroll-behavior: auto;
   }
 
-  .hero-scroll-arrow,
+  .hero-scroll-arrow::after,
   .nav-links.open,
   .nav-links.open > a,
   .nav-links.open .nav-menu-brand {
