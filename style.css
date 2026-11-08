@@ -139,6 +139,14 @@ a {
 }
 
 
+/* Hidden mobile menu elements on desktop */
+
+.nav-menu-icon,
+.nav-menu-brand {
+  display: none;
+}
+
+
 /* Mobile e-mail icon */
 
 .nav-email-mobile,
@@ -980,7 +988,6 @@ footer {
    ========================================================= */
 
 @keyframes menuIn {
-
   from {
     opacity: 0;
     transform: translateY(-10px);
@@ -1011,7 +1018,6 @@ footer {
   .nav-inner {
     position: relative;
   }
-
 
   .nav-links {
     display: none;
@@ -1049,7 +1055,6 @@ footer {
     -webkit-overflow-scrolling: touch;
   }
 
-
   .nav-links.open {
     display: flex;
 
@@ -1085,8 +1090,14 @@ footer {
       1px solid rgba(255, 255, 255, .11);
   }
 
+  /*
+    Keep separator beneath Contact.
+    The branding block starts after this line.
+  */
+
   .nav-links a:last-of-type {
-    border-bottom: 0;
+    border-bottom:
+      1px solid rgba(255, 255, 255, .11);
   }
 
   .nav-links a::after {
@@ -1098,7 +1109,11 @@ footer {
   }
 
 
-  /* Menu mail icon */
+  /* E-mail inside menu */
+
+  .nav-email-desktop {
+    display: flex;
+  }
 
   .nav-menu-icon {
     width: 25px;
@@ -1126,76 +1141,64 @@ footer {
   }
 
 
-  /*
-    SURMISE signature in bottom of menu.
+  /* SURMISE signature at bottom */
 
-    Keeps the brand clearly visible against
-    the dark navy menu without competing
-    with the main header branding.
-  */
+  .nav-menu-brand {
+    display: block;
 
-  .nav-links .brand {
     margin-top: auto;
 
     padding:
-      24px
+      28px
       10px
-      10px;
-
-    border-top:
-      1px solid rgba(255, 255, 255, .11);
+      8px;
   }
 
-  .nav-links .brand-text {
-    gap: 6px;
-  }
+  .nav-menu-lockup {
+    display: flex;
+    align-items: center;
 
-  .nav-links .brand-lockup {
     gap: 3px;
-  }
 
-  .nav-links .brand-word,
-  .nav-links .brand-tld {
-    color: rgba(255, 255, 255, .90);
+    color: rgba(255, 255, 255, .92);
 
-    font-size: 14px;
-    font-weight: 850;
-  }
+    font-size: 15px;
+    font-weight: 900;
 
-  .nav-links .brand-word {
     letter-spacing: .09em;
+
+    line-height: 1;
   }
 
-  .nav-links .brand-tld {
-    letter-spacing: .02em;
-  }
+  .nav-menu-dot {
+    display: block;
 
-  .nav-links .brand-dot {
     width: 6px;
     height: 6px;
 
+    flex: 0 0 6px;
+
     background: var(--accent);
+
+    border-radius: 50%;
   }
 
-  .nav-links .brand-name {
-    color: rgba(255, 255, 255, .56);
+  .nav-menu-tagline {
+    margin-top: 8px;
 
-    font-size: 9px;
+    color: rgba(220, 228, 237, .58);
+
+    font-size: 8px;
     font-weight: 700;
 
-    letter-spacing: .12em;
+    letter-spacing: .13em;
+    line-height: 1.4;
+
     text-transform: uppercase;
   }
 
 
-  /*
-    Desktop E-post link hidden on mobile.
-  */
-
-  .nav-email-desktop {
-    display: none;
-  }
-
+  /* Header mail button */
 
   .nav-email-mobile {
     display: flex;
@@ -1210,7 +1213,6 @@ footer {
 
     color: var(--ink);
   }
-
 
   .menu-toggle {
     display: flex;
@@ -1398,26 +1400,52 @@ footer {
   }
 
 
-  /* Make bottom signature slightly more compact on phone */
+  /* Mobile menu e-mail icon */
 
-  .nav-links .brand {
+  .nav-menu-icon {
+    width: 24px;
+    height: 24px;
+
+    margin-right: 15px;
+
+    flex-basis: 24px;
+  }
+
+  .nav-menu-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+
+  /* Mobile menu signature */
+
+  .nav-menu-brand {
     padding:
-      22px
+      26px
       8px
       6px;
   }
 
-  .nav-links .brand-word,
-  .nav-links .brand-tld {
-    color: rgba(255, 255, 255, .92);
+  .nav-menu-lockup {
+    gap: 3px;
 
-    font-size: 14px;
+    font-size: 15px;
   }
 
-  .nav-links .brand-name {
-    color: rgba(255, 255, 255, .58);
+  .nav-menu-dot {
+    width: 6px;
+    height: 6px;
 
-    font-size: 9px;
+    flex-basis: 6px;
+  }
+
+  .nav-menu-tagline {
+    margin-top: 8px;
+
+    color: rgba(220, 228, 237, .58);
+
+    font-size: 8px;
+    letter-spacing: .13em;
   }
 
 
@@ -1434,10 +1462,7 @@ footer {
   }
 
 
-  /*
-    Clean X.
-    The middle line is fully removed.
-  */
+  /* Clean X */
 
   .menu-toggle.active span:first-child {
     width: 22px;
