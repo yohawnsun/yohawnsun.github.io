@@ -1083,9 +1083,7 @@ footer {
   }
 
 
-  /* =======================================================
-     IPAD NAVIGATION
-     ======================================================= */
+  /* IPAD NAVIGATION */
 
   .nav-links {
     display: none;
@@ -1256,9 +1254,7 @@ footer {
   }
 
 
-  /* =======================================================
-     IPAD HERO
-     ======================================================= */
+  /* IPAD HERO */
 
   .hero {
     display: grid;
@@ -1358,9 +1354,7 @@ footer {
   }
 
 
-  /* =======================================================
-     IPAD PROFILE
-     ======================================================= */
+  /* IPAD PROFILE */
 
   .hero-profile {
     position: relative;
@@ -1427,9 +1421,7 @@ footer {
   }
 
 
-  /* =======================================================
-     IPAD SECTIONS
-     ======================================================= */
+  /* IPAD SECTIONS */
 
   .about-simple,
   .capabilities-row,
@@ -1446,9 +1438,7 @@ footer {
   }
 
 
-  /* =======================================================
-     IPAD MINDSET
-     ======================================================= */
+  /* IPAD MINDSET */
 
   .mindset {
     width: 100vw;
@@ -1575,9 +1565,7 @@ footer {
   }
 
 
-  /* =======================================================
-     IPAD REST
-     ======================================================= */
+  /* IPAD REST */
 
   .timeline {
     grid-template-columns:
@@ -1684,7 +1672,7 @@ footer {
     padding:
       32px
       22px
-      24px;
+      28px;
 
     border-radius: 0;
 
@@ -1780,52 +1768,17 @@ footer {
 
 
   /* =======================================================
-     MOBILE HERO CHIPS
-
-     Three priorities only:
-     Business architecture
-     Data-driven decisions
-     AI-enabled change
-   
-
-  .chips {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 7px;
-
-    margin-top: 25px;
-  }
-
-  .chips span {
-    display: none;
-
-    padding: 7px 11px;
-
-    color: rgba(255, 255, 255, .90);
-
-    font-size: 9px;
-
-    line-height: 1;
-
-    background: rgba(8, 18, 31, .24);
-
-    border:
-      1px solid
-      rgba(255, 255, 255, .45);
-
-    border-radius: 99px;
-  }
-
-  .chips .chip-business,
-  .chips .chip-data,
-  .chips .chip-ai {
-    display: inline-block;
-  }
-  ======================================================= */
-
-  /* =======================================================
      MOBILE PROFILE
+
+     Photo stays EXACTLY 128 x 136 px.
+
+     Latest layout:
+     PHOTO | PONTUS JOHANSSON
+           | Business Architect
+           |
+           | Think big.
+           | Ship small.
+           | Learn fast.
      ======================================================= */
 
   .hero-profile {
@@ -1848,9 +1801,9 @@ footer {
       128px
       minmax(0, 1fr);
 
-    gap: 18px;
+    column-gap: 18px;
 
-    align-items: center;
+    align-items: start;
   }
 
   .profile-photo {
@@ -1869,12 +1822,19 @@ footer {
   }
 
   .profile-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
     object-position: center 27%;
   }
 
 
-  /* ROLE WITHOUT PINK CARD */
+  /* =======================================================
+     MOBILE ROLE
+     ======================================================= */
 
   .role-card {
     width: 100%;
@@ -1886,7 +1846,10 @@ footer {
 
     padding: 0;
 
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
 
     background: transparent;
 
@@ -1896,18 +1859,51 @@ footer {
     box-shadow: none;
   }
 
+
+  /* Current role becomes Pontus Johansson on mobile only */
+
   .role-card small {
+    display: block;
+
+    margin: 1px 0 0;
+
+    color: rgba(255, 255, 255, .55);
+
+    font-size: 0;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+  }
+
+  .role-card small::before {
+    content: "PONTUS JOHANSSON";
+
     color: rgba(255, 255, 255, .55);
 
     font-size: 8px;
+    font-weight: 800;
+
+    line-height: 1;
 
     letter-spacing: .16em;
+
+    white-space: nowrap;
   }
 
-  .role-card strong {
-    max-width: 150px;
 
-    margin-top: 9px;
+  /* Business Architect directly below the name */
+
+  .role-card strong {
+    display: block;
+
+    max-width: none;
+
+    margin-top: 8px;
 
     color: #fff;
 
@@ -1918,12 +1914,11 @@ footer {
     letter-spacing: -.035em;
   }
 
+
+  /* Remove ICA Banken on mobile only */
+
   .role-card span {
-    margin-top: 6px;
-
-    color: rgba(255, 255, 255, .70);
-
-    font-size: 12px;
+    display: none;
   }
 
   .role-card p {
@@ -1933,29 +1928,110 @@ footer {
 
   /* =======================================================
      MOBILE SIGNATURE
+
+     Same handwritten styling and pink dot.
+     Only position + line breaks change.
      ======================================================= */
 
   .signature {
+    position: absolute;
+
+    z-index: 4;
+
+    right: 22px;
+    bottom: 62px;
+
+    display: block;
+
+    width: calc(100% - 168px);
+    max-width: 175px;
+
+    margin: 0;
+
+    color: #fff;
+
+    text-align: left;
+
+    font-family:
+      "Segoe Script",
+      "Bradley Hand",
+      cursive;
+
+    font-size: 0;
+
+    line-height: 1.75;
+
+    transform: rotate(-2deg);
+  }
+
+  .signature::before {
+    content:
+      "Think big.\A"
+      "Ship small.\A"
+      "Learn fast.";
+
+    white-space: pre;
+
+    color: #fff;
+
+    font-family:
+      "Segoe Script",
+      "Bradley Hand",
+      cursive;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  .signature i {
+    display: inline-block;
+
+    position: relative;
+
+    top: 1px;
+
+    width: 7px;
+    height: 7px;
+
+    margin-left: 5px;
+
+    background: var(--accent);
+
+    border-radius: 50%;
+  }
+
+
+  /* =======================================================
+     MOBILE DOWN ARROW
+     ======================================================= */
+
+  .hero::before {
+    content: "";
+
     position: relative;
 
     z-index: 3;
 
-    right: auto;
-    bottom: auto;
-
     display: block;
 
-    width: 100%;
+    width: 17px;
+    height: 17px;
 
-    margin-top: 27px;
+    margin:
+      38px
+      auto
+      3px;
 
-    color: #fff;
+    border-right:
+      2px solid
+      rgba(255, 255, 255, .82);
 
-    text-align: right;
+    border-bottom:
+      2px solid
+      rgba(255, 255, 255, .82);
 
-    font-size: 13px;
-
-    transform: rotate(-2deg);
+    transform: rotate(45deg);
   }
 
 
