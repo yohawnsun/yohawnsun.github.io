@@ -522,6 +522,16 @@ h1 span {
 
 
 /* =========================================================
+   HERO SCROLL
+   Hidden outside mobile
+   ========================================================= */
+
+.hero-scroll {
+  display: none;
+}
+
+
+/* =========================================================
    GENERAL SECTIONS
    ========================================================= */
 
@@ -1672,7 +1682,7 @@ footer {
     padding:
       32px
       22px
-      28px;
+      20px;
 
     border-radius: 0;
 
@@ -1772,7 +1782,6 @@ footer {
 
      Photo stays EXACTLY 128 x 136 px.
 
-     Latest layout:
      PHOTO | PONTUS JOHANSSON
            | Business Architect
            |
@@ -1939,7 +1948,7 @@ footer {
     z-index: 4;
 
     right: 22px;
-    bottom: 62px;
+    bottom: 96px;
 
     display: block;
 
@@ -2003,35 +2012,67 @@ footer {
 
 
   /* =======================================================
-     MOBILE DOWN ARROW
+     MOBILE CLICKABLE DOWN ARROW
+
+     Only mobile.
+     Sits after profile/signature at bottom of hero.
+     Entire 48 x 48 area is clickable.
      ======================================================= */
 
-  .hero::before {
-    content: "";
-
+  .hero-scroll {
     position: relative;
 
-    z-index: 3;
+    z-index: 5;
 
-    display: block;
+    display: flex;
 
-    width: 17px;
-    height: 17px;
+    width: 48px;
+    height: 48px;
 
     margin:
-      38px
+      26px
       auto
-      3px;
+      0;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    opacity: .82;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .hero-scroll span {
+    display: block;
+
+    width: 18px;
+    height: 18px;
 
     border-right:
       2px solid
-      rgba(255, 255, 255, .82);
+      rgba(255, 255, 255, .90);
 
     border-bottom:
       2px solid
-      rgba(255, 255, 255, .82);
+      rgba(255, 255, 255, .90);
 
-    transform: rotate(45deg);
+    transform:
+      translateY(-4px)
+      rotate(45deg);
+
+    transition:
+      transform .2s ease,
+      opacity .2s ease;
+  }
+
+  .hero-scroll:active span {
+    opacity: .65;
+
+    transform:
+      translateY(0)
+      rotate(45deg);
   }
 
 
