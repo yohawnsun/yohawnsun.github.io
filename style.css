@@ -265,6 +265,7 @@ a {
   border-radius: 28px;
   overflow: hidden;
   color: #fff;
+
   background-image:
     linear-gradient(
       90deg,
@@ -273,6 +274,7 @@ a {
       rgba(7, 16, 29, .18) 100%
     ),
     url('/hero-mountains.png');
+
   background-size: cover;
   background-position: center;
   box-shadow: var(--shadow);
@@ -876,17 +878,6 @@ footer {
   }
 }
 
-@keyframes scrollCue {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(4px);
-  }
-}
-
 
 /* =========================================================
    TABLET / IPAD
@@ -906,12 +897,18 @@ footer {
     position: relative;
   }
 
+
+  /* =======================================================
+     FULLSCREEN NAV
+     ======================================================= */
+
   .nav-links {
     display: none;
     position: fixed;
     isolation: isolate;
     z-index: 1000;
     inset: 0;
+
     width: 100vw;
     height: 100dvh;
 
@@ -997,12 +994,15 @@ footer {
     display: flex;
     align-items: center;
     flex-shrink: 0;
+
     min-height: 64px;
     padding: 0 6px;
+
     color: rgba(239, 244, 250, .90);
     font-size: clamp(18px, 4.8vw, 22px);
     font-weight: 580;
     letter-spacing: -.025em;
+
     border-bottom: 0;
   }
 
@@ -1027,6 +1027,7 @@ footer {
     width: 28px;
     flex: 0 0 28px;
     margin-right: 4px;
+
     color: var(--accent);
     font-size: 9px;
     font-weight: 850;
@@ -1058,6 +1059,7 @@ footer {
     min-height: 72px;
     margin-bottom: 14px;
     padding: 0 6px;
+
     color: #fff;
     font-size: clamp(19px, 5vw, 23px);
     font-weight: 650;
@@ -1108,6 +1110,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 5px;
+
     color: #fff;
     font-size: clamp(23px, 6vw, 31px);
     font-weight: 950;
@@ -1126,6 +1129,7 @@ footer {
 
   .nav-menu-tagline {
     margin-top: 12px;
+
     color: rgba(203, 214, 228, .74);
     font-size: clamp(8px, 2.3vw, 10px);
     font-weight: 750;
@@ -1139,8 +1143,10 @@ footer {
     width: 42px;
     height: 42px;
     margin-left: auto;
+
     align-items: center;
     justify-content: center;
+
     color: var(--ink);
   }
 
@@ -1354,7 +1360,6 @@ footer {
     color: var(--accent);
     font-size: 28px;
     line-height: 1;
-    animation: scrollCue 1.8s ease-in-out infinite;
   }
 
   .hero-scroll-label {
@@ -1510,7 +1515,9 @@ footer {
   }
 
 
-  /* MOBILE MENU */
+  /* =======================================================
+     MOBILE FULLSCREEN MENU
+     ======================================================= */
 
   .nav-links {
     padding:
@@ -1580,7 +1587,7 @@ footer {
 
     min-height: auto;
     margin-top: 0;
-    padding: 30px 0 24px;
+    padding: 30px 0 20px;
 
     color: var(--ink);
 
@@ -1645,21 +1652,23 @@ footer {
     display: block;
 
     width: 100%;
-    margin-top: 21px;
+    margin-top: 22px;
   }
 
   .profile-photo {
+    position: relative;
+
     width: 100%;
+    height: auto;
 
     /*
-      LOWER / MORE COMPACT PROFILE IMAGE
-      closer to the original mockup.
+      Taller crop than the previous banner-style version.
+      This keeps more of the portrait composition visible.
     */
-    height: clamp(225px, 61vw, 270px);
-    aspect-ratio: auto;
+    aspect-ratio: 1.22 / 1;
 
     border: 0;
-    border-radius: 18px;
+    border-radius: 20px;
 
     box-shadow: none;
     overflow: hidden;
@@ -1667,11 +1676,12 @@ footer {
 
   .profile-photo img {
     display: block;
+
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-    object-position: center 33%;
+    object-position: center 26%;
   }
 
   .role-card {
@@ -1680,7 +1690,7 @@ footer {
     height: auto;
     min-height: 0;
 
-    margin: 12px 0 0;
+    margin: 13px 0 0;
     padding: 0;
 
     color: var(--ink);
@@ -1706,7 +1716,7 @@ footer {
   .role-card span {
     display: block;
 
-    margin-top: 3px;
+    margin-top: 4px;
 
     color: var(--text);
     font-size: 13px;
@@ -1718,39 +1728,47 @@ footer {
 
 
   /* =======================================================
-     SCROLL DOWN
-     CIRCLE + CHEVRON + EXPLORE MORE
+     MOBILE EXPLORE MORE
      ======================================================= */
 
   .hero-scroll {
     position: relative;
+
     left: auto;
+    right: auto;
     bottom: auto;
 
     display: block;
 
-    width: min(270px, 82%);
-    height: 90px;
+    width: 250px;
+    height: 94px;
 
-    margin: 24px auto 0;
+    margin: 27px auto 2px;
 
     color: var(--ink);
   }
 
+
+  /* =======================================================
+     CIRCLE
+     ======================================================= */
+
   .hero-scroll-arrow {
     position: absolute;
+
     left: 50%;
     top: 0;
 
     display: block;
 
-    width: 60px;
-    height: 60px;
+    width: 62px;
+    height: 62px;
 
-    margin-left: -30px;
+    margin-left: -51px;
 
     color: transparent;
     font-size: 0;
+    line-height: 0;
 
     border: 1.5px solid var(--ink);
     border-radius: 50%;
@@ -1758,39 +1776,63 @@ footer {
     animation: none;
   }
 
-  /* PURE CSS DOWN CHEVRON */
 
+  /* =======================================================
+     CLEAN V
+     Two separate lines.
+     No unicode character.
+     No rotated border corner.
+     ======================================================= */
+
+  .hero-scroll-arrow::before,
   .hero-scroll-arrow::after {
     content: "";
 
     position: absolute;
-    left: 50%;
-    top: 46%;
 
-    width: 17px;
-    height: 17px;
+    top: 29px;
 
-    border-right: 2px solid var(--ink);
-    border-bottom: 2px solid var(--ink);
+    display: block;
 
-    transform:
-      translate(-50%, -60%)
-      rotate(45deg);
+    width: 15px;
+    height: 2px;
 
-    animation: scrollCue 1.9s ease-in-out infinite;
+    background: var(--ink);
+    border: 0;
+    border-radius: 99px;
+
+    animation: none;
+  }
+
+  .hero-scroll-arrow::before {
+    left: 17px;
+
+    transform: rotate(42deg);
+    transform-origin: right center;
+  }
+
+  .hero-scroll-arrow::after {
+    right: 17px;
+
+    transform: rotate(-42deg);
+    transform-origin: left center;
   }
 
 
-  /* HANDWRITTEN "EXPLORE MORE" */
+  /* =======================================================
+     HANDWRITTEN EXPLORE MORE
+     ======================================================= */
 
   .hero-scroll-label {
     position: absolute;
 
-    left: calc(50% + 48px);
-    top: 16px;
+    left: calc(50% + 27px);
+    top: 5px;
 
     display: block;
-    width: 82px;
+
+    width: 92px;
+
     margin: 0;
 
     color: var(--text);
@@ -1803,8 +1845,8 @@ footer {
 
     font-size: 15px;
     font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -.035em;
+    line-height: 1.08;
+    letter-spacing: -.04em;
 
     text-transform: none;
 
@@ -1812,26 +1854,44 @@ footer {
   }
 
 
-  /* HANDDRAWN STYLE POINTER */
+  /* =======================================================
+     HAND-DRAWN POINTER
+     ======================================================= */
 
   .hero-scroll-label::after {
-    content: "↙";
+    content: "";
 
     position: absolute;
-    left: -21px;
-    top: 27px;
 
-    color: var(--text);
+    left: -23px;
+    top: 36px;
 
-    font-family:
-      "Segoe Print",
-      "Bradley Hand",
-      cursive;
+    width: 24px;
+    height: 17px;
 
-    font-size: 27px;
-    font-weight: 400;
+    border-left: 1.4px solid var(--text);
+    border-bottom: 1.4px solid var(--text);
 
-    transform: rotate(4deg);
+    border-radius: 0 0 0 18px;
+
+    transform: rotate(-22deg);
+  }
+
+  .hero-scroll-label::before {
+    content: "";
+
+    position: absolute;
+
+    left: -27px;
+    top: 49px;
+
+    width: 7px;
+    height: 7px;
+
+    border-left: 1.4px solid var(--text);
+    border-bottom: 1.4px solid var(--text);
+
+    transform: rotate(-15deg);
   }
 
 
@@ -2169,22 +2229,19 @@ footer {
   }
 
   .profile-photo {
-    height: 215px;
-    aspect-ratio: auto;
+    aspect-ratio: 1.18 / 1;
   }
 
+  /*
+    Keep the same geometry on small iPhones.
+    Only tighten the overall spacing.
+  */
   .hero-scroll {
-    margin-top: 21px;
-  }
-
-  .hero-scroll-arrow {
-    width: 56px;
-    height: 56px;
-    margin-left: -28px;
+    width: 240px;
+    margin-top: 23px;
   }
 
   .hero-scroll-label {
-    left: calc(50% + 43px);
     font-size: 14px;
   }
 
@@ -2223,7 +2280,6 @@ footer {
     scroll-behavior: auto;
   }
 
-  .hero-scroll-arrow::after,
   .nav-links.open,
   .nav-links.open > a,
   .nav-links.open .nav-menu-brand {
