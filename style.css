@@ -1360,17 +1360,137 @@ footer {
     grid-column: 2;
   }
 
-  /* MINDSET */
+/* =========================================================
+   MOBILE MINDSET
+   ========================================================= */
 
-  .mindset {
-    margin-top: 55px;
-    border-radius: 0;
-  }
+.mindset {
+  width: 100vw;
 
-  .mindset-title h2 {
-    font-size: 42px;
-  }
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: 55px;
 
+  padding: 42px 24px 36px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+
+  border-radius: 0;
+}
+
+
+/* INTRO */
+
+.mindset-title {
+  padding-bottom: 10px;
+}
+
+.mindset-title h2 {
+  margin-top: 14px;
+
+  font-size: 38px;
+  line-height: .98;
+  letter-spacing: -.05em;
+}
+
+.mindset-title p {
+  max-width: 350px;
+
+  margin: 14px 0 0;
+
+  color: #bdc8d4;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+
+/* PRINCIPLES */
+
+.principle {
+  display: grid;
+
+  grid-template-columns: 56px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+
+  column-gap: 16px;
+  row-gap: 6px;
+
+  min-height: 0;
+
+  padding: 26px 0;
+
+  border-left: 0;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+
+  align-items: center;
+}
+
+
+/* ICON */
+
+.principle-icon {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+
+  width: 56px;
+  height: 48px;
+
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  color: #fff;
+
+  font-size: 37px;
+  line-height: 1;
+}
+
+
+/* TITLE */
+
+.principle strong {
+  grid-column: 2;
+  grid-row: 1;
+
+  display: block;
+
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+
+/* DESCRIPTION */
+
+.principle p {
+  grid-column: 2;
+  grid-row: 2;
+
+  margin: 0;
+
+  color: #bdc8d4;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* MOUNTAIN ICON */
+
+.mountain-icon {
+  position: relative;
+
+  width: 54px;
+  height: 48px;
+}
   /* EXPERIENCE */
 
   .experience-compact {
