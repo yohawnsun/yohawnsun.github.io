@@ -487,10 +487,11 @@ h1 span {
   letter-spacing: -.035em;
 }
 
-.role-card span {
-  display: none;
-}
+				 
+				
+ 
 
+.role-card span,
 .role-card p {
   display: none;
 }
@@ -534,7 +535,7 @@ h1 span {
 
 /* =========================================================
    HERO SCROLL
-   Hidden outside mobile
+						
    ========================================================= */
 
 .hero-scroll {
@@ -1279,27 +1280,30 @@ footer {
 
   .hero {
     display: grid;
-
+  
     grid-template-columns:
       minmax(0, 1fr)
       210px;
-
+  
     column-gap: 30px;
-
+  
     align-items: start;
-
+  
     width: 100vw;
-
-    min-height: 600px;
-
+  
+    min-height: 0;
+  
     margin-top: 0;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-
-    padding: 42px 40px;
-
+  
+    padding:
+      42px
+      40px
+      70px;
+  
     border-radius: 0;
-
+  
     background-position: 56% center;
   }
 
@@ -1392,7 +1396,7 @@ footer {
     display: flex;
     flex-direction: column;
 
-    gap: 10px;
+    gap: 0;
   }
 
   .profile-photo {
@@ -1411,25 +1415,41 @@ footer {
   .role-card {
     width: 100%;
 
-    min-height: 185px;
+    height: auto;
+    min-height: 0;
 
+    margin: 12px 0 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+  }
+
+  .role-card small {
     margin: 0;
 
-    padding: 19px;
+    color: rgba(255, 255, 255, .55);
 
-    justify-content: center;
-
-    border-radius: 20px;
+    font-size: 9px;
   }
 
   .role-card strong {
-    margin-top: 9px;
+    margin-top: 8px;
 
     font-size: 21px;
-  }
+   
 
-  .role-card p {
-    line-height: 1.45;
+				
+    line-height: 1.05;
   }
 
   .signature {
@@ -1607,10 +1627,149 @@ footer {
 
 
 /* =========================================================
+   SMALL TABLET / LARGE MOBILE
+   581 - 700
+   ========================================================= */
+
+@media (min-width: 581px) and (max-width: 700px) {
+
+  .hero {
+    display: block;
+  
+    min-height: auto;
+  
+    padding:
+      38px
+      32px
+      54px;
+  
+    background-position: 58% center;
+  }
+
+  .hero:after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 14, 26, .65) 0%,
+        rgba(5, 14, 26, .35) 48%,
+        rgba(5, 14, 26, .78) 100%
+      );
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero-title-desktop {
+    max-width: 470px;
+  }
+
+  .hero-lead {
+    max-width: 500px;
+  }
+
+  .chips {
+    max-width: 530px;
+  }
+
+
+  /* COMPACT TABLET PROFILE */
+
+  .hero-profile {
+    position: relative;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+      190px
+      minmax(0, 1fr);
+
+    column-gap: 24px;
+
+    align-items: start;
+  }
+
+  .profile-photo {
+    width: 190px;
+    height: 190px;
+
+    aspect-ratio: auto;
+  }
+
+  .role-card {
+    width: auto;
+
+    height: auto;
+    min-height: 0;
+
+    margin: 4px 0 0;
+    padding: 0;
+
+    justify-content: flex-start;
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+  }
+
+  .role-card small {
+    margin: 0;
+
+    font-size: 9px;
+  }
+
+  .role-card strong {
+    margin-top: 9px;
+
+    font-size: 24px;
+
+    line-height: 1.05;
+  }
+
+  .signature {
+    position: relative;
+
+    right: auto;
+    bottom: auto;
+
+    z-index: 4;
+
+    width: max-content;
+
+    margin:
+      -70px
+      0
+      18px
+      214px;
+
+    font-size: 16px;
+
+    transform: rotate(-3deg);
+  }
+}
+
+
+/* =========================================================
    MOBILE
    ========================================================= */
 
 @media (max-width: 580px) {
+
+  .wrap {
+    width: min(100% - 32px, 1180px);
+  }
 
   .nav-inner {
     height: 68px;
@@ -1675,9 +1834,9 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE HERO
-     ======================================================= */
+															
+  /* MOBILE HERO */
+															   
 
   .hero {
     display: block;
@@ -1693,7 +1852,7 @@ footer {
     padding:
       32px
       22px
-      20px;
+      18px;
 
     border-radius: 0;
 
@@ -1731,7 +1890,7 @@ footer {
   }
 
   .eyebrow {
-    max-width: 330px;
+    max-width: 100%;
 
     color: rgba(224, 231, 239, .82);
 
@@ -1788,18 +1947,18 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE PROFILE
+															
+  /* MOBILE PROFILE */
 
-     Photo stays EXACTLY 128 x 136 px.
+									  
 
-     PHOTO | PONTUS JOHANSSON
-           | Business Architect
-           |
-           | Think big.
-           | Ship small.
-           | Learn fast.
-     ======================================================= */
+							 
+							   
+			
+					   
+						
+						
+															   
 
   .hero-profile {
     position: relative;
@@ -1813,7 +1972,7 @@ footer {
 
     width: 100%;
 
-    margin-top: 34px;
+    margin-top: 28px;
 
     display: grid;
 
@@ -1852,9 +2011,9 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE ROLE
-     ======================================================= */
+															
+  /* MOBILE ROLE */
+															   
 
   .role-card {
     width: 100%;
@@ -1880,7 +2039,7 @@ footer {
   }
 
 
-  /* Current role becomes Pontus Johansson on mobile only */
+															
 
   .role-card small {
     display: block;
@@ -1916,7 +2075,7 @@ footer {
   }
 
 
-  /* Business Architect directly below the name */
+												  
 
   .role-card strong {
     display: block;
@@ -1935,23 +2094,23 @@ footer {
   }
 
 
-  /* Remove ICA Banken on mobile only */
+										
 
-  .role-card span {
-    display: none;
-  }
+  .role-card span,
+				  
+   
 
   .role-card p {
     display: none;
   }
 
 
-  /* =======================================================
-     MOBILE SIGNATURE
+															
+					 
 
-     Same handwritten styling and pink dot.
-     Only position + line breaks change.
-     ======================================================= */
+  /* MOBILE SIGNATURE */
+										
+															   
 
   .signature {
     position: absolute;
@@ -1959,7 +2118,7 @@ footer {
     z-index: 4;
 
     right: 22px;
-    bottom: 96px;
+    bottom: 80px;
 
     display: block;
 
@@ -2022,13 +2181,13 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE CLICKABLE DOWN ARROW
+															
+  /* MOBILE CLICKABLE DOWN ARROW */
 
-     Only mobile.
-     Sits after profile/signature at bottom of hero.
-     Entire 48 x 48 area is clickable.
-     ======================================================= */
+				 
+													
+									  
+															   
 
   .hero-scroll {
     position: relative;
@@ -2041,7 +2200,7 @@ footer {
     height: 48px;
 
     margin:
-      26px
+      12px
       auto
       0;
 
@@ -2087,9 +2246,9 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE ABOUT
-     ======================================================= */
+															
+  /* MOBILE ABOUT */
+															   
 
   .about-simple {
     padding-top: 58px;
@@ -2100,9 +2259,9 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE CAPABILITIES
-     ======================================================= */
+															
+  /* MOBILE CAPABILITIES */
+															   
 
   .capabilities-row {
     padding-top: 55px;
@@ -2137,9 +2296,9 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE MINDSET
-     ======================================================= */
+															
+  /* MOBILE MINDSET */
+															   
 
   .mindset {
     width: 100vw;
@@ -2266,9 +2425,9 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE EXPERIENCE
-     ======================================================= */
+															
+  /* MOBILE EXPERIENCE */
+															   
 
   .experience-compact {
     padding-top: 55px;
@@ -2298,9 +2457,9 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE THINKING
-     ======================================================= */
+															
+  /* MOBILE THINKING */
+															   
 
   .section-head {
     padding-top: 0;
@@ -2311,9 +2470,9 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE CONTACT
-     ======================================================= */
+															
+  /* MOBILE CONTACT */
+															   
 
   .contact {
     margin-top: 55px;
@@ -2330,9 +2489,9 @@ footer {
   }
 
 
-  /* =======================================================
-     MOBILE FOOTER
-     ======================================================= */
+															
+  /* MOBILE FOOTER */
+															   
 
   footer {
     flex-direction: column;
