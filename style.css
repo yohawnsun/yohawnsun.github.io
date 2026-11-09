@@ -1107,17 +1107,146 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .mindset {
-    grid-template-columns: 1fr;
-    padding: 34px 28px;
-  }
+/* =======================================================
+   IPAD MINDSET
+   Intro left, principles right
+   ======================================================= */
 
-  .principle {
-    min-height: 0;
-    padding: 22px 0 0;
-    border-left: 0;
-    border-top: 1px solid #ffffff22;
-  }
+.mindset {
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, .85fr)
+    minmax(0, 1.15fr);
+
+  grid-template-rows:
+    repeat(3, auto);
+
+  column-gap: 42px;
+  row-gap: 0;
+
+  align-items: stretch;
+
+  padding: 42px 38px;
+}
+
+
+/* LEFT SIDE */
+
+.mindset-title {
+  grid-column: 1;
+  grid-row: 1 / 4;
+
+  align-self: center;
+
+  padding-right: 36px;
+
+  border-right: 1px solid rgba(255, 255, 255, .16);
+}
+
+.mindset-title h2 {
+  font-size: 40px;
+  line-height: .98;
+}
+
+.mindset-title p {
+  max-width: 290px;
+
+  margin-top: 15px;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+
+/* RIGHT SIDE */
+
+.principle {
+  display: grid;
+
+  grid-template-columns:
+    54px
+    minmax(0, 1fr);
+
+  grid-template-rows:
+    auto
+    auto;
+
+  column-gap: 16px;
+  row-gap: 5px;
+
+  min-height: 0;
+
+  padding: 20px 0;
+
+  align-items: center;
+
+  border-left: 0;
+  border-top: 1px solid rgba(255, 255, 255, .15);
+}
+
+
+/* No line above first principle */
+
+.mindset-title + .principle {
+  border-top: 0;
+}
+
+
+/* ICON LEFT */
+
+.principle-icon {
+  grid-column: 1;
+  grid-row: 1 / 3;
+
+  width: 54px;
+  height: 48px;
+
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  font-size: 36px;
+  line-height: 1;
+}
+
+
+/* TITLE RIGHT */
+
+.principle strong {
+  grid-column: 2;
+  grid-row: 1;
+
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+
+/* TEXT RIGHT */
+
+.principle p {
+  grid-column: 2;
+  grid-row: 2;
+
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+/* Mountain keeps correct proportions */
+
+.mountain-icon {
+  position: relative;
+
+  width: 54px;
+  height: 48px;
+}
 
   .timeline {
     grid-template-columns: 1fr 1fr;
