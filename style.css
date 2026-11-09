@@ -1471,7 +1471,6 @@ footer {
 
   /* =======================================================
      MOBILE PROFILE AND ROLE
-     Larger portrait, smaller role card
      ======================================================= */
 
   .hero-profile {
@@ -1514,35 +1513,49 @@ footer {
     filter: none;
   }
 
+
+  /* Role information directly on hero */
+
   .role-card {
     width: 100%;
     height: 116px;
     min-height: 116px;
 
     margin: 0;
-    padding: 12px 14px;
+    padding: 12px 6px 12px 14px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    border-radius: 16px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
     box-shadow: none;
   }
 
   .role-card small {
+    color: rgba(255, 255, 255, .62);
+
     font-size: 7px;
+    font-weight: 800;
+    letter-spacing: .13em;
   }
 
   .role-card strong {
-    max-width: 120px;
-    margin-top: 5px;
-    font-size: 17px;
-    line-height: 1.02;
+    max-width: 140px;
+
+    margin-top: 6px;
+
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.03;
   }
 
   .role-card span {
-    margin-top: 2px;
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, .78);
     font-size: 10px;
   }
 
@@ -1566,10 +1579,20 @@ footer {
     width: 100%;
     margin-top: 17px;
 
+    color: #fff;
     text-align: right;
     font-size: 13px;
 
     transform: rotate(-2deg);
+  }
+
+  .signature i {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-left: 5px;
+    background: var(--accent);
+    border-radius: 50%;
   }
 
 
