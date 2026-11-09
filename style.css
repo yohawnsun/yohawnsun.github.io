@@ -444,44 +444,55 @@ h1 span {
   display: flex;
   flex-direction: column;
 
-  margin-top: 8px;
+  margin-top: 12px;
+  padding: 0;
 
-  padding: 20px;
+  background: transparent;
 
-  background: var(--accent);
+  border: 0;
+  border-radius: 0;
 
-  border-radius: 19px;
+  box-shadow: none;
 }
 
 .role-card small {
-  color: #ffe6eb;
+  display: block;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, .55);
 
   font-size: 9px;
   font-weight: 800;
 
-  letter-spacing: .13em;
+  line-height: 1;
+
+  letter-spacing: .16em;
 
   text-transform: uppercase;
 }
 
 .role-card strong {
-  margin-top: 10px;
+  display: block;
+
+  margin-top: 8px;
+
+  color: #fff;
 
   font-size: 22px;
+  font-weight: 750;
 
-  line-height: 1.1;
+  line-height: 1.05;
+
+  letter-spacing: -.035em;
 }
 
 .role-card span {
-  font-size: 13px;
+  display: none;
 }
 
 .role-card p {
-  margin: 6px 0 0;
-
-  color: #ffe6eb;
-
-  font-size: 11px;
+  display: none;
 }
 
 
