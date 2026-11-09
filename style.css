@@ -834,6 +834,7 @@ footer {
     position: fixed;
     z-index: 1000;
     inset: 0;
+
     width: 100vw;
     height: 100dvh;
 
@@ -974,7 +975,6 @@ footer {
     align-items: start;
 
     width: 100vw;
-
     min-height: 600px;
 
     margin-top: 0;
@@ -984,7 +984,6 @@ footer {
     padding: 42px 40px;
 
     border-radius: 0;
-
     background-position: 56% center;
   }
 
@@ -1249,7 +1248,9 @@ footer {
   }
 
 
-  /* IPAD REST */
+  /* =======================================================
+     IPAD REST
+     ======================================================= */
 
   .timeline {
     grid-template-columns: 1fr 1fr;
@@ -1448,7 +1449,9 @@ footer {
   }
 
 
-  /* SIX HERO CAPABILITIES */
+  /* =======================================================
+     SIX HERO CAPABILITIES
+     ======================================================= */
 
   .chips {
     display: flex;
@@ -1468,6 +1471,7 @@ footer {
 
   /* =======================================================
      MOBILE PROFILE AND ROLE
+     Larger portrait, smaller role card
      ======================================================= */
 
   .hero-profile {
@@ -1483,13 +1487,13 @@ footer {
     margin-top: 24px;
 
     display: grid;
-    grid-template-columns: 92px minmax(0, 1fr);
+    grid-template-columns: 118px minmax(0, 1fr);
     gap: 10px;
     align-items: stretch;
   }
 
   .profile-photo {
-    width: 92px;
+    width: 118px;
     height: 116px;
     aspect-ratio: auto;
 
@@ -1501,10 +1505,13 @@ footer {
   }
 
   .profile-photo img {
+    display: block;
     width: 100%;
     height: 100%;
+
     object-fit: cover;
     object-position: center 27%;
+    filter: none;
   }
 
   .role-card {
@@ -1513,7 +1520,7 @@ footer {
     min-height: 116px;
 
     margin: 0;
-    padding: 13px 15px;
+    padding: 12px 14px;
 
     display: flex;
     flex-direction: column;
@@ -1528,21 +1535,25 @@ footer {
   }
 
   .role-card strong {
+    max-width: 120px;
     margin-top: 5px;
     font-size: 17px;
-    line-height: 1.05;
+    line-height: 1.02;
   }
 
   .role-card span {
-    margin-top: 1px;
+    margin-top: 2px;
     font-size: 10px;
   }
 
   .role-card p {
-    margin: 4px 0 0;
-    font-size: 8px;
-    line-height: 1.35;
+    display: none;
   }
+
+
+  /* =======================================================
+     MOBILE SIGNATURE
+     ======================================================= */
 
   .signature {
     display: block;
@@ -1557,6 +1568,7 @@ footer {
 
     text-align: right;
     font-size: 13px;
+
     transform: rotate(-2deg);
   }
 
