@@ -1038,6 +1038,15 @@ footer {
     font-size:8px;
     line-height:1.45
   }
+
+
+  .chips  {
+    display:none;
+  }
+
+
+
+
   .hero-title-desktop {
     display:none
   }
