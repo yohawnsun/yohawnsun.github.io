@@ -657,7 +657,10 @@ let db;
 let selectedImage = null;
 let activeFilter = 'all';
 
+
+
 const $ = id => document.getElementById(id);
+const list = $('parcelList');
 
 function openDB() {
   return new Promise((resolve,reject) => {
