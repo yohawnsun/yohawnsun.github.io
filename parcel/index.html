@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-title" content="Paket">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" href="./icon.svg" type="image/svg+xml">
-<title>Paket – SURMI.SE</title>
+<title>Paket – SURMI</title>
 
 <style>
 :root {
@@ -55,16 +55,48 @@ header {
 }
 
 .brand {
-  font-size:13px;
-  font-weight:850;
-  letter-spacing:.16em;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  font-weight:800;
 }
 
-.brand span {
+.brand-lockup {
+  display:inline-flex;
+  align-items:baseline;
+  white-space:nowrap;
+  letter-spacing:-.055em;
+  line-height:1;
+}
+
+.brand-word,
+.brand-tld {
+  color:var(--ink);
+}
+
+.brand-word {
+  font-weight:850;
+}
+
+.brand-dot {
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--accent);
+  display:inline-block;
+  margin:0 4px 2px 3px;
+}
+
+.brand-tld {
+  font-weight:650;
+}
+
+.brand-section {
   color:var(--muted);
-  font-weight:600;
-  letter-spacing:.03em;
-  margin-left:5px;
+  font-size:10px;
+  font-weight:650;
+  letter-spacing:.08em;
 }
 
 .icon-btn {
@@ -543,10 +575,17 @@ textarea {
 <body>
 <main class="app">
 
-<header>
-  <div class="brand">SURMI.SE<span>/ PAKET</span></div>
-  <button class="icon-btn" id="helpBtn">?</button>
-</header>
+  <header>
+    <div class="brand">
+      <span class="brand-lockup">
+        <span class="brand-word">SURMI</span>
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-tld">SE</span>
+      </span>
+      <span class="brand-section">/ PAKET</span>
+    </div>
+    <button class="icon-btn" id="helpBtn">?</button>
+  </header>
 
 <p class="eyebrow">Din lilla vinted-assistent</p>
 <h1>Paket<span style="color:var(--accent)">.</span></h1>
