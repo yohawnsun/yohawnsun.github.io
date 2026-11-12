@@ -1,175 +1,980 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#101827">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Paket">
-  <meta name="description" content="Din personliga lista för paket och returer.">
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" href="./icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="./icon.svg">
-  <title>Paket – SURMI</title>
-  <style>
-    :root{color-scheme:light;--ink:#101827;--text:#263449;--muted:#738096;--bg:#f3f5f8;--surface:#fff;--line:#e3e8ef;--accent:#ff536d;--green:#16845b;--amber:#a96812;--shadow:0 12px 32px rgba(16,24,39,.07)}
-    *{box-sizing:border-box} html{background:var(--bg)} body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);min-height:100vh}
-    button,input,textarea{font:inherit} button{cursor:pointer}
-    .app{max-width:680px;margin:0 auto;min-height:100dvh;padding:calc(16px + env(safe-area-inset-top)) 18px calc(28px + env(safe-area-inset-bottom))}
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-    .brand{font-size:13px;font-weight:850;letter-spacing:.16em}.brand span{color:var(--muted);font-weight:600;letter-spacing:.03em;margin-left:5px}
-    .icon-btn{width:42px;height:42px;border:1px solid var(--line);border-radius:14px;background:var(--surface);display:grid;place-items:center;color:var(--text)}
-    .eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:750;margin:0 0 9px}
-    h1{font-size:clamp(32px,8vw,42px);letter-spacing:-.055em;line-height:1;margin:0}
-    .intro{color:var(--muted);font-size:14px;line-height:1.5;margin:11px 0 22px}
-    .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
-    .stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:15px 16px;box-shadow:0 4px 14px rgba(16,24,39,.025)}
-    .stat strong{display:block;font-size:27px;letter-spacing:-.05em}.stat span{font-size:12px;color:var(--muted)}
-    .primary{width:100%;border:0;border-radius:17px;background:var(--ink);color:white;min-height:56px;font-weight:750;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 8px 18px rgba(16,24,39,.15)}
-    .primary:active{transform:scale(.99)} .plus{font-size:23px;font-weight:400;line-height:1}
-    .section-head{display:flex;align-items:center;justify-content:space-between;margin:29px 2px 12px}
-    .section-head h2{font-size:17px;letter-spacing:-.03em;margin:0}.count{font-size:12px;color:var(--muted)}
-    .filters{display:flex;gap:7px;overflow:auto;padding:0 0 4px;margin-bottom:12px;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}
-    .filter{white-space:nowrap;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:9px 13px;font-size:12px;font-weight:700}
-    .filter.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-    .list{display:grid;gap:11px}
-    .parcel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:12px;display:grid;grid-template-columns:86px minmax(0,1fr);gap:13px;box-shadow:0 4px 14px rgba(16,24,39,.025)}
-    .thumb{width:86px;height:104px;border-radius:13px;background:#f0f2f5;overflow:hidden;display:grid;place-items:center;color:#a0aaba}
-    .thumb img{width:100%;height:100%;object-fit:contain;background:#fff}
-    .no-image{font-size:10px;text-align:center;padding:8px}
-    .parcel-main{min-width:0;display:flex;flex-direction:column}
-    .parcel-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-    .parcel-title{font-size:14px;font-weight:800;letter-spacing:-.02em;margin:2px 0 5px;overflow-wrap:anywhere}
-    .date{font-size:10px;color:var(--muted)}
-    .desc{font-size:13px;line-height:1.4;color:var(--text);margin:8px 0 11px;white-space:pre-wrap;overflow-wrap:anywhere}
-    .status{display:inline-flex;align-self:flex-start;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:800;background:#fff4df;color:var(--amber)}
-    .status.ready{background:#e8f6ef;color:var(--green)}
-    .actions{display:flex;gap:7px;margin-top:auto;padding-top:3px;flex-wrap:wrap}
-    .small-btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;font-size:11px;font-weight:750;color:var(--text)}
-    .small-btn.done{background:#edf7f1;color:var(--green);border-color:#d6ecdf}
-    .small-btn.delete{color:#a14c57}
-    .empty{border:1px dashed #cbd3df;border-radius:20px;padding:28px 18px;text-align:center;color:var(--muted);background:rgba(255,255,255,.55)}
-    .empty strong{display:block;color:var(--ink);font-size:14px;margin-bottom:6px}.empty p{font-size:12px;line-height:1.5;margin:0}
-    .foot{font-size:10px;color:#9aa4b3;text-align:center;margin:28px 0 8px;letter-spacing:.04em}
-    .modal-backdrop{position:fixed;inset:0;background:rgba(10,17,29,.48);display:none;align-items:flex-end;justify-content:center;z-index:10;padding:12px}
-    .modal-backdrop.open{display:flex}
-    .modal{width:100%;max-width:620px;background:var(--bg);border-radius:25px 25px 20px 20px;padding:20px 18px calc(18px + env(safe-area-inset-bottom));max-height:92dvh;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.22)}
-    .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.modal h2{font-size:21px;letter-spacing:-.04em;margin:0}
-    .close{border:0;background:#e8ebf0;width:36px;height:36px;border-radius:50%;font-size:20px;color:var(--text)}
-    label{display:block;font-size:12px;font-weight:750;color:var(--text);margin:15px 0 7px}
-    input[type=text],textarea{width:100%;border:1px solid var(--line);background:#fff;border-radius:13px;padding:13px 14px;color:var(--ink);outline:none;font-size:14px}
-    textarea{min-height:100px;resize:vertical;line-height:1.45}input:focus,textarea:focus{border-color:#9ba8bb;box-shadow:0 0 0 3px rgba(116,135,162,.12)}
-    .upload{border:1.5px dashed #bdc7d5;border-radius:16px;background:#fff;min-height:112px;display:flex;align-items:center;justify-content:center;gap:12px;padding:14px;color:var(--muted);text-align:left}
-    .upload-icon{width:42px;height:42px;border-radius:13px;background:#f0f2f6;display:grid;place-items:center;font-size:20px;color:var(--ink);flex:none}
-    .upload strong{display:block;color:var(--ink);font-size:13px;margin-bottom:4px}.upload small{font-size:11px}
-    .preview{display:none;width:100%;max-height:190px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:13px;margin-top:9px}
-    .form-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:19px}.secondary{border:1px solid var(--line);background:#fff;border-radius:15px;min-height:52px;font-weight:750;color:var(--text)}
-    .save{border:0;background:var(--ink);color:#fff;border-radius:15px;min-height:52px;font-weight:800}
-    .hint{font-size:11px;color:var(--muted);line-height:1.5;margin:12px 2px 0}
-    .toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));left:50%;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 16px;border-radius:99px;font-size:12px;opacity:0;pointer-events:none;transition:.2s;z-index:20;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
-    .help{font-size:12px;line-height:1.55;color:var(--muted);background:#fff;border:1px solid var(--line);padding:13px 14px;border-radius:14px;margin-top:12px;display:none}.help.show{display:block}
-    @media(min-width:600px){.app{padding-top:34px}.modal-backdrop{align-items:center}.modal{border-radius:25px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101827">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Paket">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<title>Paket – SURMI</title>
+
+<style>
+:root {
+  --ink:#101827;
+  --text:#263449;
+  --muted:#738096;
+  --bg:#f3f5f8;
+  --surface:#fff;
+  --line:#e3e8ef;
+  --accent:#ff536d;
+  --green:#16845b;
+  --amber:#a96812;
+}
+
+* { box-sizing:border-box; }
+
+html { background:var(--bg); }
+
+body {
+  margin:0;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  min-height:100vh;
+}
+
+button,input,textarea { font:inherit; }
+button { cursor:pointer; }
+
+.app {
+  max-width:680px;
+  margin:0 auto;
+  min-height:100dvh;
+  padding:calc(16px + env(safe-area-inset-top)) 18px calc(28px + env(safe-area-inset-bottom));
+}
+
+header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:28px;
+}
+
+.brand {
+  font-size:13px;
+  font-weight:850;
+  letter-spacing:.16em;
+}
+
+.brand span {
+  color:var(--muted);
+  font-weight:600;
+  letter-spacing:.03em;
+  margin-left:5px;
+}
+
+.icon-btn {
+  width:42px;
+  height:42px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--surface);
+  display:grid;
+  place-items:center;
+  color:var(--text);
+}
+
+.eyebrow {
+  font-size:11px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:750;
+  margin:0 0 9px;
+}
+
+h1 {
+  font-size:clamp(32px,8vw,42px);
+  letter-spacing:-.055em;
+  line-height:1;
+  margin:0;
+}
+
+.intro {
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+  margin:11px 0 22px;
+}
+
+.stats {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:22px;
+}
+
+.stat {
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:15px 16px;
+}
+
+.stat strong {
+  display:block;
+  font-size:27px;
+  letter-spacing:-.05em;
+}
+
+.stat span {
+  font-size:12px;
+  color:var(--muted);
+}
+
+.primary {
+  width:100%;
+  border:0;
+  border-radius:17px;
+  background:var(--ink);
+  color:white;
+  min-height:56px;
+  font-weight:750;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.plus { font-size:23px; }
+
+.section-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:29px 2px 12px;
+}
+
+.section-head h2 {
+  font-size:17px;
+  margin:0;
+}
+
+.count {
+  font-size:12px;
+  color:var(--muted);
+}
+
+.filters {
+  display:flex;
+  gap:7px;
+  overflow:auto;
+  padding-bottom:4px;
+  margin-bottom:12px;
+}
+
+.filter {
+  white-space:nowrap;
+  border:1px solid var(--line);
+  background:white;
+  color:var(--muted);
+  border-radius:999px;
+  padding:9px 13px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.filter.active {
+  background:var(--ink);
+  color:white;
+  border-color:var(--ink);
+}
+
+.list {
+  display:grid;
+  gap:11px;
+}
+
+.parcel {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:12px;
+  display:grid;
+  grid-template-columns:86px minmax(0,1fr);
+  gap:13px;
+}
+
+.thumb {
+  width:86px;
+  height:104px;
+  border-radius:13px;
+  background:#f0f2f5;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  color:#a0aaba;
+}
+
+.thumb img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:white;
+}
+
+.no-image {
+  font-size:10px;
+  text-align:center;
+  padding:8px;
+}
+
+.parcel-main {
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+}
+
+.parcel-title {
+  font-size:14px;
+  font-weight:800;
+  margin:2px 0 5px;
+  overflow-wrap:anywhere;
+}
+
+.date {
+  font-size:10px;
+  color:var(--muted);
+}
+
+.desc {
+  font-size:13px;
+  line-height:1.4;
+  color:var(--text);
+  margin:8px 0 11px;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+}
+
+.status {
+  display:inline-flex;
+  align-self:flex-start;
+  border-radius:999px;
+  padding:6px 9px;
+  font-size:10px;
+  font-weight:800;
+  background:#fff4df;
+  color:var(--amber);
+}
+
+.status.ready {
+  background:#e8f6ef;
+  color:var(--green);
+}
+
+.actions {
+  display:flex;
+  gap:7px;
+  margin-top:auto;
+  padding-top:10px;
+  flex-wrap:wrap;
+}
+
+.small-btn {
+  border:1px solid var(--line);
+  background:white;
+  border-radius:10px;
+  padding:8px 10px;
+  font-size:11px;
+  font-weight:750;
+  color:var(--text);
+}
+
+.small-btn.done {
+  background:#edf7f1;
+  color:var(--green);
+}
+
+.small-btn.delete { color:#a14c57; }
+
+.empty {
+  border:1px dashed #cbd3df;
+  border-radius:20px;
+  padding:28px 18px;
+  text-align:center;
+  color:var(--muted);
+}
+
+.empty strong {
+  display:block;
+  color:var(--ink);
+  margin-bottom:6px;
+}
+
+.empty p {
+  font-size:12px;
+  line-height:1.5;
+  margin:0;
+}
+
+.foot {
+  font-size:10px;
+  color:#9aa4b3;
+  text-align:center;
+  margin:28px 0 8px;
+}
+
+.modal-backdrop {
+  position:fixed;
+  inset:0;
+  background:rgba(10,17,29,.48);
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  z-index:10;
+  padding:12px;
+}
+
+.modal-backdrop.open { display:flex; }
+
+.modal {
+  width:100%;
+  max-width:620px;
+  background:var(--bg);
+  border-radius:25px 25px 20px 20px;
+  padding:20px 18px calc(18px + env(safe-area-inset-bottom));
+  max-height:92dvh;
+  overflow:auto;
+}
+
+.modal-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.modal h2 {
+  font-size:21px;
+  margin:0;
+}
+
+.close {
+  border:0;
+  background:#e8ebf0;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  font-size:20px;
+}
+
+.field-label {
+  display:block;
+  font-size:12px;
+  font-weight:750;
+  color:var(--text);
+  margin:15px 0 7px;
+}
+
+input[type=text],textarea {
+  width:100%;
+  border:1px solid var(--line);
+  background:white;
+  border-radius:13px;
+  padding:13px 14px;
+  color:var(--ink);
+  outline:none;
+  font-size:14px;
+}
+
+textarea {
+  min-height:100px;
+  resize:vertical;
+  line-height:1.45;
+}
+
+.upload {
+  border:1.5px dashed #bdc7d5;
+  border-radius:16px;
+  background:white;
+  min-height:105px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:14px;
+  color:var(--muted);
+  cursor:pointer;
+}
+
+.upload-icon {
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  background:#f0f2f6;
+  display:grid;
+  place-items:center;
+  font-size:22px;
+  color:var(--ink);
+}
+
+.upload strong {
+  display:block;
+  color:var(--ink);
+  font-size:13px;
+  margin-bottom:4px;
+}
+
+.upload small { font-size:11px; }
+
+.preview {
+  display:none;
+  width:100%;
+  max-height:190px;
+  object-fit:contain;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:13px;
+  margin-top:9px;
+}
+
+.hint {
+  font-size:11px;
+  color:var(--muted);
+  line-height:1.5;
+  margin:12px 2px 0;
+}
+
+.form-actions {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+  margin-top:19px;
+}
+
+.secondary,.save {
+  border-radius:15px;
+  min-height:52px;
+  font-weight:750;
+}
+
+.secondary {
+  border:1px solid var(--line);
+  background:white;
+  color:var(--text);
+}
+
+.save {
+  border:0;
+  background:var(--ink);
+  color:white;
+}
+
+.photo-viewer {
+  position:fixed;
+  inset:0;
+  background:rgba(5,10,18,.96);
+  z-index:30;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.photo-viewer.open { display:flex; }
+
+.photo-viewer img {
+  max-width:100%;
+  max-height:calc(100dvh - 80px);
+  object-fit:contain;
+}
+
+.photo-viewer button {
+  position:absolute;
+  top:calc(16px + env(safe-area-inset-top));
+  right:16px;
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.16);
+  color:white;
+  font-size:27px;
+}
+
+.toast {
+  position:fixed;
+  bottom:calc(20px + env(safe-area-inset-bottom));
+  left:50%;
+  transform:translate(-50%,20px);
+  background:var(--ink);
+  color:white;
+  padding:12px 16px;
+  border-radius:99px;
+  font-size:12px;
+  opacity:0;
+  pointer-events:none;
+  transition:.2s;
+  z-index:40;
+  white-space:nowrap;
+}
+
+.toast.show {
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+.help {
+  font-size:12px;
+  line-height:1.55;
+  color:var(--muted);
+  background:white;
+  border:1px solid var(--line);
+  padding:13px 14px;
+  border-radius:14px;
+  margin-top:12px;
+  display:none;
+}
+
+.help.show { display:block; }
+
+@media(min-width:600px) {
+  .app { padding-top:34px; }
+  .modal-backdrop { align-items:center; }
+  .modal { border-radius:25px; }
+}
+</style>
 </head>
+
 <body>
 <main class="app">
-  <header>
-    <div class="brand">SURMI<span>/ PAKET</span></div>
-    <button class="icon-btn" id="helpBtn" aria-label="Hjälp" title="Hjälp">?</button>
-  </header>
-  <p class="eyebrow">Din lilla returassistent</p>
-  <h1>Paket<span style="color:var(--accent)">.</span></h1>
-  <p class="intro">QR-koder och packningslistor – samlade på ett ställe.</p>
 
-  <section class="stats" aria-label="Översikt">
-    <div class="stat"><strong id="todoCount">0</strong><span>Att packa</span></div>
-    <div class="stat"><strong id="readyCount">0</strong><span>Redo att skicka</span></div>
-  </section>
-  <button class="primary" id="addBtn"><span class="plus">＋</span> Lägg till paket</button>
+<header>
+  <div class="brand">SURMI<span>/ PAKET</span></div>
+  <button class="icon-btn" id="helpBtn">?</button>
+</header>
 
-  <div class="section-head"><h2>Dina paket</h2><span class="count" id="totalCount">0 totalt</span></div>
-  <nav class="filters" aria-label="Filtrera paket">
-    <button class="filter active" data-filter="all">Alla</button>
-    <button class="filter" data-filter="todo">Att packa</button>
-    <button class="filter" data-filter="ready">Redo att skicka</button>
-  </nav>
-  <section class="list" id="parcelList"></section>
-  <p class="foot">SURMI · THINK BIG. SHIP SMALL. LEARN FAST.</p>
-  <div class="help" id="helpPanel"><strong style="color:var(--ink)">Så fungerar det</strong><br>Allt sparas lokalt i den här webbläsaren på mobilen. Lägg till QR-bilden och skriv vad som ska packas. När paketet är skickat kan du ta bort det från listan.<br><br><strong style="color:var(--ink)">Tips:</strong> Lägg sidan på hemskärmen via Dela → Lägg till på hemskärmen i Safari. Då får du en appikon och ett mer app-likt läge.</div>
+<p class="eyebrow">Din lilla returassistent</p>
+<h1>Paket<span style="color:var(--accent)">.</span></h1>
+<p class="intro">QR-koder och packningslistor – samlade på ett ställe.</p>
+
+<section class="stats">
+  <div class="stat">
+    <strong id="todoCount">0</strong>
+    <span>Att packa</span>
+  </div>
+  <div class="stat">
+    <strong id="readyCount">0</strong>
+    <span>Redo att skicka</span>
+  </div>
+</section>
+
+<button class="primary" id="addBtn">
+  <span class="plus">＋</span> Lägg till paket
+</button>
+
+<div class="section-head">
+  <h2>Dina paket</h2>
+  <span class="count" id="totalCount">0 totalt</span>
+</div>
+
+<nav class="filters">
+  <button class="filter active" data-filter="all">Alla</button>
+  <button class="filter" data-filter="todo">Att packa</button>
+  <button class="filter" data-filter="ready">Redo att skicka</button>
+</nav>
+
+<section class="list" id="parcelList"></section>
+
+<p class="foot">SURMI · THINK BIG. SHIP SMALL. LEARN FAST.</p>
+
+<div class="help" id="helpPanel">
+  <strong>Så fungerar det</strong><br>
+  Allt sparas lokalt i den här webbläsaren.
+  Lägg till QR-bilden och skriv vad som ska packas.
+  När paketet är skickat kan du ta bort det från listan.
+</div>
+
 </main>
 
-<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal">
-    <div class="modal-head"><h2 id="modalTitle">Nytt paket</h2><button class="close" id="closeModal" aria-label="Stäng">×</button></div>
-    <form id="parcelForm">
-      <label for="parcelName">Namn på paketet</label>
-      <input type="text" id="parcelName" maxlength="60" placeholder="Ex. Paket till PostNord" autocomplete="off">
-      <label>QR-kod / fraktsedel</label>
-      <label class="upload" for="parcelImage" style="margin:0">
-        <span class="upload-icon">＋</span><span><strong id="uploadTitle">Välj eller ta en bild</strong><small id="uploadSub">Bild från mobilen · JPG, PNG eller HEIC</small></span>
-      </label>
-      <input id="parcelImage" type="file" accept="image/*" capture="environment" hidden>
-      <img class="preview" id="imagePreview" alt="Förhandsvisning av vald QR-bild">
-      <label for="parcelNotes">Vad ska packas?</label>
-      <textarea id="parcelNotes" maxlength="1000" placeholder="Skriv vad du ska lägga i paketet..."></textarea>
-      <p class="hint">QR-bilden sparas i din mobil tillsammans med instruktionen. Kontrollera att QR-koden är tydlig innan du går till ombudet.</p>
-      <div class="form-actions"><button type="button" class="secondary" id="cancelBtn">Avbryt</button><button class="save" type="submit">Spara paket</button></div>
-    </form>
-  </div>
+<!-- Lägg till paket -->
+<div class="modal-backdrop" id="modalBackdrop">
+<div class="modal">
+
+<div class="modal-head">
+  <h2>Nytt paket</h2>
+  <button class="close" id="closeModal">×</button>
 </div>
+
+<form id="parcelForm">
+
+<label class="field-label" for="parcelName">Namn på paketet</label>
+<input type="text" id="parcelName" maxlength="60"
+placeholder="Ex. Paket till PostNord">
+
+<label class="field-label">QR-kod / fraktsedel</label>
+
+<label class="upload" for="parcelImage">
+  <span class="upload-icon">▧</span>
+  <span>
+    <strong>Välj bild från biblioteket</strong>
+    <small>Välj ett befintligt foto från mobilen</small>
+  </span>
+</label>
+
+<input id="parcelImage" type="file" accept="image/*" hidden>
+
+<img class="preview" id="imagePreview" alt="Förhandsvisning av QR-bild">
+
+<label class="field-label" for="parcelNotes">Vad ska packas?</label>
+<textarea id="parcelNotes" maxlength="1000"
+placeholder="Skriv vad du ska lägga i paketet..."></textarea>
+
+<p class="hint">
+  QR-bilden sparas tillsammans med instruktionen.
+  Du kan trycka på bilden i paketlistan för att förstora den.
+</p>
+
+<div class="form-actions">
+  <button type="button" class="secondary" id="cancelBtn">Avbryt</button>
+  <button class="save" type="submit">Spara paket</button>
+</div>
+
+</form>
+</div>
+</div>
+
+<!-- Förstorad bild -->
+<div class="photo-viewer" id="photoViewer">
+  <button id="closePhotoViewer" aria-label="Stäng">×</button>
+  <img id="largePhoto" alt="Förstorad QR-kod">
+</div>
+
 <div class="toast" id="toast"></div>
+
 <script>
 (() => {
-  const DB_NAME='surmi-parcel-db', STORE='parcels', DB_VERSION=1;
-  let db, selectedImage=null, activeFilter='all';
-  const $=id=>document.getElementById(id);
-  const list=$('parcelList');
 
-  function openDB(){return new Promise((resolve,reject)=>{
-    const req=indexedDB.open(DB_NAME,DB_VERSION);
-    req.onupgradeneeded=()=>{const d=req.result;if(!d.objectStoreNames.contains(STORE))d.createObjectStore(STORE,{keyPath:'id'});};
-    req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);
-  });}
-  function allParcels(){return new Promise((resolve,reject)=>{const r=db.transaction(STORE).objectStore(STORE).getAll();r.onsuccess=()=>resolve(r.result.sort((a,b)=>b.created-a.created));r.onerror=()=>reject(r.error);});}
-  function putParcel(p){return new Promise((resolve,reject)=>{const r=db.transaction(STORE,'readwrite').objectStore(STORE).put(p);r.onsuccess=()=>resolve();r.onerror=()=>reject(r.error);});}
-  function deleteParcel(id){return new Promise((resolve,reject)=>{const r=db.transaction(STORE,'readwrite').objectStore(STORE).delete(id);r.onsuccess=()=>resolve();r.onerror=()=>reject(r.error);});}
-  function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2200);}
-  function dateText(ts){return new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'short'}).format(new Date(ts));}
-  function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-  async function render(){
-    const items=await allParcels();
-    $('todoCount').textContent=items.filter(p=>!p.ready).length;
-    $('readyCount').textContent=items.filter(p=>p.ready).length;
-    $('totalCount').textContent=items.length+' totalt';
-    const shown=items.filter(p=>activeFilter==='all'||(activeFilter==='ready'?p.ready:!p.ready));
-    if(!shown.length){
-      list.innerHTML=`<div class="empty"><strong>${items.length?'Inga paket här':'Listan är tom – skönt!'}</strong><p>${items.length?'Byt filter för att se dina andra paket.':'Lägg till QR-bilden du fått och skriv vad som ska packas.'}</p></div>`;
-      return;
-    }
-    list.innerHTML='';
-    for(const p of shown){
-      const card=document.createElement('article');card.className='parcel';
-      const thumb=document.createElement('div');thumb.className='thumb';
-      if(p.image){const img=document.createElement('img');img.src=URL.createObjectURL(p.image);img.alt='QR-kod för '+(p.name||'paket');thumb.append(img);}
-      else thumb.innerHTML='<span class="no-image">Ingen QR-bild</span>';
-      const main=document.createElement('div');main.className='parcel-main';
-      main.innerHTML=`<div class="parcel-top"><div><div class="parcel-title">${esc(p.name||'Paket')}</div><div class="date">Tillagd ${dateText(p.created)}</div></div></div><div class="desc">${esc(p.notes||'Ingen packningsinstruktion angiven.')}</div><span class="status ${p.ready?'ready':''}">${p.ready?'Redo att skicka':'Att packa'}</span><div class="actions"><button class="small-btn done" data-action="toggle">${p.ready?'Ångra status':'Markera klar'}</button><button class="small-btn delete" data-action="delete">Ta bort</button></div>`;
-      main.querySelector('[data-action="toggle"]').addEventListener('click',async()=>{p.ready=!p.ready;await putParcel(p);render();toast(p.ready?'Markerad som redo':'Flyttad till att packa');});
-      main.querySelector('[data-action="delete"]').addEventListener('click',async()=>{if(confirm('Ta bort paketet från listan?')){await deleteParcel(p.id);render();toast('Paketet är borttaget');}});
-      card.append(thumb,main);list.append(card);
-    }
+const DB_NAME = 'surmi-parcel-db';
+const STORE = 'parcels';
+const DB_VERSION = 1;
+
+let db;
+let selectedImage = null;
+let activeFilter = 'all';
+
+const $ = id => document.getElementById(id);
+
+function openDB() {
+  return new Promise((resolve,reject) => {
+    const req = indexedDB.open(DB_NAME,DB_VERSION);
+
+    req.onupgradeneeded = () => {
+      const d = req.result;
+      if (!d.objectStoreNames.contains(STORE)) {
+        d.createObjectStore(STORE,{keyPath:'id'});
+      }
+    };
+
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+function allParcels() {
+  return new Promise((resolve,reject) => {
+    const r = db.transaction(STORE)
+      .objectStore(STORE).getAll();
+
+    r.onsuccess = () =>
+      resolve(r.result.sort((a,b) => b.created-a.created));
+
+    r.onerror = () => reject(r.error);
+  });
+}
+
+function putParcel(p) {
+  return new Promise((resolve,reject) => {
+    const r = db.transaction(STORE,'readwrite')
+      .objectStore(STORE).put(p);
+
+    r.onsuccess = () => resolve();
+    r.onerror = () => reject(r.error);
+  });
+}
+
+function deleteParcel(id) {
+  return new Promise((resolve,reject) => {
+    const r = db.transaction(STORE,'readwrite')
+      .objectStore(STORE).delete(id);
+
+    r.onsuccess = () => resolve();
+    r.onerror = () => reject(r.error);
+  });
+}
+
+function toast(msg) {
+  const el = $('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'),2200);
+}
+
+function dateText(ts) {
+  return new Intl.DateTimeFormat('sv-SE',{
+    day:'numeric',
+    month:'short'
+  }).format(new Date(ts));
+}
+
+function esc(s) {
+  return String(s || '').replace(/[&<>"']/g,c => ({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#39;'
+  }[c]));
+}
+
+async function render() {
+
+  const items = await allParcels();
+
+  $('todoCount').textContent =
+    items.filter(p => !p.ready).length;
+
+  $('readyCount').textContent =
+    items.filter(p => p.ready).length;
+
+  $('totalCount').textContent =
+    items.length + ' totalt';
+
+  const shown = items.filter(p =>
+    activeFilter === 'all' ||
+    (activeFilter === 'ready' ? p.ready : !p.ready)
+  );
+
+  if (!shown.length) {
+    list.innerHTML = `
+      <div class="empty">
+        <strong>${items.length ? 'Inga paket här' : 'Listan är tom – skönt!'}</strong>
+        <p>${items.length
+          ? 'Byt filter för att se dina andra paket.'
+          : 'Lägg till QR-bilden du fått och skriv vad som ska packas.'}
+        </p>
+      </div>`;
+    return;
   }
-  function openModal(){selectedImage=null;$('parcelForm').reset();$('imagePreview').style.display='none';$('uploadTitle').textContent='Välj eller ta en bild';$('uploadSub').textContent='Bild från mobilen · JPG, PNG eller HEIC';$('modalBackdrop').classList.add('open');setTimeout(()=>$('parcelName').focus(),150);}
-  function closeModal(){$('modalBackdrop').classList.remove('open');}
-  $('addBtn').addEventListener('click',openModal);$('closeModal').addEventListener('click',closeModal);$('cancelBtn').addEventListener('click',closeModal);
-  $('modalBackdrop').addEventListener('click',e=>{if(e.target===$('modalBackdrop'))closeModal();});
-  $('parcelImage').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;if(!file.type.startsWith('image/')){toast('Välj en bildfil');return;}selectedImage=file;$('imagePreview').src=URL.createObjectURL(file);$('imagePreview').style.display='block';$('uploadTitle').textContent=file.name;$('uploadSub').textContent=(file.size/1024/1024).toFixed(1)+' MB · Bild vald';});
-  $('parcelForm').addEventListener('submit',async e=>{e.preventDefault();const name=$('parcelName').value.trim(),notes=$('parcelNotes').value.trim();if(!selectedImage&&!notes){toast('Lägg till en bild eller instruktion');return;}const p={id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),name:name||'Paket',notes,image:selectedImage,ready:false,created:Date.now()};try{await putParcel(p);closeModal();activeFilter='all';document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all'));await render();toast('Paketet är sparat');}catch(err){console.error(err);toast('Kunde inte spara – kontrollera lagringsutrymmet');}});
-  document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{activeFilter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render();}));
-  $('helpBtn').addEventListener('click',()=>$('helpPanel').classList.toggle('show'));
-  openDB().then(d=>{db=d;render();}).catch(err=>{console.error(err);list.innerHTML='<div class="empty"><strong>Lagringen kunde inte starta</strong><p>Öppna sidan i Safari eller en modern webbläsare.</p></div>';});
-  if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+
+  list.innerHTML = '';
+
+  for (const p of shown) {
+
+    const card = document.createElement('article');
+    card.className = 'parcel';
+
+    const thumb = document.createElement('div');
+    thumb.className = 'thumb';
+
+    if (p.image) {
+
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(p.image);
+      img.alt = 'QR-kod för ' + (p.name || 'paket');
+
+      thumb.append(img);
+      thumb.style.cursor = 'zoom-in';
+
+      thumb.addEventListener('click',() => {
+        showLargePhoto(img.src);
+      });
+
+    } else {
+      thumb.innerHTML = '<span class="no-image">Ingen QR-bild</span>';
+    }
+
+    const main = document.createElement('div');
+    main.className = 'parcel-main';
+
+    main.innerHTML = `
+      <div class="parcel-title">${esc(p.name || 'Paket')}</div>
+      <div class="date">Tillagd ${dateText(p.created)}</div>
+      <div class="desc">${esc(p.notes || 'Ingen packningsinstruktion angiven.')}</div>
+      <span class="status ${p.ready ? 'ready' : ''}">
+        ${p.ready ? 'Redo att skicka' : 'Att packa'}
+      </span>
+      <div class="actions">
+        <button class="small-btn done" data-action="toggle">
+          ${p.ready ? 'Ångra status' : 'Markera klar'}
+        </button>
+        <button class="small-btn delete" data-action="delete">
+          Ta bort
+        </button>
+      </div>
+    `;
+
+    main.querySelector('[data-action="toggle"]')
+      .addEventListener('click',async () => {
+        p.ready = !p.ready;
+        await putParcel(p);
+        render();
+        toast(p.ready ? 'Markerad som redo' : 'Flyttad till att packa');
+      });
+
+    main.querySelector('[data-action="delete"]')
+      .addEventListener('click',async () => {
+        if (confirm('Ta bort paketet från listan?')) {
+          await deleteParcel(p.id);
+          render();
+          toast('Paketet är borttaget');
+        }
+      });
+
+    card.append(thumb,main);
+    list.append(card);
+  }
+}
+
+function openModal() {
+  selectedImage = null;
+  $('parcelForm').reset();
+  $('imagePreview').style.display = 'none';
+  $('parcelImage').value = '';
+  $('modalBackdrop').classList.add('open');
+}
+
+function closeModal() {
+  $('modalBackdrop').classList.remove('open');
+}
+
+$('addBtn').addEventListener('click',openModal);
+$('closeModal').addEventListener('click',closeModal);
+$('cancelBtn').addEventListener('click',closeModal);
+
+$('modalBackdrop').addEventListener('click',e => {
+  if (e.target === $('modalBackdrop')) closeModal();
+});
+
+// Bild från mobilens befintliga bibliotek
+$('parcelImage').addEventListener('change',e => {
+
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+
+  if (!file.type.startsWith('image/')) {
+    toast('Välj en bildfil');
+    return;
+  }
+
+  selectedImage = file;
+
+  $('imagePreview').src = URL.createObjectURL(file);
+  $('imagePreview').style.display = 'block';
+
+});
+
+// Förstorad QR-bild
+function showLargePhoto(src) {
+  $('largePhoto').src = src;
+  $('photoViewer').classList.add('open');
+}
+
+function closeLargePhoto() {
+  $('photoViewer').classList.remove('open');
+  $('largePhoto').removeAttribute('src');
+}
+
+$('closePhotoViewer').addEventListener('click',closeLargePhoto);
+
+$('photoViewer').addEventListener('click',e => {
+  if (e.target === $('photoViewer')) closeLargePhoto();
+});
+
+document.addEventListener('keydown',e => {
+  if (e.key === 'Escape') {
+    closeLargePhoto();
+    closeModal();
+  }
+});
+
+// Spara paket
+$('parcelForm').addEventListener('submit',async e => {
+
+  e.preventDefault();
+
+  const name = $('parcelName').value.trim();
+  const notes = $('parcelNotes').value.trim();
+
+  if (!selectedImage && !notes) {
+    toast('Lägg till en bild eller instruktion');
+    return;
+  }
+
+  const p = {
+    id: crypto.randomUUID
+      ? crypto.randomUUID()
+      : String(Date.now()),
+    name: name || 'Paket',
+    notes,
+    image:selectedImage,
+    ready:false,
+    created:Date.now()
+  };
+
+  try {
+    await putParcel(p);
+
+    closeModal();
+    activeFilter = 'all';
+
+    document.querySelectorAll('.filter').forEach(b => {
+      b.classList.toggle('active',b.dataset.filter === 'all');
+    });
+
+    await render();
+    toast('Paketet är sparat');
+
+  } catch(err) {
+    console.error(err);
+    toast('Kunde inte spara paketet');
+  }
+
+});
+
+// Filter
+document.querySelectorAll('.filter').forEach(b => {
+  b.addEventListener('click',() => {
+    activeFilter = b.dataset.filter;
+
+    document.querySelectorAll('.filter').forEach(x => {
+      x.classList.toggle('active',x === b);
+    });
+
+    render();
+  });
+});
+
+// Hjälp
+$('helpBtn').addEventListener('click',() => {
+  $('helpPanel').classList.toggle('show');
+});
+
+// Starta
+openDB()
+  .then(d => {
+    db = d;
+    render();
+  })
+  .catch(err => {
+    console.error(err);
+    list.innerHTML = `
+      <div class="empty">
+        <strong>Lagringen kunde inte starta</strong>
+        <p>Öppna sidan i en modern webbläsare.</p>
+      </div>`;
+  });
+
+// Offline-stöd
+if ('serviceWorker' in navigator &&
+    location.protocol.startsWith('http')) {
+  navigator.serviceWorker.register('./sw.js').catch(() => {});
+}
+
 })();
 </script>
 </body>
