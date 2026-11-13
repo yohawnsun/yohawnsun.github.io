@@ -1,0 +1,1289 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#173b32">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Christmas">
+<title>Christmas – SURMI</title>
+
+<style>
+:root {
+  --ink:#172b25;
+  --text:#354b43;
+  --muted:#819087;
+  --bg:#f3f6f3;
+  --surface:#fff;
+  --line:#e3eae5;
+  --green:#24634c;
+  --green-dark:#173b32;
+  --red:#b94c50;
+  --gold:#bd9650;
+  --shadow:0 8px 28px rgba(27,55,43,.06);
+}
+
+* { box-sizing:border-box; }
+
+html { background:var(--bg); }
+
+body {
+  margin:0;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  min-height:100vh;
+}
+
+button,input,textarea { font:inherit; }
+button { cursor:pointer; }
+
+.app {
+  max-width:680px;
+  margin:0 auto;
+  min-height:100dvh;
+  padding:calc(18px + env(safe-area-inset-top)) 18px calc(32px + env(safe-area-inset-bottom));
+}
+
+header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:32px;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  font-weight:800;
+}
+
+.brand-lockup {
+  display:inline-flex;
+  align-items:baseline;
+  white-space:nowrap;
+  letter-spacing:-.055em;
+  line-height:1;
+}
+
+.brand-word,.brand-tld { color:var(--ink); }
+.brand-word { font-weight:850; }
+
+.brand-dot {
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--red);
+  display:inline-block;
+  margin:0 4px 2px 3px;
+}
+
+.brand-tld { font-weight:650; }
+
+.brand-section {
+  color:var(--muted);
+  font-size:10px;
+  font-weight:650;
+  letter-spacing:.08em;
+}
+
+.header-icon {
+  width:42px;
+  height:42px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--surface);
+  color:var(--green);
+  display:grid;
+  place-items:center;
+  font-size:19px;
+}
+
+.eyebrow {
+  font-size:11px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--green);
+  font-weight:750;
+  margin:0 0 10px;
+}
+
+h1 {
+  font-size:clamp(36px,9vw,48px);
+  letter-spacing:-.06em;
+  line-height:1;
+  margin:0;
+}
+
+.intro {
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+  margin:12px 0 24px;
+}
+
+.hero {
+  position:relative;
+  overflow:hidden;
+  background:var(--green-dark);
+  color:white;
+  border-radius:23px;
+  padding:24px 22px;
+  margin-bottom:20px;
+}
+
+.hero:after {
+  content:"✳";
+  position:absolute;
+  right:20px;
+  top:10px;
+  font-size:100px;
+  color:rgba(255,255,255,.07);
+  transform:rotate(15deg);
+  pointer-events:none;
+}
+
+.hero-label {
+  color:#b8d2c3;
+  font-size:10px;
+  font-weight:750;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:9px;
+}
+
+.hero-title {
+  font-size:23px;
+  font-weight:750;
+  letter-spacing:-.04em;
+  margin-bottom:6px;
+}
+
+.hero-sub {
+  color:#c5d6cc;
+  font-size:13px;
+  line-height:1.5;
+  max-width:80%;
+}
+
+.stats {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:27px;
+}
+
+.stat {
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:16px;
+}
+
+.stat-label {
+  color:var(--muted);
+  font-size:11px;
+  font-weight:650;
+  margin-bottom:8px;
+}
+
+.stat-value {
+  font-size:23px;
+  font-weight:800;
+  letter-spacing:-.04em;
+}
+
+.stat-value small {
+  font-size:13px;
+  font-weight:650;
+}
+
+.section-heading {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:28px 0 14px;
+}
+
+.section-heading h2 {
+  font-size:17px;
+  letter-spacing:-.03em;
+  margin:0;
+}
+
+.person-count {
+  color:var(--muted);
+  font-size:12px;
+}
+
+.primary-btn {
+  border:0;
+  border-radius:13px;
+  background:var(--green);
+  color:white;
+  padding:12px 16px;
+  font-size:13px;
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:background .15s,transform .15s;
+}
+
+.primary-btn:hover { background:var(--green-dark); }
+.primary-btn:active { transform:scale(.98); }
+
+.secondary-btn {
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:white;
+  color:var(--text);
+  padding:10px 13px;
+  font-size:12px;
+  font-weight:650;
+}
+
+.danger-btn {
+  border:1px solid #f0dddd;
+  border-radius:11px;
+  background:#fff8f8;
+  color:var(--red);
+  padding:9px 12px;
+  font-size:12px;
+  font-weight:650;
+}
+
+.people {
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.person-card {
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:19px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.person-top {
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:17px;
+}
+
+.person-photo {
+  width:54px;
+  height:54px;
+  border-radius:17px;
+  object-fit:cover;
+  background:#eaf0eb;
+  flex-shrink:0;
+}
+
+.person-placeholder {
+  width:54px;
+  height:54px;
+  border-radius:17px;
+  display:grid;
+  place-items:center;
+  background:#eaf0eb;
+  color:var(--green);
+  font-size:23px;
+  flex-shrink:0;
+}
+
+.person-info {
+  flex:1;
+  min-width:0;
+}
+
+.person-name {
+  font-size:16px;
+  font-weight:800;
+  letter-spacing:-.025em;
+  overflow-wrap:anywhere;
+}
+
+.person-meta {
+  font-size:11px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.person-total {
+  text-align:right;
+  flex-shrink:0;
+}
+
+.person-total-label {
+  font-size:10px;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+
+.person-total-value {
+  font-size:17px;
+  font-weight:800;
+  letter-spacing:-.035em;
+}
+
+.person-actions {
+  display:flex;
+  gap:7px;
+  padding:0 17px 15px;
+}
+
+.person-actions button {
+  font-size:11px;
+  padding:8px 10px;
+}
+
+.gift-list {
+  border-top:1px solid var(--line);
+  padding:4px 17px 13px;
+}
+
+.gift-row {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:12px 0;
+  border-bottom:1px solid #eff2ef;
+}
+
+.gift-row:last-child { border-bottom:0; }
+
+.gift-image {
+  width:55px;
+  height:55px;
+  border-radius:12px;
+  object-fit:cover;
+  background:#f0f3f0;
+  flex-shrink:0;
+  cursor:zoom-in;
+}
+
+.gift-placeholder {
+  width:55px;
+  height:55px;
+  border-radius:12px;
+  background:#f0f3f0;
+  display:grid;
+  place-items:center;
+  color:#9aa99e;
+  font-size:21px;
+  flex-shrink:0;
+}
+
+.gift-info {
+  flex:1;
+  min-width:0;
+}
+
+.gift-name {
+  font-size:13px;
+  font-weight:750;
+  overflow-wrap:anywhere;
+}
+
+.gift-link {
+  display:inline-block;
+  margin-top:4px;
+  color:var(--green);
+  font-size:11px;
+  text-decoration:none;
+}
+
+.gift-link:hover { text-decoration:underline; }
+
+.gift-price {
+  font-size:13px;
+  font-weight:800;
+  white-space:nowrap;
+  text-align:right;
+}
+
+.gift-controls {
+  display:flex;
+  gap:5px;
+  margin-top:6px;
+  justify-content:flex-end;
+}
+
+.mini-btn {
+  border:1px solid var(--line);
+  background:white;
+  color:var(--muted);
+  border-radius:8px;
+  font-size:10px;
+  padding:5px 7px;
+}
+
+.add-gift-row {
+  padding-top:10px;
+}
+
+.add-gift-btn {
+  width:100%;
+  border:1px dashed #cbd8ce;
+  background:#f8faf8;
+  color:var(--green);
+  border-radius:11px;
+  padding:11px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.empty-gifts {
+  color:var(--muted);
+  font-size:12px;
+  padding:13px 0;
+}
+
+.empty-state {
+  text-align:center;
+  background:white;
+  border:1px dashed #d6e0d8;
+  border-radius:18px;
+  padding:35px 20px;
+}
+
+.empty-icon {
+  font-size:34px;
+  margin-bottom:12px;
+}
+
+.empty-title {
+  font-weight:800;
+  font-size:15px;
+}
+
+.empty-text {
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.5;
+  margin:8px auto 17px;
+  max-width:260px;
+}
+
+footer {
+  text-align:center;
+  color:#a1aca5;
+  font-size:10px;
+  margin-top:35px;
+  letter-spacing:.04em;
+}
+
+/* Modal */
+
+.backdrop {
+  position:fixed;
+  inset:0;
+  z-index:20;
+  background:rgba(15,30,24,.48);
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  padding:16px;
+}
+
+.backdrop.open { display:flex; }
+
+.modal {
+  width:100%;
+  max-width:480px;
+  max-height:90dvh;
+  overflow:auto;
+  background:white;
+  border-radius:22px;
+  padding:22px;
+  box-shadow:0 20px 60px rgba(0,0,0,.2);
+  animation:slideUp .2s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform:translateY(20px); opacity:0; }
+  to { transform:translateY(0); opacity:1; }
+}
+
+.modal-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.modal-head h2 {
+  font-size:20px;
+  letter-spacing:-.04em;
+  margin:0;
+}
+
+.close-btn {
+  border:0;
+  background:#f1f4f1;
+  color:var(--text);
+  border-radius:11px;
+  width:36px;
+  height:36px;
+  font-size:20px;
+}
+
+.field { margin-bottom:15px; }
+
+.field label {
+  display:block;
+  color:var(--text);
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:7px;
+}
+
+.field input,.field textarea {
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fbfcfb;
+  padding:12px 13px;
+  font-size:14px;
+  color:var(--ink);
+  outline:none;
+}
+
+.field input:focus,.field textarea:focus {
+  border-color:#80a995;
+  box-shadow:0 0 0 3px rgba(36,99,76,.08);
+}
+
+.field input[type="file"] {
+  font-size:12px;
+  padding:10px;
+}
+
+.field textarea {
+  resize:vertical;
+  min-height:70px;
+}
+
+.field-hint {
+  color:var(--muted);
+  font-size:10px;
+  margin-top:6px;
+}
+
+.preview {
+  display:none;
+  width:100%;
+  max-height:180px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-top:9px;
+}
+
+.modal-actions {
+  display:flex;
+  gap:9px;
+  margin-top:20px;
+}
+
+.modal-actions button { flex:1; }
+
+.toast {
+  position:fixed;
+  z-index:50;
+  left:50%;
+  bottom:calc(24px + env(safe-area-inset-bottom));
+  transform:translate(-50%,20px);
+  background:var(--green-dark);
+  color:white;
+  padding:12px 17px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:650;
+  opacity:0;
+  pointer-events:none;
+  transition:.2s;
+  box-shadow:0 8px 25px rgba(0,0,0,.15);
+  white-space:nowrap;
+}
+
+.toast.show {
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+.photo-viewer {
+  position:fixed;
+  inset:0;
+  z-index:40;
+  background:rgba(10,18,14,.92);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.photo-viewer.open { display:flex; }
+
+.photo-viewer img {
+  max-width:100%;
+  max-height:85dvh;
+  object-fit:contain;
+  border-radius:12px;
+}
+
+.photo-close {
+  position:absolute;
+  top:20px;
+  right:20px;
+  border:0;
+  color:white;
+  background:rgba(255,255,255,.15);
+  border-radius:50%;
+  width:42px;
+  height:42px;
+  font-size:22px;
+}
+
+@media (min-width:600px) {
+  .backdrop { align-items:center; }
+  .modal { border-radius:22px; }
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+  <header>
+    <div class="brand">
+      <span class="brand-lockup">
+        <span class="brand-word">SURMI</span>
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-tld">SE</span>
+      </span>
+      <span class="brand-section">/ CHRISTMAS</span>
+    </div>
+    <button class="header-icon" id="helpBtn" aria-label="Information">✳</button>
+  </header>
+
+  <main>
+    <p class="eyebrow">The most wonderful time</p>
+    <h1>Christmas<span style="color:var(--red)">.</span></h1>
+    <p class="intro">
+      Håll koll på julklapparna. Vem får vad – och vad kostar det?
+      Allt samlat på ett ställe.
+    </p>
+
+    <section class="hero">
+      <div class="hero-label">Christmas overview</div>
+      <div class="hero-title">Julklappar med omtanke.</div>
+      <div class="hero-sub">En liten överblick gör julklappshandeln lite enklare.</div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <div class="stat-label">Totalt antal julklappar</div>
+        <div class="stat-value" id="totalGifts">0</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Total kostnad</div>
+        <div class="stat-value" id="totalCost">0 <small>kr</small></div>
+      </div>
+    </section>
+
+    <div class="section-heading">
+      <h2>Personer</h2>
+      <span class="person-count" id="personCount">0 personer</span>
+    </div>
+
+    <div id="people" class="people"></div>
+  </main>
+
+  <footer>
+    MADE WITH CARE · SURMI.SE
+  </footer>
+</div>
+
+<!-- Person modal -->
+<div class="backdrop" id="personBackdrop">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="personModalTitle">Lägg till person</h2>
+      <button class="close-btn" data-close="personBackdrop">×</button>
+    </div>
+
+    <form id="personForm">
+      <div class="field">
+        <label for="personName">Namn</label>
+        <input id="personName" type="text" placeholder="Vem ska få julklappar?" required maxlength="70">
+      </div>
+
+      <div class="field">
+        <label for="personImage">Bild på personen</label>
+        <input id="personImage" type="file" accept="image/*">
+        <img id="personPreview" class="preview" alt="Förhandsvisning">
+        <div class="field-hint">Välj en bild från mobilen eller datorn.</div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="secondary-btn" data-close="personBackdrop">Avbryt</button>
+        <button type="submit" class="primary-btn">Spara person</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Gift modal -->
+<div class="backdrop" id="giftBackdrop">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="giftModalTitle">Lägg till julklapp</h2>
+      <button class="close-btn" data-close="giftBackdrop">×</button>
+    </div>
+
+    <form id="giftForm">
+      <div class="field">
+        <label for="giftName">Vad är det för julklapp?</label>
+        <input id="giftName" type="text" placeholder="Exempelvis hörlurar" required maxlength="100">
+      </div>
+
+      <div class="field">
+        <label for="giftPrice">Kostnad (kr)</label>
+        <input id="giftPrice" type="number" min="0" step="0.01" placeholder="0">
+      </div>
+
+      <div class="field">
+        <label for="giftUrl">Länk till produkten</label>
+        <input id="giftUrl" type="url" placeholder="https://...">
+      </div>
+
+      <div class="field">
+        <label for="giftImage">Bild på julklappen</label>
+        <input id="giftImage" type="file" accept="image/*">
+        <img id="giftPreview" class="preview" alt="Förhandsvisning">
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="secondary-btn" data-close="giftBackdrop">Avbryt</button>
+        <button type="submit" class="primary-btn">Spara julklapp</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Photo viewer -->
+<div class="photo-viewer" id="photoViewer">
+  <button class="photo-close" id="closePhoto">×</button>
+  <img id="largePhoto" alt="Förstorad bild">
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const DB_NAME = 'surmi-christmas-db';
+const DB_VERSION = 1;
+
+let db;
+let editingPersonId = null;
+let editingGiftId = null;
+let activePersonId = null;
+let selectedPersonImage = null;
+let selectedGiftImage = null;
+let toastTimer;
+
+const $ = id => document.getElementById(id);
+
+function makeId() {
+  return crypto.randomUUID
+    ? crypto.randomUUID()
+    : String(Date.now()) + Math.random().toString(16).slice(2);
+}
+
+function openDB() {
+  return new Promise((resolve,reject) => {
+    const request = indexedDB.open(DB_NAME,DB_VERSION);
+
+    request.onupgradeneeded = e => {
+      const database = e.target.result;
+
+      if (!database.objectStoreNames.contains('people')) {
+        database.createObjectStore('people',{keyPath:'id'});
+      }
+
+      if (!database.objectStoreNames.contains('gifts')) {
+        const store = database.createObjectStore('gifts',{keyPath:'id'});
+        store.createIndex('personId','personId',{unique:false});
+      }
+    };
+
+    request.onsuccess = () => {
+      db = request.result;
+      resolve(db);
+    };
+
+    request.onerror = () => reject(request.error);
+  });
+}
+
+function getAll(storeName) {
+  return new Promise((resolve,reject) => {
+    const tx = db.transaction(storeName,'readonly');
+    const request = tx.objectStore(storeName).getAll();
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+}
+
+function getOne(storeName,id) {
+  return new Promise((resolve,reject) => {
+    const tx = db.transaction(storeName,'readonly');
+    const request = tx.objectStore(storeName).get(id);
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+}
+
+function putItem(storeName,item) {
+  return new Promise((resolve,reject) => {
+    const tx = db.transaction(storeName,'readwrite');
+    tx.objectStore(storeName).put(item);
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  });
+}
+
+function deleteItem(storeName,id) {
+  return new Promise((resolve,reject) => {
+    const tx = db.transaction(storeName,'readwrite');
+    tx.objectStore(storeName).delete(id);
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  });
+}
+
+function money(value) {
+  return new Intl.NumberFormat('sv-SE',{
+    maximumFractionDigits:2
+  }).format(value || 0) + ' kr';
+}
+
+function escapeHTML(value) {
+  return String(value ?? '').replace(/[&<>"']/g,char => ({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#39;'
+  })[char]);
+}
+
+function safeUrl(value) {
+  try {
+    const url = new URL(value);
+    return ['http:','https:'].includes(url.protocol) ? url.href : '';
+  } catch {
+    return '';
+  }
+}
+
+function imageUrl(blob) {
+  return blob ? URL.createObjectURL(blob) : '';
+}
+
+function toast(message) {
+  $('toast').textContent = message;
+  $('toast').classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => $('toast').classList.remove('show'),2300);
+}
+
+function openModal(id) {
+  $(id).classList.add('open');
+}
+
+function closeModal(id) {
+  $(id).classList.remove('open');
+}
+
+function openPersonModal(person = null) {
+  editingPersonId = person?.id || null;
+  selectedPersonImage = null;
+
+  $('personForm').reset();
+  $('personPreview').style.display = 'none';
+  $('personImage').value = '';
+
+  $('personModalTitle').textContent = person ? 'Redigera person' : 'Lägg till person';
+  $('personName').value = person?.name || '';
+
+  if (person?.image) {
+    $('personPreview').src = imageUrl(person.image);
+    $('personPreview').style.display = 'block';
+  }
+
+  openModal('personBackdrop');
+}
+
+function openGiftModal(personId,gift = null) {
+  activePersonId = personId;
+  editingGiftId = gift?.id || null;
+  selectedGiftImage = null;
+
+  $('giftForm').reset();
+  $('giftPreview').style.display = 'none';
+  $('giftImage').value = '';
+
+  $('giftModalTitle').textContent = gift ? 'Redigera julklapp' : 'Lägg till julklapp';
+  $('giftName').value = gift?.name || '';
+  $('giftPrice').value = gift?.price ?? '';
+  $('giftUrl').value = gift?.url || '';
+
+  if (gift?.image) {
+    $('giftPreview').src = imageUrl(gift.image);
+    $('giftPreview').style.display = 'block';
+  }
+
+  openModal('giftBackdrop');
+}
+
+async function render() {
+  const people = await getAll('people');
+  const gifts = await getAll('gifts');
+
+  people.sort((a,b) => a.created - b.created);
+
+  const totalCost = gifts.reduce((sum,gift) => sum + (Number(gift.price) || 0),0);
+
+  $('totalGifts').textContent = gifts.length;
+  $('totalCost').innerHTML = `${money(totalCost).replace(' kr','')} <small>kr</small>`;
+  $('personCount').textContent = `${people.length} ${people.length === 1 ? 'person' : 'personer'}`;
+
+  const container = $('people');
+  container.innerHTML = '';
+
+  if (!people.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">🎄</div>
+        <div class="empty-title">Dags att börja julklappshandeln?</div>
+        <div class="empty-text">Lägg till en person och börja samla julklapparna på ett ställe.</div>
+        <button class="primary-btn" data-action="add-person">+ Lägg till person</button>
+      </div>
+    `;
+    return;
+  }
+
+  const addButton = document.createElement('button');
+  addButton.className = 'primary-btn';
+  addButton.style.width = '100%';
+  addButton.style.marginBottom = '2px';
+  addButton.textContent = '+ Lägg till person';
+  addButton.dataset.action = 'add-person';
+  container.append(addButton);
+
+  for (const person of people) {
+    const personGifts = gifts.filter(gift => gift.personId === person.id);
+    const personTotal = personGifts.reduce((sum,gift) => sum + (Number(gift.price) || 0),0);
+
+    const card = document.createElement('section');
+    card.className = 'person-card';
+
+    const photo = person.image
+      ? `<img class="person-photo" src="${imageUrl(person.image)}" alt="">`
+      : `<div class="person-placeholder">♟</div>`;
+
+    card.innerHTML = `
+      <div class="person-top">
+        ${photo}
+        <div class="person-info">
+          <div class="person-name">${escapeHTML(person.name)}</div>
+          <div class="person-meta">${personGifts.length} ${personGifts.length === 1 ? 'julklapp' : 'julklappar'}</div>
+        </div>
+        <div class="person-total">
+          <div class="person-total-label">Totalt</div>
+          <div class="person-total-value">${money(personTotal)}</div>
+        </div>
+      </div>
+
+      <div class="person-actions">
+        <button class="secondary-btn" data-action="edit-person" data-id="${person.id}">Redigera person</button>
+        <button class="danger-btn" data-action="delete-person" data-id="${person.id}">Ta bort</button>
+      </div>
+
+      <div class="gift-list">
+        <div class="gift-items"></div>
+        <div class="add-gift-row">
+          <button class="add-gift-btn" data-action="add-gift" data-id="${person.id}">+ Lägg till julklapp</button>
+        </div>
+      </div>
+    `;
+
+    const giftItems = card.querySelector('.gift-items');
+
+    if (!personGifts.length) {
+      giftItems.innerHTML = '<div class="empty-gifts">Inga julklappar tillagda ännu.</div>';
+    }
+
+    for (const gift of personGifts) {
+      const row = document.createElement('div');
+      row.className = 'gift-row';
+
+      const giftPhoto = gift.image
+        ? `<img class="gift-image" src="${imageUrl(gift.image)}" alt="">`
+        : `<div class="gift-placeholder">🎁</div>`;
+
+      const link = safeUrl(gift.url);
+      const linkHTML = link
+        ? `<a class="gift-link" href="${escapeHTML(link)}" target="_blank" rel="noopener noreferrer">Visa produkt ↗</a>`
+        : '';
+
+      row.innerHTML = `
+        ${giftPhoto}
+        <div class="gift-info">
+          <div class="gift-name">${escapeHTML(gift.name)}</div>
+          ${linkHTML}
+        </div>
+        <div>
+          <div class="gift-price">${money(Number(gift.price) || 0)}</div>
+          <div class="gift-controls">
+            <button class="mini-btn" data-action="edit-gift" data-id="${gift.id}">Ändra</button>
+            <button class="mini-btn" data-action="delete-gift" data-id="${gift.id}">Ta bort</button>
+          </div>
+        </div>
+      `;
+
+      const image = row.querySelector('.gift-image');
+      if (image) {
+        image.addEventListener('click',() => showLargePhoto(image.src));
+      }
+
+      giftItems.append(row);
+    }
+
+    const personImage = card.querySelector('.person-photo');
+    if (personImage) {
+      personImage.addEventListener('click',() => showLargePhoto(personImage.src));
+      personImage.style.cursor = 'zoom-in';
+    }
+
+    container.append(card);
+  }
+}
+
+function showLargePhoto(src) {
+  $('largePhoto').src = src;
+  $('photoViewer').classList.add('open');
+}
+
+function closeLargePhoto() {
+  $('photoViewer').classList.remove('open');
+  $('largePhoto').removeAttribute('src');
+}
+
+// Person image selection
+$('personImage').addEventListener('change',e => {
+  const file = e.target.files?.[0];
+  if (!file) return;
+
+  if (!file.type.startsWith('image/')) {
+    toast('Välj en bildfil');
+    return;
+  }
+
+  selectedPersonImage = file;
+  $('personPreview').src = URL.createObjectURL(file);
+  $('personPreview').style.display = 'block';
+});
+
+// Gift image selection
+$('giftImage').addEventListener('change',e => {
+  const file = e.target.files?.[0];
+  if (!file) return;
+
+  if (!file.type.startsWith('image/')) {
+    toast('Välj en bildfil');
+    return;
+  }
+
+  selectedGiftImage = file;
+  $('giftPreview').src = URL.createObjectURL(file);
+  $('giftPreview').style.display = 'block';
+});
+
+// Save person
+$('personForm').addEventListener('submit',async e => {
+  e.preventDefault();
+
+  const name = $('personName').value.trim();
+  if (!name) return;
+
+  try {
+    const oldPerson = editingPersonId
+      ? await getOne('people',editingPersonId)
+      : null;
+
+    const person = {
+      id: editingPersonId || makeId(),
+      name,
+      image: selectedPersonImage || oldPerson?.image || null,
+      created: oldPerson?.created || Date.now()
+    };
+
+    await putItem('people',person);
+    closeModal('personBackdrop');
+    await render();
+    toast(editingPersonId ? 'Personen är uppdaterad' : 'Personen är sparad');
+  } catch(err) {
+    console.error(err);
+    toast('Kunde inte spara personen');
+  }
+});
+
+// Save gift
+$('giftForm').addEventListener('submit',async e => {
+  e.preventDefault();
+
+  const name = $('giftName').value.trim();
+  if (!name) return;
+
+  const price = Number($('giftPrice').value) || 0;
+
+  if (price < 0) {
+    toast('Ange en giltig kostnad');
+    return;
+  }
+
+  try {
+    const oldGift = editingGiftId
+      ? await getOne('gifts',editingGiftId)
+      : null;
+
+    const gift = {
+      id: editingGiftId || makeId(),
+      personId: activePersonId,
+      name,
+      price,
+      url: $('giftUrl').value.trim(),
+      image: selectedGiftImage || oldGift?.image || null,
+      created: oldGift?.created || Date.now()
+    };
+
+    await putItem('gifts',gift);
+    closeModal('giftBackdrop');
+    await render();
+    toast(editingGiftId ? 'Julklappen är uppdaterad' : 'Julklappen är sparad');
+  } catch(err) {
+    console.error(err);
+    toast('Kunde inte spara julklappen');
+  }
+});
+
+// Click actions
+$('people').addEventListener('click',async e => {
+  const button = e.target.closest('[data-action]');
+  if (!button) return;
+
+  const action = button.dataset.action;
+  const id = button.dataset.id;
+
+  if (action === 'add-person') {
+    openPersonModal();
+    return;
+  }
+
+  if (action === 'edit-person') {
+    const person = await getOne('people',id);
+    if (person) openPersonModal(person);
+    return;
+  }
+
+  if (action === 'delete-person') {
+    if (!confirm('Ta bort personen och alla tillhörande julklappar?')) return;
+
+    const gifts = await getAll('gifts');
+    for (const gift of gifts.filter(g => g.personId === id)) {
+      await deleteItem('gifts',gift.id);
+    }
+
+    await deleteItem('people',id);
+    await render();
+    toast('Personen är borttagen');
+    return;
+  }
+
+  if (action === 'add-gift') {
+    openGiftModal(id);
+    return;
+  }
+
+  if (action === 'edit-gift') {
+    const gift = await getOne('gifts',id);
+    if (gift) openGiftModal(gift.personId,gift);
+    return;
+  }
+
+  if (action === 'delete-gift') {
+    if (!confirm('Ta bort julklappen?')) return;
+
+    await deleteItem('gifts',id);
+    await render();
+    toast('Julklappen är borttagen');
+  }
+});
+
+// Modal close buttons
+document.querySelectorAll('[data-close]').forEach(button => {
+  button.addEventListener('click',() => closeModal(button.dataset.close));
+});
+
+document.querySelectorAll('.backdrop').forEach(backdrop => {
+  backdrop.addEventListener('click',e => {
+    if (e.target === backdrop) closeModal(backdrop.id);
+  });
+});
+
+$('closePhoto').addEventListener('click',closeLargePhoto);
+
+$('photoViewer').addEventListener('click',e => {
+  if (e.target === $('photoViewer')) closeLargePhoto();
+});
+
+document.addEventListener('keydown',e => {
+  if (e.key === 'Escape') {
+    closeModal('personBackdrop');
+    closeModal('giftBackdrop');
+    closeLargePhoto();
+  }
+});
+
+$('helpBtn').addEventListener('click',() => {
+  alert(
+    'Christmas – SURMI\n\n' +
+    'Lägg till personer och samla deras julklappar på ett ställe.\n\n' +
+    'Information och bilder sparas lokalt i webbläsaren. ' +
+    'De synkas inte automatiskt mellan olika enheter.'
+  );
+});
+
+// Start
+(async function init() {
+  try {
+    await openDB();
+    await render();
+  } catch(err) {
+    console.error(err);
+    alert('Kunde inte starta Christmas. Kontrollera att webbläsaren tillåter lokal lagring.');
+  }
+})();
+</script>
+</body>
+</html>
